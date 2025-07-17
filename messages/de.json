@@ -2,5 +2,9 @@
   "Homepage": {
     "title": "Willkommen auf der Startseite",
     "content": "Dies ist der inhalt der Startseite"
+  },
+  "LocalSwitcher": {
+    "label": "Sprache wechseln",
+    "locale": "{locale, select, de {Deutsch} en {English} other {Unknown} }"
   }
 }

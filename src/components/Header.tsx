@@ -1,13 +1,14 @@
 "use client";
 
-import { LogoPlaceholder } from "@/lib/helper/ImagePlacholder";
 import clsx from "clsx";
 import { AlignJustify, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { LogoPlaceholder } from "../lib/helper/ImagePlacholder";
 import ContactPopup from "./ContactPopup";
+import LocalSwitcher from "./common/LocalSwitcher";
 
 const menuItems = [
   { name: "Beranda", route: "/" },
@@ -70,6 +71,8 @@ const Header = () => {
               </Link>
             );
           })}
+
+          <LocalSwitcher />
         </nav>
 
         {/* Mobile menu icon */}

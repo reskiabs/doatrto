@@ -1,5 +1,5 @@
-import { LogoPlaceholder } from "@/lib/helper/ImagePlacholder";
 import Image from "next/image";
+import { LogoPlaceholder } from "../lib/helper/ImagePlacholder";
 
 const Footer = () => {
   return (
