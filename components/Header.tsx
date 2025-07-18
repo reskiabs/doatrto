@@ -8,14 +8,14 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { LogoPlaceholder } from "../lib/helper/ImagePlacholder";
 import ContactPopup from "./ContactPopup";
-import LocalSwitcher from "./common/LocalSwitcher";
+import LanguageSwitcher from "./common/LanguageSwitcher";
 
 const menuItems = [
   { name: "Beranda", route: "/" },
   { name: "Tentang Kami", route: "/about-us" },
   { name: "Artikel", route: "/articles" },
   { name: "Kegiatan", route: "/activities" },
-  { name: "Hubungi Kami", route: "/" }, // route dummy, karena pakai popup
+  { name: "Hubungi Kami", route: "/" },
 ];
 
 const Header = () => {
@@ -72,7 +72,7 @@ const Header = () => {
             );
           })}
 
-          <LocalSwitcher />
+          <LanguageSwitcher />
         </nav>
 
         {/* Mobile menu icon */}
