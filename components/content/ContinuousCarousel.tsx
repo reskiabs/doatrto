@@ -11,7 +11,6 @@ interface RowProps {
 }
 
 function ScrollRow({ items, animationClass, pauseOnHover }: RowProps) {
-  // Gandakan list untuk seamless loop
   const doubled = [...items, ...items];
 
   return (
@@ -29,16 +28,13 @@ function ScrollRow({ items, animationClass, pauseOnHover }: RowProps) {
           <CarouselCard key={`${item.id}-${i}`} item={item} />
         ))}
       </div>
-      {/* Fade Edges */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-white via-white/70 to-transparent dark:from-neutral-900 dark:via-neutral-900/80" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-28 bg-gradient-to-l from-white via-white/70 to-transparent dark:from-neutral-900 dark:via-neutral-900/80" />
     </div>
   );
 }
 
 export function ContinuousCarousel() {
   return (
-    <section className="relative mx-auto max-w-[1640px] space-y-10 py-10">
+    <section className="relative space-y-[30px] pt-9">
       <ScrollRow
         items={carouselRow1}
         animationClass="animate-scroll-fast"
