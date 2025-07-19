@@ -1,5 +1,6 @@
 "use client";
 
+import Certificate from "@/components/common/Certificate";
 import GoingBeyond from "@/components/content/GoingBeyond";
 import HeroSection from "@/components/content/HeroSection";
 import { HonestReview } from "@/components/content/HonestReview";
@@ -18,6 +19,7 @@ export default function Home() {
       <HonestReview />
       <TheDifferences />
       <OpenEvidenceBasedSystem />
+      <Certificate />
     </main>
   );
 }

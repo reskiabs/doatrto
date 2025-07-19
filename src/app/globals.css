@@ -51,7 +51,6 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  /* Tambahan animasi scroll */
   @keyframes scroll {
     0% {
       transform: translateX(0);
