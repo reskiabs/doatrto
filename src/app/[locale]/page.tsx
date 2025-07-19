@@ -1,15 +1,11 @@
-import { useTranslations } from "next-intl";
-import Link from "next/link";
+import HeroSection from "@/components/content/HeroSection";
+import TrustMedicalExpert from "@/components/content/TrustMedicalExpert";
 
 export default function Home() {
-  const t = useTranslations("Homepage");
   return (
-    <div>
-      <p>{t("title")}</p>
-      <p>{t("content")}</p>
-      <Link href="/about">About</Link>
-      <br />
-      <Link href="/article">Article</Link>
-    </div>
+    <main>
+      <HeroSection />
+      <TrustMedicalExpert />
+    </main>
   );
 }
