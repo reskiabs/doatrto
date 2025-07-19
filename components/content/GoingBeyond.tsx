@@ -64,12 +64,12 @@ const GoingBeyond = () => {
   return (
     <main className="flex flex-col items-center w-full mt-[50px] md:mt-[80px] lg:mt-[100px]">
       <div className="w-full max-w-[1140px]">
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center mb-8">
           <ContentTitle title="Beyond Conventional Therapies" />
         </div>
 
         <div
-          className="mt-9 grid gap-6
+          className="grid gap-6
                         sm:grid-cols-2
                         md:grid-cols-3
                         xl:grid-cols-3"

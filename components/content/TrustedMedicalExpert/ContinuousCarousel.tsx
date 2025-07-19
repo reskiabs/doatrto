@@ -1,6 +1,9 @@
 "use client";
 
-import { carouselRow1, carouselRow2 } from "../common/carousel-data";
+import {
+  carouselRow1,
+  carouselRow2,
+} from "@/components/common/trusted-media-carousel-data";
 import { CarouselCard } from "./CarouselCard";
 
 interface RowProps {
@@ -37,12 +40,12 @@ export function ContinuousCarousel() {
     <section className="relative space-y-[30px]">
       <ScrollRow
         items={carouselRow1}
-        animationClass="animate-scroll-fast"
+        animationClass="animate-scroll-slow"
         pauseOnHover
       />
       <ScrollRow
         items={carouselRow2}
-        animationClass="animate-scroll-slow-reverse"
+        animationClass="animate-scroll-fast"
         pauseOnHover
       />
     </section>

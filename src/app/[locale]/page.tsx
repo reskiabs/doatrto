@@ -4,7 +4,8 @@ import GoingBeyond from "@/components/content/GoingBeyond";
 import HeroSection from "@/components/content/HeroSection";
 import { HonestReview } from "@/components/content/HonestReview";
 import Media from "@/components/content/Media";
-import TrustMedicalExpert from "@/components/content/TrustMedicalExpert";
+import TheDifferences from "@/components/content/TheDifferences";
+import TrustMedicalExpert from "@/components/content/TrustedMedicalExpert";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <GoingBeyond />
       <Media />
       <HonestReview />
+      <TheDifferences />
     </main>
   );
 }

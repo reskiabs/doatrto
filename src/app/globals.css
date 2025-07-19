@@ -70,10 +70,10 @@
     }
   }
 
-  --animate-scroll-fast: scroll 55s linear infinite;
-  --animate-scroll-slow: scroll 55s linear infinite;
-  --animate-scroll-fast-reverse: scrollReverse 60s linear infinite;
-  --animate-scroll-slow-reverse: scrollReverse 60s linear infinite;
+  --animate-scroll-fast: scroll 20s linear infinite;
+  --animate-scroll-slow: scroll 40s linear infinite;
+  --animate-scroll-fast-reverse: scrollReverse 20s linear infinite;
+  --animate-scroll-slow-reverse: scrollReverse 40s linear infinite;
 }
 
 :root {
