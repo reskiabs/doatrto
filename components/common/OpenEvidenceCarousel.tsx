@@ -18,7 +18,7 @@ export function OpenEvidenceCarousel() {
     },
   ];
   return (
-    <div className="relative overflow-hidden w-full h-full py-20">
+    <div className="relative overflow-hidden w-full h-full">
       <Carousel slides={slideData} />
     </div>
   );

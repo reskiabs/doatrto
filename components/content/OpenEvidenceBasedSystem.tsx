@@ -1,6 +1,7 @@
 "use client";
 
 import ContentTitle from "@/components/typography/ContentTitle";
+import PrimaryButton from "../button/PrimaryButton";
 import { OpenEvidenceCarousel } from "../common/OpenEvidenceCarousel";
 
 const OpenEvidenceBasedSystem = () => {
@@ -10,6 +11,12 @@ const OpenEvidenceBasedSystem = () => {
         <ContentTitle title="Open Evidence Based System" />
       </div>
       <OpenEvidenceCarousel />
+      <div className="flex flex-col justify-center items-center mt-8">
+        <PrimaryButton
+          title="Lihat Lainnya"
+          subtitle="2000 orang telah menonton podcast ini."
+        />
+      </div>
     </main>
   );
 };
