@@ -1,6 +1,6 @@
-import { ComingSoon } from "@/components/common/ComingSoon";
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
+import { MobileComingSoon } from "@/components/common/MobileComingSoon";
 import type { Metadata } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -44,7 +44,7 @@ export default async function RootLayout({
         <NextIntlClientProvider>
           {/* Mobile & Tablet: show ComingSoon */}
           <div className="lg:hidden">
-            <ComingSoon />
+            <MobileComingSoon />
           </div>
 
           {/* Desktop: full site */}
