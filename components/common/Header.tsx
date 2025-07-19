@@ -14,7 +14,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 const menuItems = [
   { name: "Home", route: "/" },
   { name: "About DOA", route: "/about" },
-  { name: "Trust & Transparency", route: "/trust" },
+  { name: "Trust & Transparency", route: "/trust-and-transparency" },
   { name: "Testimonial", route: "/testimonial" },
   { name: "FAQ", route: "/faq" },
   { name: "Article", route: "/article" },

@@ -1,6 +1,6 @@
 import ComingSoon from "@/components/common/ComingSoon";
 
-const ArticlePage = () => {
+const FAQPage = () => {
   return (
     <div>
       <ComingSoon />
@@ -8,4 +8,4 @@ const ArticlePage = () => {
   );
 };
 
-export default ArticlePage;
+export default FAQPage;

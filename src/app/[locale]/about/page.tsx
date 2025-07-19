@@ -1,5 +1,11 @@
+import ComingSoon from "@/components/common/ComingSoon";
+
 const AboutPage = () => {
-  return <div>AboutPage</div>;
+  return (
+    <div>
+      <ComingSoon />
+    </div>
+  );
 };
 
 export default AboutPage;
