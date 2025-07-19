@@ -1,16 +1,14 @@
 import * as React from "react";
 
-type OutsideClickHandler = (event: MouseEvent | TouchEvent) => void;
-
 export function useOutsideClick<T extends HTMLElement = HTMLElement>(
-  ref: React.RefObject<T>,
-  onOutsideClick: OutsideClickHandler
+  ref: React.RefObject<T | null>,
+  onOutsideClick: (event: MouseEvent | TouchEvent) => void
 ) {
   React.useEffect(() => {
     const handleEvent = (event: MouseEvent | TouchEvent) => {
       const el = ref.current;
       if (!el) return;
-      if (el.contains(event.target as Node)) return; // clicked inside
+      if (el.contains(event.target as Node)) return;
       onOutsideClick(event);
     };
 

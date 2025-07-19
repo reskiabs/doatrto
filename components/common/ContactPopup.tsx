@@ -1,10 +1,6 @@
 "use client";
 
-import Instagram from "@/public/instagram.svg";
-import TikTok from "@/public/tik-tok.svg";
-import Twitter from "@/public/twitter.svg";
 import { Mail, MapPin, Phone, X } from "lucide-react";
-import Image from "next/image";
 
 interface ContactPopupProps {
   onClose: () => void;
@@ -54,29 +50,6 @@ const ContactPopup = ({ onClose }: ContactPopupProps) => {
           <button className="w-full h-[32px] md:h-[40px] bg-primary rounded-full text-white text-[12px] md:text-[16px] font-medium text-center">
             Direction Google Maps
           </button>
-        </div>
-        <div className="flex gap-[15px] md:gap-[30px] mt-4 md:mt-7 justify-center">
-          <div className="relative size-[30px] rounded-full border border-primary flex items-center justify-center  md:size-[45px] md:size-[60px]">
-            <Image
-              src={Instagram}
-              alt="Instagram"
-              className="md:size-[18px] md:size-[30px]"
-            />
-          </div>
-          <div className="relative size-[30px] rounded-full border border-primary flex items-center justify-center  md:size-[45px] md:size-[60px]">
-            <Image
-              src={TikTok}
-              alt="Instagram"
-              className="md:size-[18px] md:size-[30px]"
-            />
-          </div>
-          <div className="relative size-[30px] rounded-full border border-primary flex items-center justify-center  md:size-[45px] md:size-[60px]">
-            <Image
-              src={Twitter}
-              alt="Instagram"
-              className="md:size-[18px] md:size-[30px]"
-            />
-          </div>
         </div>
       </div>
     </div>

@@ -1,0 +1,10 @@
+{
+  "Homepage": {
+    "title": "Selamat datang di halaman utama",
+    "content": "Ini adalah konten halaman utama"
+  },
+  "LocalSwitcher": {
+    "label": "Ganti Bahasa",
+    "locale": "{locale, select, id {Tidak Dikenal} en {Inggris} other {Tidak Dikenal} }"
+  }
+}

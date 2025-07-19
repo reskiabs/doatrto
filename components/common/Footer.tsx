@@ -1,11 +1,11 @@
 import Image from "next/image";
-import { LogoPlaceholder } from "../lib/helper/ImagePlacholder";
+import { LogoPlaceholder } from "../../lib/helper/ImagePlacholder";
 
 const Footer = () => {
   return (
-    <div className="w-full">
+    <div className="w-full flex flex-col justify-center items-center mt-[100px]">
       {/* main footer */}
-      <div className="bg-gradient-to-b from-primary to-tertiary w-full h-[163px] flex flex-col justify-center items-center lg:h-[319px]">
+      <div className="bg-gradient-to-b w-[98.5%] rounded-[20px] from-primary to-secondary h-[163px] flex flex-col justify-center items-center lg:h-[319px]">
         <h1 className="font-medium text-3xl text-white lg:text-[70px]">
           Try it right now
         </h1>

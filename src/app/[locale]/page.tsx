@@ -1,15 +1,29 @@
-import { useTranslations } from "next-intl";
-import Link from "next/link";
+"use client";
+
+import Certificate from "@/components/common/Certificate";
+import GoingBeyond from "@/components/content/GoingBeyond";
+import HeroSection from "@/components/content/HeroSection";
+import { HonestReview } from "@/components/content/HonestReview";
+import Media from "@/components/content/Media";
+import News from "@/components/content/News";
+import OpenEvidenceBasedSystem from "@/components/content/OpenEvidenceBasedSystem";
+import Testimonials from "@/components/content/Testimonials";
+import TheDifferences from "@/components/content/TheDifferences";
+import TrustMedicalExpert from "@/components/content/TrustedMedicalExpert";
 
 export default function Home() {
-  const t = useTranslations("Homepage");
   return (
-    <div>
-      <p>{t("title")}</p>
-      <p>{t("content")}</p>
-      <Link href="/about">About</Link>
-      <br />
-      <Link href="/article">Article</Link>
-    </div>
+    <main>
+      <HeroSection />
+      <TrustMedicalExpert />
+      <GoingBeyond />
+      <Media />
+      <HonestReview />
+      <TheDifferences />
+      <OpenEvidenceBasedSystem />
+      <Certificate />
+      <Testimonials />
+      <News />
+    </main>
   );
 }
