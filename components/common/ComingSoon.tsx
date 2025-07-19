@@ -1,14 +1,20 @@
-const ComingSoon = () => {
+"use client";
+
+interface ComingSoonProps {
+  headline?: string;
+  message?: string;
+}
+
+export function ComingSoon({
+  headline = "📱 Versi Mobile & Tablet Segera Hadir",
+  message = "Kami sedang mengoptimalkan pengalaman D.O.A TRTO untuk layar kecil. Untuk sementara, silakan akses situs ini dari perangkat desktop.",
+}: ComingSoonProps) {
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      <h2 className="mb-2 text-4xl font-bold md:text-6xl lg:text-8xl text-primary">
-        🎉 Coming Soon!
+    <div className="flex flex-col items-center justify-center min-h-screen text-center px-6">
+      <h2 className="mb-4 text-3xl font-bold text-primary md:text-4xl">
+        {headline}
       </h2>
-      <p className="text-xs text-gray-500 md:text-lg lg:text-md">
-        Kami sedang menyiapkan konten terbaik untuk Anda.
-      </p>
+      <p className="max-w-sm text-sm text-gray-500 md:text-base">{message}</p>
     </div>
   );
-};
-
-export default ComingSoon;
+}
