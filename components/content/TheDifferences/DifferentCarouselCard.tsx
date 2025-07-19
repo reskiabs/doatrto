@@ -1,6 +1,6 @@
 "use client";
 
-import { CarouselItem } from "@/components/common/trusted-media-carousel-data";
+import { CarouselItem } from "@/data/trusted-media-carousel-data";
 import clsx from "clsx";
 import Image from "next/image";
 

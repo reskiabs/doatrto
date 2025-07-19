@@ -1,9 +1,6 @@
 "use client";
 
-import {
-  carouselRow1,
-  carouselRow2,
-} from "@/components/common/trusted-media-carousel-data";
+import { carouselRow1, carouselRow2 } from "@/data/trusted-media-carousel-data";
 import { CarouselCard } from "./CarouselCard";
 
 interface RowProps {

@@ -3,7 +3,7 @@
 import {
   carouselRow1,
   carouselRow2,
-} from "@/components/common/the-differences-carousel-data";
+} from "@/data/the-differences-carousel-data";
 import { DifferentCarouselCard } from "./DifferentCarouselCard";
 
 interface RowProps {
