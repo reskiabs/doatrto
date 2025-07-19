@@ -22,7 +22,7 @@ export function DifferentCarouselCard({ item }: Props) {
         alt="Trusted Media Carousel Card Image"
         fill
         priority
-        className="object-cover transition-transform duration-700 group-hover:scale-75"
+        className="object-cover transition-transform duration-700 group-hover:scale-120"
       />
     </div>
   );
