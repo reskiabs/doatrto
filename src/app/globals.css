@@ -6,8 +6,8 @@
 @theme {
   --color-primary: #1a237b;
   --color-secondary: #4a7bbe;
-  --color-tertiary: #324f9c;
-  --color-accent: #2b5b9a;
+  --color-tertiary: #2b5b9a;
+  --color-accent: #324f9c;
   --color-white: #ffffff;
   --color-body: #222222;
   --color-muted: #aaaaaa;
@@ -31,7 +31,6 @@
   --color-popover-foreground: var(--popover-foreground);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
@@ -87,7 +86,6 @@
   --popover-foreground: oklch(0.141 0.005 285.823);
   --primary-foreground: oklch(0.985 0 0);
   --secondary-foreground: oklch(0.21 0.006 285.885);
-  --muted: oklch(0.967 0.001 286.375);
   --muted-foreground: oklch(0.552 0.016 285.938);
   --accent-foreground: oklch(0.21 0.006 285.885);
   --destructive: oklch(0.577 0.245 27.325);

@@ -34,7 +34,7 @@ function ScrollRow({ items, animationClass, pauseOnHover }: RowProps) {
 
 export function ContinuousCarousel() {
   return (
-    <section className="relative space-y-[30px] pt-9">
+    <section className="relative space-y-[30px]">
       <ScrollRow
         items={carouselRow1}
         animationClass="animate-scroll-fast"

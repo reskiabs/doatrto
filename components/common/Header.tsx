@@ -18,17 +18,26 @@ const menuItems = [
   { name: "Testimonial", route: "/testimonial" },
   { name: "FAQ", route: "/faq" },
   { name: "Article", route: "/article" },
-  { name: "Contact us", route: "/contact" }, // Akan ditaruh paling akhir
+  { name: "Contact us", route: "/contact" },
 ];
 
 const Header = () => {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [showContactPopup, setShowContactPopup] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
   }, [menuOpen]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const removeLocale = (path: string) => {
     const locales = routing.locales;
@@ -50,7 +59,14 @@ const Header = () => {
 
   return (
     <>
-      <header className="relative z-50 flex items-center justify-between px-[150px] py-4 bg-white">
+      <header
+        className={clsx(
+          "sticky top-0 z-50 flex items-center justify-between px-[150px] py-4 transition-colors duration-300",
+          isScrolled
+            ? "backdrop-blur-md bg-white/30 shadow-md"
+            : "bg-transparent"
+        )}
+      >
         {/* Logo */}
         <div className="relative h-10 w-[100px] md:h-[75px] md:w-[180px]">
           <Image
@@ -65,7 +81,6 @@ const Header = () => {
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center space-x-[38px] text-md font-normal text-shadow-text">
-          {/* Render semua menu kecuali Contact */}
           {menuItems
             .filter((item) => item.name !== "Contact us")
             .map((item) => {
@@ -84,10 +99,8 @@ const Header = () => {
               );
             })}
 
-          {/* Language Switcher sebelum Contact */}
           <LanguageSwitcher />
 
-          {/* Contact Button */}
           <button
             onClick={() => setShowContactPopup(true)}
             className="px-5 py-2.5 text-md font-medium border-2 rounded-full border-primary text-primary hover:bg-secondary/20 transition"
@@ -111,7 +124,6 @@ const Header = () => {
       {/* Mobile Overlay Menu */}
       {menuOpen && (
         <div className="fixed inset-0 z-40 flex flex-col items-center px-8 pt-24 bg-white text-gray-800 md:hidden">
-          {/* Semua menu kecuali Contact */}
           {menuItems
             .filter((item) => item.name !== "Contact us")
             .map((item) => {
@@ -131,12 +143,10 @@ const Header = () => {
               );
             })}
 
-          {/* Language Switcher */}
           <div className="w-full py-4 border-b border-gray-300 flex justify-center">
             <LanguageSwitcher />
           </div>
 
-          {/* Contact us di bawah */}
           <button
             onClick={() => {
               setShowContactPopup(true);
@@ -149,7 +159,6 @@ const Header = () => {
         </div>
       )}
 
-      {/* Contact Popup */}
       {showContactPopup && (
         <ContactPopup onClose={() => setShowContactPopup(false)} />
       )}
