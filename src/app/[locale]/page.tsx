@@ -9,13 +9,13 @@ import News from "@/components/content/News";
 import OpenEvidenceBasedSystem from "@/components/content/OpenEvidenceBasedSystem";
 import Testimonials from "@/components/content/Testimonials";
 import TheDifferences from "@/components/content/TheDifferences";
-import TrustMedicalExpert from "@/components/content/TrustedMedicalExpert";
+import TrustByMedicalExpert from "@/components/content/TrustedByMedicalExpert";
 
 export default function Home() {
   return (
     <main>
       <HeroSection />
-      <TrustMedicalExpert />
+      <TrustByMedicalExpert />
       <GoingBeyond />
       <Media />
       <HonestReview />
