@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 type NewsCardProps = {
   item: {
@@ -31,12 +32,12 @@ const NewsCard = ({ item }: NewsCardProps) => {
         <p className="text-gray-800 text-sm mb-7 font-normal text-md">
           {item.description}
         </p>
-        <a
-          href="#"
+        <Link
+          href={`/article/${item.id}`}
           className="text-blue-600 text-sm font-medium hover:underline"
         >
           Baca Selengkapnya &gt;
-        </a>
+        </Link>
       </div>
     </div>
   );
