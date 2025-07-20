@@ -13,6 +13,7 @@ const OpenEvidenceBasedSystem = () => {
       <OpenEvidenceCarousel />
       <div className="flex flex-col justify-center items-center mt-8">
         <PrimaryButton
+          href="/"
           title="Lihat Lainnya"
           subtitle="2000 orang telah menonton podcast ini."
         />
