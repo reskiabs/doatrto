@@ -12,8 +12,8 @@ const TrustedByMedicalExpertDetailPage = () => {
         />
         <div className="relative w-[1140px] h-[641px] rounded-[50px] overflow-hidden mt-[50px]">
           <Image
-            src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0"
-            alt="Event"
+            src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Background of a beautiful view"
             fill
             className="object-cover"
           />
