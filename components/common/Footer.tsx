@@ -48,11 +48,12 @@ const Footer = () => {
           {/* logo */}
           <div className="relative w-[120px] h-[50px] lg:w-[250px] lg:h-[102px]">
             <Image
-              src="logo.svg"
-              alt="Logo"
+              src="/logo.svg"
+              alt="DOA Official Logo"
               fill
-              blurDataURL={LogoPlaceholder}
+              priority
               placeholder="blur"
+              blurDataURL={LogoPlaceholder}
             />
           </div>
 

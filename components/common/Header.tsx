@@ -61,10 +61,8 @@ const Header = () => {
     <>
       <header
         className={clsx(
-          "sticky top-0 z-50 flex items-center justify-between px-[150px] py-4 transition-colors duration-300",
-          isScrolled
-            ? "backdrop-blur-md bg-white/30 shadow-md"
-            : "bg-transparent"
+          "sticky top-0 z-50 flex backdrop-blur-md bg-white/30 items-center justify-between px-[150px] py-4 transition-colors duration-300",
+          isScrolled ? "shadow-md" : "shadow-none"
         )}
       >
         {/* Logo */}
