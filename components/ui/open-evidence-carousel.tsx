@@ -1,6 +1,7 @@
 "use client";
-import { IconArrowNarrowRight } from "@tabler/icons-react";
+import { Play } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useId, useRef, useState } from "react";
 
 interface SlideData {
@@ -98,33 +99,26 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
             }}
             className="absolute inset-0 object-cover opacity-100 transition-opacity duration-600 ease-in-out"
           />
+          {current === index && (
+            <div className="absolute inset-0 bg-black/30 transition-all duration-1000" />
+          )}
         </div>
+        <article
+          className={`relative p-[4vmin] transition-opacity duration-1000 ease-in-out ${
+            current === index ? "opacity-100 visible" : "opacity-0 invisible"
+          }`}
+        >
+          <Link
+            href={`/open-evidence/${index + 1}`}
+            className="mt-6 flex items-center gap-2 px-7 py-3.5 bg-white/50 hover:bg-white mx-auto font-semibold text-md text-tertiary rounded-full justify-center hover:shadow-xl 
+              hover:shadow-white/30
+              transition-all duration-300 ease-out hover:scale-[1.02] hover:cursor-pointer"
+          >
+            <Play size={30} /> Play Video
+          </Link>
+        </article>
       </li>
     </div>
-  );
-};
-
-interface CarouselControlProps {
-  type: string;
-  title: string;
-  handleClick: () => void;
-}
-
-const CarouselControl = ({
-  type,
-  title,
-  handleClick,
-}: CarouselControlProps) => {
-  return (
-    <button
-      className={`w-10 h-10 flex items-center mx-2 justify-center bg-neutral-200 dark:bg-neutral-800 border-3 border-transparent rounded-full focus:border-[#6D64F7] focus:outline-none hover:-translate-y-0.5 active:translate-y-0.5 transition duration-200 ${
-        type === "previous" ? "rotate-180" : ""
-      }`}
-      title={title}
-      onClick={handleClick}
-    >
-      <IconArrowNarrowRight className="text-neutral-600 dark:text-neutral-200" />
-    </button>
   );
 };
 
@@ -134,16 +128,6 @@ interface CarouselProps {
 
 export function Carousel({ slides }: CarouselProps) {
   const [current, setCurrent] = useState(0);
-
-  const handlePreviousClick = () => {
-    const previous = current - 1;
-    setCurrent(previous < 0 ? slides.length - 1 : previous);
-  };
-
-  const handleNextClick = () => {
-    const next = current + 1;
-    setCurrent(next === slides.length ? 0 : next);
-  };
 
   const handleSlideClick = (index: number) => {
     if (current !== index) {
@@ -174,20 +158,6 @@ export function Carousel({ slides }: CarouselProps) {
           />
         ))}
       </ul>
-
-      {/* <div className="absolute flex justify-center w-full top-[calc(100%+1rem)]">
-        <CarouselControl
-          type="previous"
-          title="Go to previous slide"
-          handleClick={handlePreviousClick}
-        />
-
-        <CarouselControl
-          type="next"
-          title="Go to next slide"
-          handleClick={handleNextClick}
-        />
-      </div> */}
     </div>
   );
 }

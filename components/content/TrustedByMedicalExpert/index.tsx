@@ -3,15 +3,15 @@
 import ContentTitle from "../../typography/ContentTitle";
 import { ContinuousCarousel } from "./ContinuousCarousel";
 
-const TrustMedicalExpert = () => {
+const TrustByMedicalExpert = () => {
   return (
     <main className="mt-[50px] md:mt-[80px] lg:mt-[100px]">
       <div className="flex flex-col justify-center items-center mb-8">
-        <ContentTitle title="Trust by Medical Expert" />
+        <ContentTitle title="Trusted by Medical Expert" />
       </div>
       <ContinuousCarousel />
     </main>
   );
 };
 
-export default TrustMedicalExpert;
+export default TrustByMedicalExpert;
