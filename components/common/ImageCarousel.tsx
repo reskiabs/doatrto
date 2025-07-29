@@ -3,22 +3,13 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const images = [
-  "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?q=80&w=2340&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1522199710521-72d69614c702?q=80&w=2340&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1508780709619-79562169bc64?q=80&w=2340&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2340&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1481277542470-605612bd2d61?q=80&w=2340&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2340&auto=format&fit=crop",
-];
-
-const ImageCarousel = () => {
+const ImageCarousel = ({ images }: { images: string[] }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
@@ -29,12 +20,12 @@ const ImageCarousel = () => {
           <Image
             key={index}
             src={src}
-            alt={`Slide ${index + 1}`}
+            alt={src}
             fill
             className={`absolute top-0 left-0 object-cover transition-opacity duration-1000 ease-in-out ${
               index === activeIndex ? "opacity-100 z-10" : "opacity-0 z-0"
             }`}
-            priority={index === 0}
+            priority
           />
         ))}
       </div>
