@@ -12,10 +12,9 @@ const HeroSection = () => {
   useEffect(() => {
     const fetchHeros = async () => {
       const { data, error } = await supabase.from("hero-section").select("*");
-
       if (error) {
         setError("Error fetching hero data");
-        console.error("❌ Supabase error:", error);
+        console.error("Supabase error:", error);
       } else {
         setHeros(data || []);
       }
@@ -25,15 +24,24 @@ const HeroSection = () => {
     fetchHeros();
   }, []);
 
-  const allThumbnails = heros.map((hero) => hero.thumbnail).filter(Boolean);
-  console.log("🔍 > HeroSection > allThumbnails:", allThumbnails);
+  const allThumbnails = heros
+    .map((hero) => ({
+      id: hero.id,
+      src: hero.thumbnail,
+    }))
+    .filter((item) => !!item.src);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading)
+    return (
+      <div className="relative w-[98.5%] h-[770px] rounded-[40px] overflow-hidden bg-gray-100 flex justify-center items-center">
+        Loading...
+      </div>
+    );
   if (error) return <div>{error}</div>;
 
   return (
     <div className="flex flex-col justify-center items-center">
-      {allThumbnails.length > 0 && <ImageCarousel images={allThumbnails} />}
+      <ImageCarousel images={allThumbnails} />
       <div className="pt-[15px] flex w-[97%] items-center gap-[18px] mt-[10px]">
         <MainOutlineButton text="Session" />
         <MainOutlineButton text="Klasses" />
