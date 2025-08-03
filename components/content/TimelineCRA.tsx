@@ -7,7 +7,7 @@ export function TimelineCRA() {
       title: "Latar Belakang",
       content: (
         <div>
-          <p className="text-xl font-normal">
+          <p className="text-xl font-normal leading-9">
             Ijinkan saya menceritakan background hidup saya.Saya anak pertama
             dari 3 bersaudara, saya memiliki masalah emosi di masa lalu terkait
             dengan keluarga, dan trauma perihal kerusuhan 1998.
@@ -30,7 +30,7 @@ export function TimelineCRA() {
       title: "Jawaban Tuhan",
       content: (
         <div>
-          <p className="text-xl font-normal">
+          <p className="text-xl font-normal leading-9">
             Akhirnya Tuhan menjawab doa saya, genap 10 tahun kemudian, akhirnya
             setiap potongan puzzle dan pertanyaan saya menjadi lengkap, dan
             itulah awal Divine Oracular Assistance (D.O.A) terbentuk, yang

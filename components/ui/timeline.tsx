@@ -36,7 +36,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             <h2 className="text-[40px] mt-[55px] mb-4 text-tertiary font-extrabold">
               Profile Coach Rheo
             </h2>
-            <p className="text-neutral-700 dark:text-neutral-300 text-xl">
+            <p className="text-neutral-700 dark:text-neutral-300 text-xl leading-9">
               Nama saya Caezarro, panggilan saya Rheo.
               <br />
               <br />
