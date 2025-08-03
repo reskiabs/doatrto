@@ -6,7 +6,7 @@ import Link from "next/link";
 interface PrimaryButtonProps {
   title: string;
   subtitle?: string;
-  href: string;
+  href?: string;
 }
 
 const PrimaryButton = ({ title, subtitle, href = "#" }: PrimaryButtonProps) => {
