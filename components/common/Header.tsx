@@ -13,7 +13,22 @@ import LanguageSwitcher from "./LanguageSwitcher";
 
 const menuItems = [
   { name: "Home", route: "/" },
-  { name: "About DOA", route: "/about" },
+  {
+    name: "About DOA",
+    children: [
+      { name: "What is DOA?", route: "/about-doa/what-is-doa" },
+      { name: "Story of CRA", route: "/about-doa/story-of-cra" },
+      { name: "How it Works", route: "/about-doa/how-it-works" },
+      {
+        name: "When DOA System is Effective?",
+        route: "/about-doa/when-doa-system-is-effective",
+      },
+      {
+        name: "Session Protocol",
+        route: "/about-doa/session-protocol",
+      },
+    ],
+  },
   { name: "Trust & Transparency", route: "/trust-and-transparency" },
   { name: "Testimonial", route: "/testimonial" },
   { name: "FAQ", route: "/faq" },
@@ -57,6 +72,11 @@ const Header = () => {
     return cleanPath === route || cleanPath.startsWith(`${route}/`);
   };
 
+  const isAboutDOARoute = () => {
+    const cleanPath = removeLocale(pathname);
+    return cleanPath.startsWith("/about-doa");
+  };
+
   return (
     <>
       <header
@@ -82,18 +102,55 @@ const Header = () => {
           {menuItems
             .filter((item) => item.name !== "Contact us")
             .map((item) => {
-              const active = isRouteActive(item.route);
+              const active = isRouteActive(item.route || "");
+              const hasChildren = !!item.children;
+              const isAboutDOA = item.name === "About DOA";
+
               return (
-                <Link
-                  key={item.name}
-                  href={item.route}
-                  className={clsx(
-                    "transition hover:underline hover:text-primary",
-                    active && "font-bold underline text-primary"
+                <div key={item.name} className="relative group">
+                  {hasChildren ? (
+                    <button
+                      className={clsx(
+                        "transition hover:underline hover:text-primary group-hover:underline group-hover:text-primary",
+                        isAboutDOARoute() &&
+                          isAboutDOA &&
+                          "font-bold underline text-primary"
+                      )}
+                    >
+                      {item.name}
+                    </button>
+                  ) : (
+                    <Link
+                      href={item.route}
+                      className={clsx(
+                        "transition hover:underline hover:text-primary",
+                        active && "font-bold underline text-primary"
+                      )}
+                    >
+                      {item.name}
+                    </Link>
                   )}
-                >
-                  {item.name}
-                </Link>
+
+                  {/* Dropdown */}
+                  {hasChildren && (
+                    <div
+                      className={clsx(
+                        "absolute top-full left-0 mt-2 w-64 bg-white border rounded shadow-lg transition-all duration-200 z-50",
+                        "opacity-0 invisible group-hover:opacity-100 group-hover:visible"
+                      )}
+                    >
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.name}
+                          href={child.route}
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        >
+                          {child.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               );
             })}
 
@@ -125,11 +182,11 @@ const Header = () => {
           {menuItems
             .filter((item) => item.name !== "Contact us")
             .map((item) => {
-              const active = isRouteActive(item.route);
+              const active = isRouteActive(item.route || "");
               return (
                 <Link
                   key={item.name}
-                  href={item.route}
+                  href={item.route || "#"}
                   onClick={() => setMenuOpen(false)}
                   className={clsx(
                     "w-full py-4 text-xs text-center border-b border-gray-300 transition",
