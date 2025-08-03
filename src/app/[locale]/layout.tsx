@@ -18,12 +18,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// export const koulen = Koulen({
-//   variable: "--font-koulen",
-//   subsets: ["latin"],
-//   weight: "400",
-// });
-
 export const metadata: Metadata = {
   title: "DOATRTO | Divine Oracular Assistance",
   description: "A System soo Good, it feels like a scam",

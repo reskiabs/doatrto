@@ -8,8 +8,9 @@ type NewsCardProps = {
     description: string;
     image: string;
   };
+  buttonText: string;
 };
-const NewsCard = ({ item }: NewsCardProps) => {
+const NewsCard = ({ item, buttonText }: NewsCardProps) => {
   return (
     <div
       key={item.id}
@@ -36,7 +37,7 @@ const NewsCard = ({ item }: NewsCardProps) => {
           href={`/article/${item.id}`}
           className="text-blue-600 text-sm font-medium hover:underline"
         >
-          Baca Selengkapnya &gt;
+          {buttonText} &gt;
         </Link>
       </div>
     </div>

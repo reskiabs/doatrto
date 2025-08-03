@@ -64,7 +64,7 @@ dengan Divine Oracular Assistance Tension Releasing Technique Online"
       </div>
       <div className="w-full max-w-[1140px] mx-auto grid md:grid-cols-2 gap-6 mt-[150px]">
         {news.map((item) => (
-          <NewsCard key={item.id} item={item} />
+          <NewsCard key={item.id} item={item} buttonText="Baca Selengkapnya" />
         ))}
       </div>
     </div>
