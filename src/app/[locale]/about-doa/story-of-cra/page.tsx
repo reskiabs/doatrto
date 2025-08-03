@@ -1,3 +1,4 @@
+import { TimelineCRA } from "@/components/content/TimelineCRA";
 import DetailHeader from "@/components/typography/DetailHeader";
 import Image from "next/image";
 
@@ -19,7 +20,7 @@ const StoryOfCRA = () => {
         </div>
       </div>
       <div className="mt-[100px] w-full flex flex-col justify-center items-center">
-        <StoryOfCRA />
+        <TimelineCRA />
       </div>
     </div>
   );
