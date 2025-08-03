@@ -30,7 +30,7 @@ const News = () => {
       </div>
       <div className="w-full max-w-[1140px] mx-auto grid md:grid-cols-2 gap-6">
         {news.map((item) => (
-          <NewsCard key={item.id} item={item} />
+          <NewsCard key={item.id} item={item} buttonText="Baca Selengkapnya" />
         ))}
       </div>
     </main>

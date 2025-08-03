@@ -13,7 +13,7 @@ const PrimaryButton = ({ title, subtitle, href = "#" }: PrimaryButtonProps) => {
   return (
     <Link
       href={href}
-      className="bg-gradient-to-r from-secondary to-primary font-medium text-lg flex items-center justify-between px-6 py-4 rounded-full text-white hover:cursor-pointer"
+      className="inline-flex items-center px-6 py-4 rounded-full text-white font-medium text-lg bg-gradient-to-r from-secondary to-primary hover:cursor-pointer"
     >
       {subtitle && (
         <>

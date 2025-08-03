@@ -33,7 +33,6 @@ const BannerDetailPage = () => {
 
   return (
     <div>
-      {/* HERO IMAGE WITH OVERLAY & TITLE */}
       <div className="w-full h-[740px] relative">
         {hero?.thumbnail && (
           <Image
@@ -59,17 +58,18 @@ const BannerDetailPage = () => {
       </div>
 
       {/* DESCRIPTION + IMAGES + QUOTES */}
-      <div className="max-w-[1140px] mx-auto space-y-7 mt-[100px] px-4">
+      <div className="max-w-[1140px] mx-auto mt-[100px]">
         <div
-          className="text-3xl leading-relaxed"
+          className="text-2xl leading-relaxed"
           dangerouslySetInnerHTML={{ __html: hero?.description || "" }}
         />
+
         {hasImages && (
           <div className="my-[100px] grid grid-cols-1 md:grid-cols-3 gap-[30px]">
             {hero!.images!.slice(0, 3).map((image, index) => (
               <div
                 key={index}
-                className="relative aspect-square rounded-3xl overflow-hidden bg-gray-300"
+                className="relative size-[360px] rounded-3xl overflow-hidden bg-gray-300"
               >
                 <Image
                   src={image}
@@ -84,9 +84,28 @@ const BannerDetailPage = () => {
         )}
 
         <div
-          className="text-3xl leading-relaxed"
+          className="text-xl leading-relaxed"
           dangerouslySetInnerHTML={{ __html: hero?.quotes || "" }}
         />
+
+        {hasImages && (
+          <div className="mt-[100px] grid grid-cols-1 md:grid-cols-3 gap-[30px]">
+            {hero!.images!.slice(-1).map((image, index) => (
+              <div
+                key={index}
+                className="relative w-[1140px] h-[555px] rounded-3xl overflow-hidden bg-gray-300"
+              >
+                <Image
+                  src={image}
+                  alt={`Image ${index + 1}`}
+                  fill
+                  priority
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

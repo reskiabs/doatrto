@@ -34,7 +34,7 @@ dengan Divine Oracular Assistance Tension Releasing Technique Online"
 
       {/* Filter Buttons */}
       <div className="mt-[100px] mb-[50px] w-full flex flex-col justify-center items-center">
-        <div className="max-w-[700px] ">
+        <div className="max-w-[700px]">
           <h1 className="text-tertiary font-bold text-[40px] text-center">
             100+ of the world’s top programs for personal growth and
             transformation
