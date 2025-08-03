@@ -1,7 +1,7 @@
 "use client";
 
 import NewsCard from "@/components/card/NewsCard";
-import FaqAccordionItem from "@/components/common/FaqAccordion";
+import FaqAccordionItem from "@/components/content/FaqAccordion";
 import SessionFaq from "@/components/content/session/SessionFaq";
 import SessionGridContent from "@/components/content/session/SessionGridContent";
 import SessionPrice from "@/components/content/session/SessionPrice";

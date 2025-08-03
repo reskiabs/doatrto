@@ -1,6 +1,6 @@
 "use client";
 
-import FaqAccordionItem from "@/components/common/FaqAccordion";
+import FaqAccordionItem from "@/components/content/FaqAccordion";
 import DetailHeader from "@/components/typography/DetailHeader";
 import { faqItems } from "@/data/faq";
 import { FaqItem } from "@/types/faq";
