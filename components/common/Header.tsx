@@ -135,7 +135,7 @@ const Header = () => {
                   {hasChildren && (
                     <div
                       className={clsx(
-                        "absolute top-full left-0 mt-2 w-64 bg-white border rounded shadow-lg transition-all duration-200 z-50",
+                        "absolute top-full left-0 mt-2 w-64 bg-white border rounded-lg shadow-lg transition-all duration-200 z-50",
                         "opacity-0 invisible group-hover:opacity-100 group-hover:visible"
                       )}
                     >
@@ -143,7 +143,7 @@ const Header = () => {
                         <Link
                           key={child.name}
                           href={child.route}
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          className="block px-4 py-2 text-md font-medium text-gray-700 hover:bg-secondary/7 hover:text-tertiary"
                         >
                           {child.name}
                         </Link>
