@@ -1,8 +1,4 @@
-export interface CarouselItem {
-  id: string;
-  image: string;
-  url: string;
-}
+import { CarouselItem } from "@/types/carousel-item";
 
 export const carouselRow1: CarouselItem[] = [
   {
