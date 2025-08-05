@@ -1,16 +1,13 @@
 "use client";
 
-import {
-  carouselRow1,
-  carouselRow2,
-} from "@/data/the-differences-carousel-data";
+import { useTheDifferences } from "@/hooks/useTheDifferences";
+import { ITheDifferences } from "@/types/the-differences";
 import { DifferentCarouselCard } from "./DifferentCarouselCard";
 
 interface RowProps {
-  items: typeof carouselRow1;
+  items: ITheDifferences[];
   animationClass: string;
   pauseOnHover?: boolean;
-  reverse?: boolean;
 }
 
 function ScrollRow({ items, animationClass, pauseOnHover }: RowProps) {
@@ -36,6 +33,15 @@ function ScrollRow({ items, animationClass, pauseOnHover }: RowProps) {
 }
 
 export function DifferentContinuousCarousel() {
+  const { items, loading, error } = useTheDifferences();
+
+  if (loading) return <p className="text-center text-gray-500">Loading...</p>;
+  if (error) return <p className="text-center text-red-500">{error}</p>;
+
+  const mid = Math.ceil(items.length / 2);
+  const carouselRow1 = items.slice(0, mid);
+  const carouselRow2 = items.slice(mid);
+
   return (
     <section className="relative space-y-[10px]">
       <ScrollRow
