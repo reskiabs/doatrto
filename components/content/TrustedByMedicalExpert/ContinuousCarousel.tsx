@@ -36,7 +36,6 @@ function ScrollRow({
 }
 
 export function ContinuousCarousel({ items }: CarouselProps) {
-  // Bagi dua baris
   const mid = Math.ceil(items.length / 2);
   const row1 = items.slice(0, mid);
   const row2 = items.slice(mid);

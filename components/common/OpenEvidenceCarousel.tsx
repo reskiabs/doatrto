@@ -1,22 +1,19 @@
 "use client";
 
+import { useOpenEvidenceList } from "@/hooks/useOpenEvidenceList";
 import { Carousel } from "../ui/open-evidence-carousel";
 
 export function OpenEvidenceCarousel() {
-  const slideData = [
-    {
-      src: "/images/open-evidence-1.png",
-    },
-    {
-      src: "/images/open-evidence-2.png",
-    },
-    {
-      src: "/images/open-evidence-3.png",
-    },
-    {
-      src: "/images/open-evidence-1.png",
-    },
-  ];
+  const { list, loading } = useOpenEvidenceList();
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  const slideData = list.map((item) => ({
+    src: item.thumbnail,
+  }));
+
   return (
     <div className="relative overflow-hidden w-full h-full">
       <Carousel slides={slideData} />

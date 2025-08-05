@@ -1,6 +1,6 @@
 "use client";
 
-import { CarouselItem } from "@/data/trusted-media-carousel-data";
+import { CarouselItem } from "@/types/carousel-item";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
