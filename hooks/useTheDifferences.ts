@@ -2,14 +2,14 @@ import supabase from "@/lib/db";
 import { ITheDifferences } from "@/types/the-differences";
 import { useEffect, useState } from "react";
 
-export function useTheDifferences() {
+export function useTheDifferences(id?: string) {
   const [items, setItems] = useState<ITheDifferences[]>([]);
   const [detail, setDetail] = useState<ITheDifferences | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchList = async () => {
       setLoading(true);
       const { data, error } = await supabase
         .from("the-differences")
@@ -23,7 +23,7 @@ export function useTheDifferences() {
           .filter((item) => !!item.thumbnail)
           .map((item) => ({
             ...item,
-            id: item.id.toString(), // ubah jadi string jika perlu
+            id: item.id.toString(), // Ensure string id
           }));
         setItems(mapped);
       }
@@ -31,8 +31,33 @@ export function useTheDifferences() {
       setLoading(false);
     };
 
-    fetchData();
-  }, []);
+    const fetchDetail = async () => {
+      setLoading(true);
+      const { data, error } = await supabase
+        .from("the-differences")
+        .select("*")
+        .eq("id", id)
+        .single();
+
+      if (error) {
+        setError("Failed to fetch difference detail");
+        console.error("Supabase error:", error);
+      } else {
+        setDetail({
+          ...data,
+          id: data.id.toString(),
+        });
+      }
+
+      setLoading(false);
+    };
+
+    if (id) {
+      fetchDetail();
+    } else {
+      fetchList();
+    }
+  }, [id]);
 
   return {
     loading,
