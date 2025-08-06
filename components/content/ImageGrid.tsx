@@ -13,7 +13,7 @@ const ImageGrid = ({ images }: ImageGridProps) => {
 
   images.forEach((src, index) => {
     const column = index % 3;
-    const height = heights[index % 2]; // alternating height
+    const height = heights[index % 2];
     columns[column].push({ src, height });
   });
 
