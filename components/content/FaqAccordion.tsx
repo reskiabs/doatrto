@@ -52,7 +52,7 @@ const FaqAccordionItem: React.FC<FaqAccordionItemProps> = ({
         <div className="px-[15px] pb-[15px] lg:px-[30px] lg:pb-[30px]">
           <div
             className="text-base font-medium text-muted md:text-xl"
-            dangerouslySetInnerHTML={{ __html: item.content }}
+            dangerouslySetInnerHTML={{ __html: item.description }}
           />
         </div>
       )}

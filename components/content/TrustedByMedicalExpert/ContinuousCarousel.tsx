@@ -1,16 +1,19 @@
-"use client";
-
-import { carouselRow1, carouselRow2 } from "@/data/trusted-media-carousel-data";
+import { CarouselItem } from "@/types/carousel-item";
 import { CarouselCard } from "./CarouselCard";
 
-interface RowProps {
-  items: typeof carouselRow1;
-  animationClass: string;
-  pauseOnHover?: boolean;
-  reverse?: boolean;
+interface CarouselProps {
+  items: CarouselItem[];
 }
 
-function ScrollRow({ items, animationClass, pauseOnHover }: RowProps) {
+function ScrollRow({
+  items,
+  animationClass,
+  pauseOnHover,
+}: {
+  items: CarouselItem[];
+  animationClass: string;
+  pauseOnHover?: boolean;
+}) {
   const doubled = [...items, ...items];
 
   return (
@@ -32,16 +35,20 @@ function ScrollRow({ items, animationClass, pauseOnHover }: RowProps) {
   );
 }
 
-export function ContinuousCarousel() {
+export function ContinuousCarousel({ items }: CarouselProps) {
+  const mid = Math.ceil(items.length / 2);
+  const row1 = items.slice(0, mid);
+  const row2 = items.slice(mid);
+
   return (
     <section className="relative space-y-[30px]">
       <ScrollRow
-        items={carouselRow1}
+        items={row1}
         animationClass="animate-scroll-slow"
         pauseOnHover
       />
       <ScrollRow
-        items={carouselRow2}
+        items={row2}
         animationClass="animate-scroll-fast"
         pauseOnHover
       />

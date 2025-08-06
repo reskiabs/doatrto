@@ -1,8 +1,10 @@
 "use client";
 
-import { testimonials } from "@/data/testimonials-data";
+import supabase from "@/lib/db";
 import { splitIntoColumns } from "@/lib/split-into-columns";
+import { ITestimonial } from "@/types/testimonial";
 import clsx from "clsx";
+import { useEffect, useState } from "react";
 import { AnimatedColumn } from "./AnimatedColumn";
 
 interface Props {
@@ -16,6 +18,28 @@ export function InfiniteVerticalCards({
   pauseOnHover = true,
   className,
 }: Props) {
+  const [testimonials, setTestimonials] = useState<ITestimonial[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      const { data, error } = await supabase
+        .from("testimonial")
+        .select("*")
+        .order("id", { ascending: true });
+
+      if (error) {
+        console.error("Error fetching testimonials:", error);
+      } else {
+        setTestimonials(data || []);
+      }
+
+      setLoading(false);
+    };
+
+    fetchTestimonials();
+  }, []);
+
   const cols = splitIntoColumns(testimonials, columns);
 
   const animationMap = [
@@ -25,6 +49,8 @@ export function InfiniteVerticalCards({
   ];
 
   const offsets = ["0px", "80px", "40px"];
+
+  if (loading) return <div>Loading testimonials...</div>;
 
   return (
     <section
@@ -44,9 +70,6 @@ export function InfiniteVerticalCards({
           randomDelay
         />
       ))}
-
-      {/* Optional background subtle */}
-      {/* <div className="pointer-events-none absolute inset-0 -z-10 rounded-[40px] bg-gradient-to-b from-neutral-100 via-neutral-50 to-neutral-100 dark:from-neutral-900 dark:via-neutral-950 dark:to-neutral-900" /> */}
     </section>
   );
 }

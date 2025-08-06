@@ -1,5 +1,6 @@
 import ImageGrid from "@/components/content/ImageGrid";
 import DetailHeader from "@/components/typography/DetailHeader";
+import { gridImages } from "@/data/grid-image";
 
 const WhenDoaEffectivePage = () => {
   return (
@@ -10,7 +11,7 @@ const WhenDoaEffectivePage = () => {
           description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
         />
         <div className="mt-[100px]">
-          <ImageGrid />
+          <ImageGrid images={gridImages} />
         </div>
       </div>
       <div className="mt-[100px] w-full flex flex-col justify-center items-center">

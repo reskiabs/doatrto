@@ -1,7 +1,7 @@
 export interface FaqItem {
   id: number;
   title: string;
-  content: string;
+  description: string;
   created_at: string;
   updated_at: string;
 }
