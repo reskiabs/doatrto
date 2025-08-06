@@ -6,7 +6,7 @@ type NewsCardProps = {
     id: number;
     title: string;
     description: string;
-    image: string;
+    thumbnail: string;
   };
   buttonText: string;
 };
@@ -21,7 +21,7 @@ const NewsCard = ({ item, buttonText }: NewsCardProps) => {
     >
       <div className="relative w-full h-[285px]">
         <Image
-          src={item.image}
+          src={item.thumbnail}
           alt={item.title}
           fill
           className="object-cover"

@@ -6,42 +6,42 @@ const news = [
     id: 1,
     title: "Session 1 on 1",
     description: "Private session dengan Coach Rheo",
-    image:
+    thumbnail:
       "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 2,
     title: "Session Workshop",
     description: "Private session dengan Coach Rheo",
-    image:
+    thumbnail:
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 3,
     title: "Session 1 on 1",
     description: "Private session dengan Coach Rheo",
-    image:
+    thumbnail:
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 4,
     title: "Session Workshop",
     description: "Private session dengan Coach Rheo",
-    image:
+    thumbnail:
       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 5,
     title: "Session 1 on 1",
     description: "Private session dengan Coach Rheo",
-    image:
+    thumbnail:
       "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 6,
     title: "Session Workshop",
     description: "Private session dengan Coach Rheo",
-    image:
+    thumbnail:
       "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80",
   },
 ];

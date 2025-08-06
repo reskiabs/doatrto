@@ -29,7 +29,6 @@ const ArticlePage = () => {
                 key={item.id}
                 item={{
                   ...item,
-                  image: item.thumbnail,
                 }}
                 buttonText="Baca Selengkapnya"
               />
