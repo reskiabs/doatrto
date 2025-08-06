@@ -2,14 +2,18 @@
 
 import FaqAccordionItem from "@/components/content/FaqAccordion";
 import DetailHeader from "@/components/typography/DetailHeader";
-import { faqItems } from "@/data/faq";
-import { FaqItem } from "@/types/faq";
-import { useState } from "react";
+import { useFaq } from "@/hooks/useFaq"; // ganti sesuai path kamu
+import { useEffect, useState } from "react";
 
 const FAQPage = () => {
-  const [activeId, setActiveId] = useState<number | null>(
-    faqItems[0]?.id ?? null
-  );
+  const { items, loading, error } = useFaq();
+  const [activeId, setActiveId] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (items.length > 0) {
+      setActiveId(items[0].id);
+    }
+  }, [items]);
 
   const handleToggle = (id: number) => {
     setActiveId((prevId) => (prevId === id ? null : id));
@@ -25,14 +29,17 @@ const FAQPage = () => {
       </div>
 
       <div className="mx-auto mt-[100px] max-w-[1140px] space-y-6">
-        {faqItems.map((item: FaqItem) => (
-          <FaqAccordionItem
-            key={item.id}
-            item={item}
-            isOpen={activeId === item.id}
-            onToggle={() => handleToggle(item.id)}
-          />
-        ))}
+        {loading && <p className="text-center text-xl">Loading...</p>}
+        {error && <p className="text-center text-red-500">{error}</p>}
+        {!loading &&
+          items.map((item) => (
+            <FaqAccordionItem
+              key={item.id}
+              item={item}
+              isOpen={activeId === item.id}
+              onToggle={() => handleToggle(item.id)}
+            />
+          ))}
       </div>
     </div>
   );
