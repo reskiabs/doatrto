@@ -50,7 +50,9 @@ export const HoverEffect = ({
           <Card>
             <div className="flex-1 pr-8">
               <CardTitle>{item.title}</CardTitle>
-              <CardDescription>{item.description}</CardDescription>
+              <CardDescription>
+                <div dangerouslySetInnerHTML={{ __html: item.description }} />
+              </CardDescription>
             </div>
             <div className="relative w-[480px] h-[270px] rounded-[20px] overflow-hidden">
               <Image
@@ -109,13 +111,13 @@ export const CardDescription = ({
   children: React.ReactNode;
 }) => {
   return (
-    <p
+    <div
       className={cn(
         "text-muted tracking-wide leading-relaxed text-xl font-medium mt-5",
         className
       )}
     >
       {children}
-    </p>
+    </div>
   );
 };
