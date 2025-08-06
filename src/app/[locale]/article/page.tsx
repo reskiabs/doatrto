@@ -27,10 +27,9 @@ const ArticlePage = () => {
             {news.map((item) => (
               <NewsCard
                 key={item.id}
-                item={{
-                  ...item,
-                }}
+                item={item}
                 buttonText="Baca Selengkapnya"
+                page="article"
               />
             ))}
           </div>

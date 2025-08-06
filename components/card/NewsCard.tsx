@@ -9,9 +9,10 @@ type NewsCardProps = {
     thumbnail: string;
   };
   buttonText: string;
+  page?: string;
 };
 
-const NewsCard = ({ item, buttonText }: NewsCardProps) => {
+const NewsCard = ({ item, buttonText, page }: NewsCardProps) => {
   return (
     <div
       key={item.id}
@@ -38,7 +39,7 @@ const NewsCard = ({ item, buttonText }: NewsCardProps) => {
         />
 
         <Link
-          href={`/article/${item.id}`}
+          href={page ? `/${page}/${item.id}` : "#"}
           className="text-blue-600 text-sm font-medium hover:underline"
         >
           {buttonText} &gt;

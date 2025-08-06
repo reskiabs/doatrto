@@ -24,11 +24,9 @@ const News = () => {
         {news.slice(0, 2).map((item) => (
           <NewsCard
             key={item.id}
-            item={{
-              ...item,
-              image: item.thumbnail,
-            }}
+            item={item}
             buttonText="Baca Selengkapnya"
+            page="article"
           />
         ))}
       </div>

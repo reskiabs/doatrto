@@ -58,6 +58,7 @@ const ArticleDetailPage = () => {
               key={item.id}
               item={item}
               buttonText="Baca Selengkapnya"
+              page="article"
             />
           ))}
         </div>

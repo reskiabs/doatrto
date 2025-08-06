@@ -7,13 +7,13 @@ import SessionGridContent from "@/components/content/session/SessionGridContent"
 import SessionPrice from "@/components/content/session/SessionPrice";
 import DetailHeader from "@/components/typography/DetailHeader";
 import { useFaq } from "@/hooks/useFaq";
-import { useNews } from "@/hooks/useNews";
+import { useSessionFeatures } from "@/hooks/useSessionFeatures";
 import { FaqItem } from "@/types/faq";
 import { useEffect, useState } from "react";
 
 const SessionPage = () => {
   const { items } = useFaq();
-  const { news } = useNews();
+  const { features } = useSessionFeatures();
   const [activeId, setActiveId] = useState<number | null>(null);
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const SessionPage = () => {
       </div>
 
       <div className="w-full max-w-[1140px] mx-auto grid md:grid-cols-2 gap-6 mt-[100px]">
-        {news.slice(0, 2).map((item) => (
+        {features.slice(0, 2).map((item) => (
           <NewsCard key={item.id} item={item} buttonText="Book a Session" />
         ))}
       </div>
