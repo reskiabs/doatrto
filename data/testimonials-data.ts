@@ -1,4 +1,3 @@
-// data/testimonials.ts
 export interface Testimonial {
   id: string;
   name: string;

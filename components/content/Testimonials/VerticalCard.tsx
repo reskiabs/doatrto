@@ -1,11 +1,11 @@
 "use client";
 
-import { Testimonial } from "@/data/testimonials-data";
+import { ITestimonial } from "@/types/testimonial";
 import clsx from "clsx";
 import Image from "next/image";
 
 interface Props {
-  item: Testimonial;
+  item: ITestimonial;
   className?: string;
 }
 
@@ -32,10 +32,13 @@ export function VerticalCard({ item, className }: Props) {
         </div>
         <div className="flex flex-col">
           <span className="font-bold text-lg">{item.name}</span>
-          <span className="text-md font-normal">{item.username}</span>
+          <span className="text-md font-normal">{item.email}</span>
         </div>
       </div>
-      <p className="mt-5 text-muted font-medium text-md">{item.text}</p>
+      <div
+        className="mt-5 text-muted font-medium text-md prose prose-sm max-w-none"
+        dangerouslySetInnerHTML={{ __html: item.text }}
+      />
     </div>
   );
 }

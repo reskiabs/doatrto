@@ -1,12 +1,12 @@
 "use client";
 
-import { Testimonial } from "@/data/testimonials-data";
+import { ITestimonial } from "@/types/testimonial";
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 import { VerticalCard } from "./VerticalCard";
 
 interface AnimatedColumnProps {
-  items: Testimonial[];
+  items: ITestimonial[];
   animationClass: string;
   staggerOffset?: string;
   pauseOnHover?: boolean;
