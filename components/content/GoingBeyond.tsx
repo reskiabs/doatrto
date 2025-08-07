@@ -63,16 +63,16 @@ const data: Item[] = [
 const GoingBeyond = () => {
   return (
     <main className="flex flex-col items-center w-full mt-[50px] md:mt-[80px] lg:mt-[100px]">
-      <div className="w-full max-w-[1140px]">
-        <div className="flex flex-col items-center mb-8">
+      <div className="w-full flex flex-col items-center lg:max-w-[1140px]">
+        <div className="flex flex-col items-center mb-[20px] lg:mb-[30px]">
           <ContentTitle title="Beyond Conventional Therapies" />
         </div>
 
         <div
-          className="grid gap-6
+          className="grid gap-3.5 lg:gap-6
                         sm:grid-cols-2
-                        md:grid-cols-3
-                        xl:grid-cols-3"
+                        lg:grid-cols-3
+                        "
         >
           {data.map((item) => (
             <BeyondCardList
