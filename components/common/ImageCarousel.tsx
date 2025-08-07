@@ -30,7 +30,7 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
 
   return (
     <>
-      <div className="relative w-[98.5%] h-[770px] rounded-[40px] overflow-hidden bg-gray-50">
+      <div className="relative w-[95%] lg:w-[98.5%] lg:h-[770px] h-[482px] rounded-[20px] lg:rounded-[40px] overflow-hidden bg-gray-50">
         {images.map(({ id, src }, index) => (
           <Link href={`/banner/${id}`} key={id}>
             <Image
@@ -46,12 +46,14 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
         ))}
       </div>
 
-      <div className="flex justify-center mt-2.5 space-x-2 md:space-x-[15px] lg:space-x-[20px] md:mt-5">
+      <div className="flex justify-center mt-3 space-x-2 md:space-x-[15px] lg:space-x-[20px] md:mt-5">
         {images.map((_, i) => (
           <div
             key={i}
             className={`rounded-full transition-all duration-300 ${
-              i === activeIndex ? "bg-primary w-7 h-3" : "bg-gray-300 w-3 h-3"
+              i === activeIndex
+                ? "bg-primary h-2 w-4 lg:w-7 lg:h-3"
+                : "bg-gray-300 size-2 lg:size-3"
             }`}
           />
         ))}
