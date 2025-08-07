@@ -71,14 +71,14 @@ const Footer = () => {
           <div className="lg:w-[60%] lg:flex lg:justify-between mt-1.5 lg:mt-6 text-body lg:mx-32">
             {footerLinks.map((section, idx) => (
               <div key={idx} className="flex flex-col gap-2 lg:gap-4 mb-4">
-                <h4 className="font-extrabold text-[10px] lg:text-md">
+                <h4 className="font-extrabold text-2xs lg:text-md">
                   {section.title}
                 </h4>
                 <div className="grid grid-cols-3 gap-y-1.5 lg:gap-y-5 lg:flex lg:flex-col">
                   {section.links.map((link, linkIdx) => (
                     <p
                       key={linkIdx}
-                      className="text-[10px] lg:text-md font-medium"
+                      className="text-2xs lg:text-md font-medium"
                     >
                       {link}
                     </p>
