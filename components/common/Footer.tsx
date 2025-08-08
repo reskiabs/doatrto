@@ -32,7 +32,7 @@ const footerLinks = [
 
 const Footer = () => {
   return (
-    <div className="w-full flex flex-col justify-center items-center mt-[100px]">
+    <div className="w-full flex flex-col justify-center items-center mt-[50px] lg:mt-[100px]">
       {/* main footer */}
       <div className="bg-gradient-to-b w-[98.5%] rounded-[20px] from-primary to-secondary h-[163px] flex flex-col justify-center items-center lg:h-[319px]">
         <h1 className="font-medium text-3xl text-white lg:text-[70px]">
