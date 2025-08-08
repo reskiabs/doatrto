@@ -137,6 +137,18 @@ export function Carousel({ slides }: CarouselProps) {
 
   const id = useId();
 
+  useEffect(() => {
+    // Cek apakah perangkat mobile (kurang dari 1024px)
+    const isMobile = window.innerWidth < 1024;
+    if (!isMobile) return;
+
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 3000); // ganti slide setiap 3 detik
+
+    return () => clearInterval(interval);
+  }, [slides.length]);
+
   return (
     <div
       className="relative w-[372px] lg:w-[1140px] h-[186px] lg:h-[585px] mx-auto"
