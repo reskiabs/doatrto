@@ -1,9 +1,9 @@
 "use client";
 
-import PageHeader from "@/components/typography/PageHeader";
+import OpenEvidenceAutoSlider from "@/components/content/OpenEvidenceAutoSlider";
+import DetailHeader from "@/components/typography/DetailHeader";
 import { useOpenEvidenceDetail } from "@/hooks/useOpenEvidenceDetail";
 import { useOpenEvidenceList } from "@/hooks/useOpenEvidenceList";
-import Image from "next/image";
 import { useParams } from "next/navigation";
 
 const OpenEvidenceDetailPage = () => {
@@ -20,38 +20,26 @@ const OpenEvidenceDetailPage = () => {
   }
   return (
     <div>
-      <div className="flex flex-col justify-center items-center bg-gradient-to-b from-white via-[#EBF0F8] to-white pt-[104px]">
-        <PageHeader
-          pageTitle="OPEN EVIDENCE BASED SYSTEM"
-          detailTitle={detail?.title || "Open Evidence Based System"}
+      <div className="flex flex-col justify-center items-center bg-gradient-to-b from-white via-[#EBF0F8] to-white pt-[50px] lg:pt-[100px]">
+        <DetailHeader
+          title="Open Evidence
+Base System"
+          description="Lorem Ipsum is simply dummy text of the printing and typesetting industry..."
         />
-        <div className="relative w-[1140px] h-[641px] rounded-[50px] overflow-hidden mt-[50px]">
+        <div className="relative size-[372px] lg:w-[1140px] lg:h-[641px] rounded-[15px] lg:rounded-[50px] overflow-hidden mt-[50px]">
           <div
-            className="w-full aspect-video rounded-[10px] overflow-hidden"
+            className="w-full aspect-video"
             dangerouslySetInnerHTML={{ __html: detail?.video || "" }}
           />
         </div>
       </div>
-      <div className="mt-[100px] w-full flex flex-col justify-center items-center">
-        <div className="w-full max-w-[1140px]">
-          <h1 className="font-extrabold text-[40px] text-tertiary text-left">
+
+      <div className="mt-[50px] lg:mt-[100px] w-full flex flex-col justify-center items-center">
+        <div className="w-full flex flex-col items-center max-w-[1140px]">
+          <h1 className="font-extrabold text-[28px] lg:text-[40px] text-tertiary text-center lg:text-left">
             Lorem ipsum dolor
           </h1>
-          <div className="grid grid-cols-3 gap-[30px] mt-5">
-            {slideData.map((item, index) => (
-              <div
-                key={index}
-                className="relative w-[360px] h-[202px] rounded-[10px] overflow-hidden"
-              >
-                <Image
-                  src={item.src}
-                  alt="Open Evidence Based System"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            ))}
-          </div>
+          <OpenEvidenceAutoSlider slideData={slideData} />
         </div>
       </div>
     </div>
