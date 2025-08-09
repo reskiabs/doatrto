@@ -34,14 +34,14 @@ const HonestReviewDetailPage = () => {
 
   return (
     <div>
-      <div className="flex flex-col justify-center items-center bg-gradient-to-b from-white via-[#EBF0F8] to-white pt-[104px]">
+      <div className="flex flex-col justify-center items-center bg-gradient-to-b from-white via-[#EBF0F8] to-white pt-[50px] lg:pt-[104px]">
         <DetailHeader
           title="Honest Review"
           description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
         />
 
-        <div className="flex justify-between gap-[50px] mt-[80px]">
-          <div className="relative size-[555px] rounded-[50px] overflow-hidden ">
+        <div className="flex flex-col px-[15px] lg:-px-0 lg:flex-row justify-between gap-[20px] lg:gap-[50px] mt-[50px] lg:mt-[80px]">
+          <div className="relative size-[372px] lg:size-[555px] rounded-[15px] lg:rounded-[25px] overflow-hidden bg-gray-300">
             <Image
               src={review.thumbnail}
               alt={review.name}
@@ -49,28 +49,30 @@ const HonestReviewDetailPage = () => {
               className="object-cover"
             />
           </div>
-          <div className="w-[525px]">
-            <h1 className="font-extrabold text-[40px] text-tertiary truncate">
+          <div className="w-[365px] px-[5px] lg:px-0 lg:w-[525px] ">
+            <h1 className="font-extrabold text-center lg:text-left text-[28px] lg:text-[40px] text-tertiary truncate">
               {review.name}
             </h1>
-            <h2 className="font-semibold text-[40px] text-tertiary truncate">
+            <h2 className="font-semibold text-center lg:text-left text-[14px] lg:text-[40px] text-tertiary truncate">
               {review.title}
             </h2>
             <div
-              className="font-normal text-justify text-xl my-[30px]"
+              className="font-normal text-justify text-[14px] lg:text-xl my-[20px] lg:my-[30px]"
               dangerouslySetInnerHTML={{
                 __html: short,
               }}
             />
-            <PrimaryButton href="#" title="Watch Video" />
+            <div className="flex justify-center lg:justify-start">
+              <PrimaryButton href="#" title="Watch Video" />
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="max-w-[1140px] mx-auto mt-[100px]">
+      <div className="max-w-[1140px] mx-auto mt-[50px] lg:mt-[100px]">
         {remaining && (
           <div
-            className="font-normal text-justify text-xl mb-[100px]"
+            className="font-normal px-[15px] lg:px-0 text-justify text-[14px] lg:text-xl my-[20px] lg:my-[30px]"
             dangerouslySetInnerHTML={{
               __html: remaining,
             }}
