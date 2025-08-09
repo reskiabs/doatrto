@@ -11,14 +11,14 @@ const HeroSection = () => {
   return (
     <div className="flex flex-col justify-center items-center">
       {loading ? (
-        <div className="relative w-[98.5%] h-[770px] rounded-[40px] overflow-hidden bg-surface flex justify-center items-center">
+        <div className="relative w-[95%] lg:w-[98.5%] lg:h-[770px] h-[482px] rounded-[20px] lg:rounded-[40px] overflow-hidden bg-surface flex justify-center items-center">
           <ImageDown className="animate-bounce  text-muted" size={150} />
         </div>
       ) : (
         <ImageCarousel images={allThumbnails} />
       )}
 
-      <div className="pt-[15px] flex w-[97%] items-center gap-[18px] mt-[10px]">
+      <div className="flex w-[95%] lg:w-[97%] items-center gap-[10px] lg:gap-[18px] mt-[15px] lg:mt-[25px]">
         <MainOutlineButton href="/session" text="Session" />
         <MainOutlineButton href="/klasses" text="Klasses" />
         <MainOutlineButton href="/facilitators" text="Facilitators" />

@@ -15,7 +15,7 @@ export function DifferentCarouselCard({ item }: Props) {
     <Link
       href={`/the-difference/${item.id}`}
       className={clsx(
-        "relative size-[140px] shrink-0 overflow-hidden rounded-[10px] bg-neutral-900",
+        "relative size-[100px] lg:size-[140px] shrink-0 overflow-hidden rounded-[10px] bg-neutral-900",
         "shadow-lg group"
       )}
     >

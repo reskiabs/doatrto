@@ -35,7 +35,7 @@ export function AnimatedColumn({
   return (
     <div
       className={clsx(
-        "relative h-[1250px] w-[360px] overflow-hidden",
+        "relative h-[402px] lg:h-[1250px] w-[360px] overflow-hidden",
         fadeMask && "mask-fade-y",
         pauseOnHover && "group"
       )}

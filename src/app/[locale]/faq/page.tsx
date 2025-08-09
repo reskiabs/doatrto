@@ -21,14 +21,14 @@ const FAQPage = () => {
 
   return (
     <div>
-      <div className="flex flex-col items-center justify-center bg-gradient-to-b from-white via-[#EBF0F8] to-white pt-[104px]">
+      <div className="flex flex-col items-center justify-center bg-gradient-to-b from-white via-[#EBF0F8] to-white pt-[50px] lg:pt-[100px]">
         <DetailHeader
           title="FAQ"
           description="Lebih dari 500 orang sudah terbantu dan merasakan kebahagiaan dengan Divine Oracular Assistance Tension Releasing Technique Online"
         />
       </div>
 
-      <div className="mx-auto mt-[100px] max-w-[1140px] space-y-6">
+      <div className="mx-auto px-[15px] lg:px-0 mt-[50px] lg:mt-[100px] max-w-[1140px] space-y-6">
         {loading && <p className="text-center text-xl">Loading...</p>}
         {error && <p className="text-center text-red-500">{error}</p>}
         {!loading &&

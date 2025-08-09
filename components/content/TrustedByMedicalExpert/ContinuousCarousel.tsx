@@ -20,7 +20,7 @@ function ScrollRow({
     <div className="relative w-full overflow-hidden">
       <div
         className={[
-          "flex w-max gap-6",
+          "flex w-max gap-2.5 lg:gap-[30px]",
           animationClass,
           pauseOnHover && "hover:[animation-play-state:paused]",
         ]
@@ -41,7 +41,7 @@ export function ContinuousCarousel({ items }: CarouselProps) {
   const row2 = items.slice(mid);
 
   return (
-    <section className="relative space-y-[30px]">
+    <section className="relative space-y-[10px] lg:space-y-[30px]">
       <ScrollRow
         items={row1}
         animationClass="animate-scroll-slow"

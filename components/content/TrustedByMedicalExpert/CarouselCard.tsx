@@ -15,7 +15,7 @@ export function CarouselCard({ item }: Props) {
     <Link
       href={item.url}
       className={clsx(
-        "relative h-[225px] w-[500px] shrink-0 overflow-hidden rounded-[20px] bg-neutral-900",
+        "relative h-[122px] lg:h-[225px] w-[272px] lg:w-[500px] shrink-0 overflow-hidden rounded-[10px] lg:rounded-[20px] bg-neutral-900",
         "shadow-lg group"
       )}
     >

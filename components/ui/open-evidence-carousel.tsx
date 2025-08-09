@@ -68,7 +68,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
     <div className="[perspective:1200px] [transform-style:preserve-3d]">
       <li
         ref={slideRef}
-        className="flex flex-1 flex-col items-center justify-center relative text-center text-white opacity-100 transition-all duration-300 ease-in-out w-[1140px] h-[585px] mx-[0.1vmin] z-10 "
+        className="flex flex-1 flex-col items-center justify-center relative text-center text-white opacity-100 transition-all duration-300 ease-in-out w-[372px] lg:w-[1140px] h-[186px] lg:h-[585px] mx-[0.1vmin] z-10 "
         onClick={() => handleSlideClick(index)}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
@@ -110,11 +110,11 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
         >
           <Link
             href={`/open-evidence/${index + 1}`}
-            className="mt-6 flex items-center gap-2 px-7 py-3.5 bg-white/50 hover:bg-white mx-auto font-semibold text-md text-tertiary rounded-full justify-center hover:shadow-xl 
+            className="mt-6 flex items-center gap-1 lg:gap-2 px-4 py-2.5 lg:px-7 lg:py-3.5 bg-white/50 hover:bg-white mx-auto font-semibold text-xs lg:text-md text-tertiary rounded-full justify-center hover:shadow-xl 
               hover:shadow-white/30
               transition-all duration-300 ease-out hover:scale-[1.02] hover:cursor-pointer"
           >
-            <Play size={30} /> Play Video
+            <Play size={20} /> Play Video
           </Link>
         </article>
       </li>
@@ -137,9 +137,21 @@ export function Carousel({ slides }: CarouselProps) {
 
   const id = useId();
 
+  useEffect(() => {
+    // Cek apakah perangkat mobile (kurang dari 1024px)
+    const isMobile = window.innerWidth < 1024;
+    if (!isMobile) return;
+
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 3000); // ganti slide setiap 3 detik
+
+    return () => clearInterval(interval);
+  }, [slides.length]);
+
   return (
     <div
-      className="relative w-[1140px] h-[585px] mx-auto"
+      className="relative w-[372px] lg:w-[1140px] h-[186px] lg:h-[585px] mx-auto"
       aria-labelledby={`carousel-heading-${id}`}
     >
       <ul

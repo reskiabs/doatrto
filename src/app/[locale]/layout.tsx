@@ -1,6 +1,5 @@
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
-import { MobileComingSoon } from "@/components/common/MobileComingSoon";
 import type { Metadata } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -42,15 +41,9 @@ export default async function RootLayout({
      ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NextIntlClientProvider>
-          {/* Mobile & Tablet: show ComingSoon */}
-          <div className="lg:hidden">
-            <MobileComingSoon />
-          </div>
-
-          {/* Desktop: full site */}
-          <div className="hidden lg:flex lg:flex-col lg:min-h-screen">
+          <div className="lg:flex lg:flex-col lg:min-h-screen">
             <Header />
-            <main className="flex-1">{children}</main>
+            <main className="flex-1 mt-[75px] md:mt-0">{children}</main>
             <Footer />
           </div>
         </NextIntlClientProvider>

@@ -81,12 +81,13 @@ const Header = () => {
     <>
       <header
         className={clsx(
-          "sticky top-0 z-50 flex backdrop-blur-md bg-white/30 items-center justify-between px-[150px] py-4 transition-colors duration-300",
+          "top-0 z-50 flex backdrop-blur-md bg-white/30 items-center justify-between px-5 md:px-[150px] py-4 transition-colors duration-300",
+          "fixed md:sticky w-full",
           isScrolled ? "shadow-md" : "shadow-none"
         )}
       >
         {/* Logo */}
-        <div className="relative h-10 w-[100px] md:h-[75px] md:w-[180px]">
+        <div className="relative w-[100px] h-[41px] md:h-[75px] md:w-[180px]">
           <Image
             src="/logo.svg"
             alt="DOA Official Logo"

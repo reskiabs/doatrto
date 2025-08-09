@@ -31,12 +31,12 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   return (
     <div className="w-full bg-white font-sans md:px-10" ref={containerRef}>
       <div className="w-full flex flex-col justify-center items-center">
-        <div className="flex justify-between w-[1080px]">
-          <div>
-            <h2 className="text-[40px] mt-[55px] mb-4 text-tertiary font-extrabold">
+        <div className="flex flex-col items-center lg:flex-row justify-between lg:w-[1080px]">
+          <div className="px-[15px] lg:px-0">
+            <h2 className="text-[28px] lg:text-[40px] text-center lg:text-left mb-4 text-tertiary font-extrabold">
               Profile Coach Rheo
             </h2>
-            <p className="text-neutral-700 dark:text-neutral-300 text-xl leading-9">
+            <p className="text-neutral-700 dark:text-neutral-300 text-center lg:text-left text-sm lg:text-xl lg:leading-9">
               Nama saya Caezarro, panggilan saya Rheo.
               <br />
               <br />
@@ -45,8 +45,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               mereka, maka Anda ada disini.
             </p>
           </div>
-          <div className="max-w-[555px] ml-[100px]">
-            <div className="relative w-[554px] h-[408px]">
+          <div className="lg:max-w-[555px] lg:ml-[100px]">
+            <div className="relative w-[372px] lg:w-[554px] h-[341px] lg:h-[408px]">
               <Image
                 src="/images/coach-rheo.png"
                 alt="startup template"

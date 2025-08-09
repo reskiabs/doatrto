@@ -90,7 +90,7 @@ export const HonestReviewCarousel = ({
           <div
             className={cn(
               "flex flex-row justify-start gap-4 pl-4",
-              "mx-auto max-w-7xl" // remove max-w-4xl if you want the carousel to span the full width of its container
+              "mx-auto max-w-7xl"
             )}
           >
             {items.map((item, index) => (
@@ -118,18 +118,18 @@ export const HonestReviewCarousel = ({
         </div>
         <div className="mr-10 flex justify-end gap-2">
           <button
-            className="relative z-40 flex size-[60px] items-center justify-center rounded-full bg-gradient-to-r from-secondary to-primary disabled:opacity-20"
+            className="relative z-40 flex size-[40px] lg:size-[60px] items-center justify-center rounded-full bg-gradient-to-r from-secondary to-primary disabled:opacity-20"
             onClick={scrollLeft}
             disabled={!canScrollLeft}
           >
-            <IconArrowNarrowLeft className="h-6 w-6 text-white" />
+            <IconArrowNarrowLeft className="h-4 w-4 lg:h-6 lg:w-6 text-white" />
           </button>
           <button
-            className="relative z-40 flex size-[60px] items-center justify-center rounded-full bg-gradient-to-r from-secondary to-primary disabled:opacity-20"
+            className="relative z-40 flex size-[40px] lg:size-[60px] items-center justify-center rounded-full bg-gradient-to-r from-secondary to-primary disabled:opacity-20"
             onClick={scrollRight}
             disabled={!canScrollRight}
           >
-            <IconArrowNarrowRight className="h-6 w-6 text-white" />
+            <IconArrowNarrowRight className="h-4 w-4 lg:h-6 lg:w-6 text-white" />
           </button>
         </div>
       </div>

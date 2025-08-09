@@ -3,26 +3,36 @@ import { LogoPlaceholder } from "../../lib/helper/ImagePlacholder";
 
 const footerLinks = [
   {
-    title: "Company",
-    links: ["About Us", "Careers", "Press", "Blog"],
+    title: "Programs",
+    links: [
+      "All Programs",
+      "Become a Member",
+      "Download The App",
+      "Certified Coach",
+    ],
   },
   {
-    title: "Product",
-    links: ["Features", "Pricing", "Integrations", "Demo"],
+    title: "About DOA",
+    links: ["Who We Are", "Press", "Blog", "Careers"],
   },
   {
     title: "Support",
     links: ["Help Center", "Contact Us", "Status", "FAQ"],
   },
   {
-    title: "Legal",
-    links: ["Terms of Service", "Privacy Policy", "Cookie Policy", "Security"],
+    title: "Events",
+    links: [
+      "Terms of Service",
+      "Privacy Policy",
+      "Membership",
+      "Code of Conduct",
+    ],
   },
 ];
 
 const Footer = () => {
   return (
-    <div className="w-full flex flex-col justify-center items-center mt-[100px]">
+    <div className="w-full flex flex-col justify-center items-center mt-[50px] lg:mt-[100px]">
       {/* main footer */}
       <div className="bg-gradient-to-b w-[98.5%] rounded-[20px] from-primary to-secondary h-[163px] flex flex-col justify-center items-center lg:h-[319px]">
         <h1 className="font-medium text-3xl text-white lg:text-[70px]">
@@ -43,10 +53,10 @@ const Footer = () => {
       </div>
 
       {/* bottom footer */}
-      <div className="bg-white w-full h-[369px] px-[15px] lg:h-[328px] lg:px-[150px]">
-        <div className="w-full flex justify-center lg:justify-start h-[327px] pt-[30px] lg:h-[270px]">
+      <div className="bg-white w-full px-[15px] lg:h-[328px] lg:px-[150px]">
+        <div className="w-full lg:flex justify-center lg:justify-start pt-[10px] lg:h-[270px]">
           {/* logo */}
-          <div className="relative w-[120px] h-[50px] lg:w-[250px] lg:h-[102px]">
+          <div className="relative w-[179px] h-[73px] lg:w-[250px] lg:h-[102px]">
             <Image
               src="/logo.svg"
               alt="DOA Official Logo"
@@ -58,15 +68,22 @@ const Footer = () => {
           </div>
 
           {/* menu footer */}
-          <div className="w-[60%] flex justify-between mt-6 text-body mx-32">
+          <div className="lg:w-[60%] lg:flex lg:justify-between mt-1.5 lg:mt-6 text-body lg:mx-32">
             {footerLinks.map((section, idx) => (
-              <div key={idx} className="flex flex-col gap-2 lg:gap-4">
-                <h4 className="font-extrabold text-md">{section.title}</h4>
-                {section.links.map((link, linkIdx) => (
-                  <p key={linkIdx} className="text-md font-medium">
-                    {link}
-                  </p>
-                ))}
+              <div key={idx} className="flex flex-col gap-2 lg:gap-4 mb-4">
+                <h4 className="font-extrabold text-2xs lg:text-md">
+                  {section.title}
+                </h4>
+                <div className="grid grid-cols-3 gap-y-1.5 lg:gap-y-5 lg:flex lg:flex-col">
+                  {section.links.map((link, linkIdx) => (
+                    <p
+                      key={linkIdx}
+                      className="text-2xs lg:text-md font-medium"
+                    >
+                      {link}
+                    </p>
+                  ))}
+                </div>
               </div>
             ))}
           </div>

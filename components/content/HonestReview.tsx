@@ -3,6 +3,7 @@
 import { useHonestReviews } from "@/hooks/useHonestReviews";
 import { ImageDown } from "lucide-react";
 import HonestReviewContent from "../common/HonestReviewContent";
+import ContentTitle from "../typography/ContentTitle";
 import { HonestReviewCard } from "../ui/honest-review/card";
 import { HonestReviewCarousel } from "../ui/honest-review/carousel";
 
@@ -35,9 +36,9 @@ export function HonestReview() {
 
   return (
     <div className="w-full h-full mt-[50px] md:mt-[80px] lg:mt-[100px]">
-      <h2 className="max-w-7xl pl-4 mx-auto text-[40px] font-extrabold text-secondary font-sans">
-        Honest Review
-      </h2>
+      <div className="flex flex-col items-center -mb-[20px] lg:mb-[30px]">
+        <ContentTitle title="Honest Review" />
+      </div>
       <HonestReviewCarousel items={cards} />
     </div>
   );

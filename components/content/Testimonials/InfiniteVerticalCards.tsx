@@ -20,6 +20,16 @@ export function InfiniteVerticalCards({
 }: Props) {
   const [testimonials, setTestimonials] = useState<ITestimonial[]>([]);
   const [loading, setLoading] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => {
+      setIsMobile(window.innerWidth < 768); // breakpoint md
+    };
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
 
   useEffect(() => {
     const fetchTestimonials = async () => {
@@ -40,15 +50,17 @@ export function InfiniteVerticalCards({
     fetchTestimonials();
   }, []);
 
-  const cols = splitIntoColumns(testimonials, columns);
+  const cols = splitIntoColumns(testimonials, isMobile ? 1 : columns);
 
-  const animationMap = [
-    "animate-scroll-y-slow",
-    "animate-scroll-y-fast",
-    "animate-scroll-y-medium",
-  ];
+  const animationMap = isMobile
+    ? ["animate-scroll-y-fast"]
+    : [
+        "animate-scroll-y-slow",
+        "animate-scroll-y-fast",
+        "animate-scroll-y-medium",
+      ];
 
-  const offsets = ["0px", "80px", "40px"];
+  const offsets = ["0px"];
 
   if (loading) return <div>Loading testimonials...</div>;
 
