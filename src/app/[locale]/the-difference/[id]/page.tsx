@@ -55,7 +55,7 @@ const TheDifferenceDetailPage = () => {
             </h1>
           </div>
           <div
-            className="font-normal text-sm lg:text-xl text-center lg:text-justify max-w-[1140px] mt-[20px] lg:mt-[30px]"
+            className="font-normal text-sm lg:text-xl text-justify max-w-[1140px] mt-[20px] lg:mt-[30px]"
             dangerouslySetInnerHTML={{ __html: detail.description }}
           />
         </div>
