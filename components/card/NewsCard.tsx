@@ -16,7 +16,7 @@ const NewsCard = ({ item, buttonText, page }: NewsCardProps) => {
   return (
     <div
       key={item.id}
-      className="rounded-[15px] lg:rounded-[25px] w-[337px] lg:w-[555px] overflow-hidden bg-white 
+      className="rounded-[15px] lg:rounded-[25px] w-[365px] lg:w-[555px] overflow-hidden bg-white 
         shadow-xs hover:shadow-2xl hover:shadow-tertiary
         transition-all duration-300 ease-out hover:scale-[1.02]"
     >
