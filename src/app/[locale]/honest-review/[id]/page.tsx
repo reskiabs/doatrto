@@ -53,11 +53,11 @@ const HonestReviewDetailPage = () => {
             <h1 className="font-extrabold text-center lg:text-left text-[28px] lg:text-[40px] text-tertiary truncate">
               {review.name}
             </h1>
-            <h2 className="font-semibold text-center lg:text-left text-[14px] lg:text-[40px] text-tertiary truncate">
+            <h2 className="font-semibold text-center lg:text-left text-sm lg:text-[40px] text-tertiary truncate">
               {review.title}
             </h2>
             <div
-              className="font-normal text-justify text-[14px] lg:text-xl my-[20px] lg:my-[30px]"
+              className="font-normal text-justify text-sm lg:text-xl my-[20px] lg:my-[30px]"
               dangerouslySetInnerHTML={{
                 __html: short,
               }}
@@ -72,7 +72,7 @@ const HonestReviewDetailPage = () => {
       <div className="max-w-[1140px] mx-auto mt-[50px] lg:mt-[100px]">
         {remaining && (
           <div
-            className="font-normal px-[15px] lg:px-0 text-justify text-[14px] lg:text-xl my-[20px] lg:my-[30px]"
+            className="font-normal px-[15px] lg:px-0 text-justify text-sm lg:text-xl my-[20px] lg:my-[30px]"
             dangerouslySetInnerHTML={{
               __html: remaining,
             }}
