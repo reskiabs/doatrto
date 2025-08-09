@@ -1,5 +1,6 @@
 "use client";
 
+import { useMobileScrollOffset } from "@/hooks/useMobileScrollOffset";
 import Flower from "@/public/images/beyond1.svg";
 import Eye from "@/public/images/beyond2.svg";
 import Repeated from "@/public/images/beyond3.svg";
@@ -7,7 +8,6 @@ import Lightning from "@/public/images/beyond4.svg";
 import Violently from "@/public/images/beyond5.svg";
 import Heal from "@/public/images/beyond6.svg";
 import { StaticImageData } from "next/image";
-import { useEffect, useRef } from "react";
 import BeyondCardList from "../card/BeyondCardList";
 import ContentTitle from "../typography/ContentTitle";
 
@@ -58,13 +58,7 @@ const data: Item[] = [
 ];
 
 const GoingBeyond = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollLeft = scrollRef.current.scrollWidth * 0.17;
-    }
-  }, []);
+  const scrollRef = useMobileScrollOffset(0.17);
 
   return (
     <main className="flex flex-col items-center w-full mt-[50px] md:mt-[80px] lg:mt-[100px]">

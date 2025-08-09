@@ -1,17 +1,18 @@
 "use client";
 
+import { useMobileScrollOffset } from "@/hooks/useMobileScrollOffset";
 import supabase from "@/lib/db";
 import { koulen } from "@/src/app/fonts";
 import { IHero } from "@/types/hero";
 import Image from "next/image";
 import { useParams } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 const BannerDetailPage = () => {
   const params = useParams();
   const id = params.id as string;
   const [hero, setHero] = useState<IHero | null>(null);
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useMobileScrollOffset(0.22, [hero]);
 
   useEffect(() => {
     if (id) {
@@ -29,15 +30,6 @@ const BannerDetailPage = () => {
       fetchHero();
     }
   }, [id]);
-
-  useEffect(() => {
-    if (scrollRef.current && window.innerWidth < 768) {
-      scrollRef.current.scrollTo({
-        left: scrollRef.current.scrollWidth * 0.22,
-        behavior: "smooth",
-      });
-    }
-  }, [hero]);
 
   const hasImages = Array.isArray(hero?.images) && hero.images.length > 0;
 
