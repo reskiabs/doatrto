@@ -22,37 +22,43 @@ const data: Item[] = [
   {
     id: 1,
     title: "Non Root Cause Processing",
-    description: "Lorem Ipsum is simply dummy text...",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
     image: Flower,
   },
   {
     id: 2,
     title: "Stage of Liberation",
-    description: "Lorem Ipsum is simply dummy text...",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
     image: Eye,
   },
   {
     id: 3,
     title: "Repeated, Consistent Result",
-    description: "Lorem Ipsum is simply dummy text...",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
     image: Repeated,
   },
   {
     id: 4,
     title: "Totally Measured and Calibrated Process",
-    description: "Lorem Ipsum is simply dummy text...",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
     image: Lightning,
   },
   {
     id: 5,
     title: "Violently Test & Recheck",
-    description: "Lorem Ipsum is simply dummy text...",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
     image: Violently,
   },
   {
     id: 6,
     title: "Heal the Amygdala Automatic Response",
-    description: "Lorem Ipsum is simply dummy text...",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
     image: Heal,
   },
 ];
@@ -68,7 +74,7 @@ const GoingBeyond = () => {
         </div>
 
         <div ref={scrollRef} className="w-full overflow-x-auto scrollbar-hide">
-          <div className="grid grid-cols-3 gap-3.5 lg:gap-6 min-w-max snap-x snap-mandatory">
+          <div className="grid grid-cols-3 gap-3.5 lg:gap-6 min-w-max snap-x snap-mandatory px-[15px] lg:px-0">
             {data.map((item) => (
               <div key={item.id} className="snap-start">
                 <BeyondCardList

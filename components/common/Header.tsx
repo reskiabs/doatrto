@@ -11,6 +11,15 @@ import { LogoPlaceholder } from "../../lib/helper/ImagePlacholder";
 import ContactPopup from "./ContactPopup";
 import LanguageSwitcher from "./LanguageSwitcher";
 
+// shadcn dialog
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
 const menuItems = [
   { name: "Home", route: "/" },
   {
@@ -184,6 +193,49 @@ const Header = () => {
             .filter((item) => item.name !== "Contact us")
             .map((item) => {
               const active = isRouteActive(item.route || "");
+              const hasChildren = !!item.children;
+
+              // Khusus untuk About DOA → pakai Dialog
+              if (item.name === "About DOA" && hasChildren) {
+                return (
+                  <Dialog key={item.name}>
+                    <DialogTrigger asChild>
+                      <button
+                        className={clsx(
+                          "w-full py-4 text-xs text-center border-b border-gray-300 transition",
+                          isAboutDOARoute() &&
+                            "font-bold underline text-primary"
+                        )}
+                      >
+                        {item.name}
+                      </button>
+                    </DialogTrigger>
+                    <DialogContent className="sm:max-w-[320px] p-0 rounded-lg overflow-hidden">
+                      <DialogHeader className="p-4 border-b border-gray-200">
+                        <DialogTitle className="text-base text-tertiary font-semibold">
+                          {item.name}
+                        </DialogTitle>
+                      </DialogHeader>
+                      <div className="flex flex-col">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.name}
+                            href={child.route}
+                            onClick={() => {
+                              setMenuOpen(false);
+                            }}
+                            className="px-4 py-3 text-sm text-primary hover:bg-secondary/10 border-b border-gray-200 last:border-none"
+                          >
+                            {child.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </DialogContent>
+                  </Dialog>
+                );
+              }
+
+              // Default item
               return (
                 <Link
                   key={item.name}

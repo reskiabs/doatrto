@@ -23,7 +23,7 @@ const ImageGrid = ({ images }: ImageGridProps) => {
   return (
     <>
       {/* Desktop */}
-      <div className="hidden md:flex max-w-[1140px] mx-auto justify-between mt-[100px] gap-[30px]">
+      <div className="hidden md:flex max-w-full lg:max-w-[1140px] mx-auto justify-between mt-[100px] gap-[30px]">
         {columns.map((column, colIndex) => (
           <div key={colIndex} className="flex flex-col gap-[30px]">
             {column.map((img, index) => (
@@ -47,21 +47,21 @@ const ImageGrid = ({ images }: ImageGridProps) => {
       {/* Mobile */}
       <div
         ref={scrollRef}
-        className="md:hidden mt-[50px] px-[15px] lg:px-0 overflow-x-auto scrollbar-hide"
+        className="md:hidden mt-[50px] px-[15px] overflow-x-auto scrollbar-hide"
       >
         <div
           className="
-            flex flex-wrap gap-4 min-w-max
-            max-h-[520px] snap-x snap-mandatory
-          "
+      flex gap-4 
+      max-h-[520px] snap-x snap-mandatory
+    "
         >
           {images.map((src, index) => (
             <div
               key={index}
               className="
-                size-[250px] rounded-[15px] lg:rounded-[25px] relative overflow-hidden bg-surface
-                flex-shrink-0 snap-start
-              "
+          size-[250px] rounded-[15px] lg:rounded-[25px] relative overflow-hidden bg-surface
+          flex-shrink-0 snap-start
+        "
             >
               <Image
                 src={src}
