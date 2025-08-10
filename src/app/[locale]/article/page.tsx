@@ -9,7 +9,7 @@ const ArticlePage = () => {
 
   return (
     <div>
-      <div className="flex flex-col justify-center items-center bg-gradient-to-b from-white via-[#EBF0F8] to-white pt-[104px]">
+      <div className="flex flex-col justify-center items-center bg-gradient-to-b from-white via-[#EBF0F8] to-white pt-[50px] lg:pt-[100px]">
         <DetailHeader
           title="The Latest News from D.O.A TRTO"
           description="Lebih dari 500 orang sudah terbantu dan merasakan kebahagiaan
@@ -17,13 +17,13 @@ const ArticlePage = () => {
         />
       </div>
 
-      <div className="w-full max-w-[1140px] mx-auto mt-[150px]">
+      <div className="w-full max-w-[1140px] mx-auto mt-[50px] lg:mt-[100px]">
         {loading ? (
           <div className="flex justify-center">Loading news...</div>
         ) : error ? (
           <div className="text-red-500 text-center">{error}</div>
         ) : (
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 justify-items-center lg:justify-items-start lg:grid-cols-2 lg:gap-6">
             {news.map((item) => (
               <NewsCard
                 key={item.id}

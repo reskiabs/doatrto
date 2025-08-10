@@ -9,7 +9,7 @@ interface DetailTitleProps {
 }
 const DetailTitle = ({ title, date, href }: DetailTitleProps) => {
   return (
-    <div className="min-w-[340px] lg:min-w-[1140px]">
+    <div className="min-w-[340px] lg:min-w-[1140px] max-w-[1140px]">
       <Link
         href={href || "/"}
         className="flex items-center gap-1.5 md:gap-2.5 font-medium text-xs text-tertiary md:text-md"
