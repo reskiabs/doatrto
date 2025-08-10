@@ -16,7 +16,7 @@ export function TrustAndTransparencyListCard() {
   if (error) return <p className="text-center text-red-500">{error}</p>;
 
   return (
-    <div className="w-[1140px]">
+    <div className="max-w-[1140px]">
       <HoverEffect items={projects} />
     </div>
   );
