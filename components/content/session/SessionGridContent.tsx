@@ -11,7 +11,7 @@ const SessionGridContent = () => {
         <div className="flex items-center gap-[10px] lg:gap-[30px] min-w-max">
           <div className="flex p-[15px] lg:p-[30px] w-[372px] lg:w-[750px] rounded-[15px] lg:rounded-[25px] border gap-[30px] border-surface">
             <div className="w-[360px]">
-              <p className="font-bold text-[16px] lg:text-[25px] mb-[10px] lg:mb-[20px]">
+              <p className="font-bold text-base lg:text-[25px] mb-[10px] lg:mb-[20px]">
                 Lorem Ipsum (Subjudul H3)
               </p>
               <p className="font-normal text-xs line-clamp-5 text-ellipsis lg:text-xl text-muted">
@@ -31,7 +31,7 @@ const SessionGridContent = () => {
           </div>
           <div className="flex p-[15px] lg:p-[30px] w-[200px] lg:w-[360px] h-[170px] lg:h-[375px] rounded-[15px] lg:rounded-[25px] border gap-[30px] border-surface">
             <div className="w-[360px]">
-              <p className="font-bold text-[16px] lg:text-[25px] mb-[10px] lg:mb-[20px]">
+              <p className="font-bold text-base lg:text-[25px] mb-[10px] lg:mb-[20px]">
                 Lorem Ipsum (Subjudul H3)
               </p>
               <p className="font-normal text-xs line-clamp-5 text-ellipsis lg:text-xl text-muted">
@@ -49,7 +49,7 @@ const SessionGridContent = () => {
         <div className="flex items-center gap-[10px] lg:gap-[30px] min-w-max">
           <div className="flex p-[15px] lg:p-[30px] w-[200px] lg:w-[360px] h-[170px] lg:h-[375px] rounded-[15px] lg:rounded-[25px] border gap-[30px] border-surface">
             <div className="w-[360px]">
-              <p className="font-bold text-[16px] lg:text-[25px] mb-[10px] lg:mb-[20px]">
+              <p className="font-bold text-base lg:text-[25px] mb-[10px] lg:mb-[20px]">
                 Lorem Ipsum (Subjudul H3)
               </p>
               <p className="font-normal text-xs line-clamp-5 text-ellipsis lg:text-xl text-muted">
@@ -61,7 +61,7 @@ const SessionGridContent = () => {
           </div>
           <div className="flex p-[15px] lg:p-[30px] w-[372px] lg:w-[750px] rounded-[15px] lg:rounded-[25px] border gap-[30px] border-surface">
             <div className="w-[360px]">
-              <p className="font-bold text-[16px] lg:text-[25px] mb-[10px] lg:mb-[20px]">
+              <p className="font-bold text-base lg:text-[25px] mb-[10px] lg:mb-[20px]">
                 Lorem Ipsum (Subjudul H3)
               </p>
               <p className="font-normal text-xs line-clamp-5 text-ellipsis lg:text-xl text-muted">

@@ -43,7 +43,7 @@ const ContactPopup = ({ onClose }: ContactPopupProps) => {
             </span>
           </div>
 
-          <button className="w-full h-[32px] md:h-[40px] bg-tertiary rounded-full text-white text-[12px] md:text-[16px] font-medium text-center">
+          <button className="w-full h-[32px] md:h-[40px] bg-tertiary rounded-full text-white text-[12px] md:text-base font-medium text-center">
             Direction Google Maps
           </button>
         </div>

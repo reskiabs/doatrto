@@ -26,7 +26,7 @@ const FaqAccordionItem: React.FC<FaqAccordionItemProps> = ({
         onClick={onToggle}
         className={cn(
           "flex w-full items-center justify-between text-left font-bold text-gray-900",
-          "px-[15px] pt-[15px] pb-[15px] lg:pb-[30px] text-[16px] lg:text-[25px] lg:px-[30px] lg:pt-[30px]",
+          "px-[15px] pt-[15px] pb-[15px] lg:pb-[30px] text-base lg:text-[25px] lg:px-[30px] lg:pt-[30px]",
           isOpen && "lg:pb-[20px]"
         )}
       >
@@ -51,7 +51,7 @@ const FaqAccordionItem: React.FC<FaqAccordionItemProps> = ({
       {isOpen && (
         <div className="px-[15px] pb-[15px] lg:px-[30px] lg:pb-[30px]">
           <div
-            className="text-base font-medium text-muted text-sm lg:text-xl"
+            className="text-base font-medium text-muted lg:text-xl"
             dangerouslySetInnerHTML={{ __html: item.description }}
           />
         </div>
