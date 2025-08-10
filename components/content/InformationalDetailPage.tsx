@@ -49,7 +49,7 @@ const InformationalDetailPage: React.FC<InformationalDetailPageProps> = ({
       <div className="flex flex-col justify-center items-center bg-gradient-to-b from-white via-[#EBF0F8] to-white pt-[50px] lg:pt-[100px]">
         <DetailHeader title={headerTitle} description={headerDescription} />
         {data.images?.length > 0 && (
-          <div className="mt-[20px] lg:mt-[50px]">
+          <div className="mt-[20px] lg:mt-[50px] overflow-x-auto w-full">
             <ImageGrid images={data.images} />
           </div>
         )}
