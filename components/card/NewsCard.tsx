@@ -30,7 +30,7 @@ const NewsCard = ({ item, buttonText, page }: NewsCardProps) => {
       </div>
       <div className="p-[15px] lg:p-[30px]">
         <h3
-          className="font-bold text-[16px] lg:text-2xl mb-2.5 lg:mb-5 line-clamp-2"
+          className="font-bold text-base lg:text-2xl mb-2.5 lg:mb-5 line-clamp-2"
           title={item.title}
         >
           {item.title}

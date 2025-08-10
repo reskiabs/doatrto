@@ -33,7 +33,7 @@ export const HoverEffect = ({
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full bg-gradient-to-r from-[#6fa0e4] via-secondary to-[#4672b4] block rounded-[31px]"
+                className="absolute inset-0 h-full w-full bg-gradient-to-r from-[#6fa0e4] via-secondary to-[#4672b4] block rounded-[17px] lg:rounded-[31px]"
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{
@@ -48,13 +48,13 @@ export const HoverEffect = ({
             )}
           </AnimatePresence>
           <Card>
-            <div className="flex-1 pr-8">
+            <div className="flex-1 lg:pr-8">
               <CardTitle>{item.title}</CardTitle>
               <CardDescription>
                 <div dangerouslySetInnerHTML={{ __html: item.description }} />
               </CardDescription>
             </div>
-            <div className="relative w-[480px] h-[270px] rounded-[20px] overflow-hidden">
+            <div className="relative mt-2.5 lg:mt-0 w-[315px] lg:w-[480px] h-[192px] lg:h-[270px] rounded-[12px] lg:rounded-[20px] overflow-hidden">
               <Image
                 src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?q=80&w=2340&auto=format&fit=crop"
                 alt="Trust & Transparency Image"
@@ -79,7 +79,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-[25px] flex flex-row items-center justify-between h-full w-full p-[30px] overflow-hidden bg-white border relative z-20",
+        "rounded-[15px] lg:rounded-[25px] flex flex-col lg:flex-row items-center justify-between h-full w-full p-[15px] lg:p-[30px] overflow-hidden bg-white border relative z-20",
         className
       )}
     >
@@ -97,7 +97,10 @@ export const CardTitle = ({
 }) => {
   return (
     <h4
-      className={cn("text-body font-bold tracking-wide text-[30px]", className)}
+      className={cn(
+        "text-body font-bold tracking-wide text-base lg:text-[30px]",
+        className
+      )}
     >
       {children}
     </h4>
@@ -113,7 +116,7 @@ export const CardDescription = ({
   return (
     <div
       className={cn(
-        "text-muted tracking-wide leading-relaxed text-xl font-medium mt-5",
+        "text-muted tracking-wide leading-relaxed text-xs lg:text-xl font-medium mt-2.5 lg:mt-5",
         className
       )}
     >
