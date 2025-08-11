@@ -5,7 +5,6 @@ import DetailHeader from "@/components/typography/DetailHeader";
 import { useMobileScrollOffset } from "@/hooks/useMobileScrollOffset";
 import { useTrustedMedical } from "@/hooks/useTrustedMedical";
 import { ImageDown } from "lucide-react";
-import Image from "next/image";
 import { useParams } from "next/navigation";
 
 const TrustedByMedicalExpertDetailPage = () => {
@@ -33,16 +32,11 @@ const TrustedByMedicalExpertDetailPage = () => {
             <ImageDown className="animate-bounce text-muted" size={150} />
           </div>
         ) : (
-          <div className="relative size-[372px] lg:w-[1140px] lg:h-[641px] rounded-[15px] lg:rounded-[50px] overflow-hidden mt-[50px]">
-            {trustedMedical?.thumbnail && (
-              <Image
-                src={trustedMedical.thumbnail}
-                alt={trustedMedical.title || "Trusted Medical Expert Image"}
-                fill
-                priority
-                className="object-cover"
-              />
-            )}
+          <div className="relative size-[372px] bg-surface lg:w-[1140px] lg:h-[641px] rounded-[15px] lg:rounded-[30px] overflow-hidden mt-[50px]">
+            <div
+              className="w-full aspect-video"
+              dangerouslySetInnerHTML={{ __html: trustedMedical?.video || "" }}
+            />
           </div>
         )}
       </div>

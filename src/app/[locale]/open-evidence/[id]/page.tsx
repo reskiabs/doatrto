@@ -26,7 +26,7 @@ const OpenEvidenceDetailPage = () => {
 Base System"
           description="Lorem Ipsum is simply dummy text of the printing and typesetting industry..."
         />
-        <div className="relative size-[372px] lg:w-[1140px] lg:h-[641px] rounded-[15px] lg:rounded-[50px] overflow-hidden mt-[50px]">
+        <div className="relative size-[372px] lg:w-[1140px] bg-surface lg:h-[641px] rounded-[15px] lg:rounded-[30px] overflow-hidden mt-[50px]">
           <div
             className="w-full aspect-video"
             dangerouslySetInnerHTML={{ __html: detail?.video || "" }}
