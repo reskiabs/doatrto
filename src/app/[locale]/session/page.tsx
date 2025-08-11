@@ -8,7 +8,7 @@ import SessionPrice from "@/components/content/session/SessionPrice";
 import DetailHeader from "@/components/typography/DetailHeader";
 import { useFaq } from "@/hooks/useFaq";
 import { useSessionFeatures } from "@/hooks/useSessionFeatures";
-import { FaqItem } from "@/types/faq";
+import { FaqLocalized } from "@/types/faq";
 import { useEffect, useState } from "react";
 
 const SessionPage = () => {
@@ -45,7 +45,7 @@ const SessionPage = () => {
       <SessionGridContent />
       <SessionPrice />
       <SessionFaq>
-        {items.slice(0, 4).map((item: FaqItem) => (
+        {items.slice(0, 4).map((item: FaqLocalized) => (
           <FaqAccordionItem
             key={item.id}
             item={item}
