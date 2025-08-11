@@ -1,11 +1,11 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { FaqItem } from "@/types/faq";
+import { FaqLocalized } from "@/types/faq";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 interface FaqAccordionItemProps {
-  item: FaqItem;
+  item: FaqLocalized;
   isOpen: boolean;
   onToggle: () => void;
 }
