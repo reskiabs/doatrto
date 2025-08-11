@@ -1,9 +1,9 @@
 import supabase from "@/lib/db";
-import { FaqItem } from "@/types/faq";
+import { FaqLocalized } from "@/types/faq";
 import { useEffect, useState } from "react";
 
 export function useHowItWorks() {
-  const [items, setItems] = useState<FaqItem[]>([]);
+  const [items, setItems] = useState<FaqLocalized[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
