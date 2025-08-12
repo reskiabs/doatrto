@@ -11,7 +11,7 @@ const FacilitatorsPage = () => {
 
   const cards = facilitators.map((facilitator, index) => ({
     name: facilitator.name,
-    review: facilitator.role,
+    review: facilitator.role, // sudah localized via hook
     src: facilitator.image,
     content: <HonestReviewContent />,
     url: `/honest-review/${facilitator.id}`,
