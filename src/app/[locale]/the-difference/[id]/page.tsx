@@ -62,29 +62,33 @@ const TheDifferenceDetailPage = () => {
       )}
 
       {/* Galeri Gambar */}
-      {hasImages && (
-        <div
-          ref={scrollRef}
-          className="my-[50px] lg:my-[100px] px-2.5 lg:px-0 overflow-x-auto scrollbar-hide"
-        >
-          <div className="grid grid-cols-3 gap-[10px] lg:gap-[30px] min-w-max snap-x snap-mandatory">
-            {detail?.images.slice(0, 3).map((image: string, index: number) => (
-              <div
-                key={index}
-                className="relative size-[250px] lg:size-[360px] rounded-[15px] lg:rounded-[25px] overflow-hidden bg-gray-300 snap-start"
-              >
-                <Image
-                  src={image}
-                  alt={`Image ${index + 1}`}
-                  fill
-                  priority
-                  className="object-cover"
-                />
-              </div>
-            ))}
+      <div className="lg:max-w-[1140px] mx-auto overflow-x-auto max-w-full">
+        {hasImages && (
+          <div
+            ref={scrollRef}
+            className="my-[50px] lg:my-[100px] px-2.5 lg:px-0 scrollbar-hide"
+          >
+            <div className="grid grid-cols-3 gap-[10px] lg:gap-[30px] min-w-max snap-x snap-mandatory">
+              {detail?.images
+                .slice(0, 3)
+                .map((image: string, index: number) => (
+                  <div
+                    key={index}
+                    className="relative size-[250px] lg:size-[360px] rounded-[15px] lg:rounded-[25px] overflow-hidden bg-gray-300 snap-start"
+                  >
+                    <Image
+                      src={image}
+                      alt={`Image ${index + 1}`}
+                      fill
+                      priority
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };

@@ -13,7 +13,7 @@ const TrustedByMedicalExpertDetailPage = () => {
   const id = params.id as string;
 
   const { detail: trustedMedical, loading } = useTrustedMedical(id);
-  const scrollRef = useMobileScrollOffset(0.22);
+  const scrollRef = useMobileScrollOffset(0.27, [trustedMedical]);
 
   const hasImages =
     !loading &&
@@ -59,29 +59,31 @@ const TrustedByMedicalExpertDetailPage = () => {
             }}
           />
 
-          {hasImages && (
-            <div
-              ref={scrollRef}
-              className="my-[50px] w-full lg:my-[100px] overflow-x-auto scrollbar-hide"
-            >
-              <div className="grid grid-cols-3 gap-[10px] px-[15px] lg:px-0 lg:gap-[30px] min-w-max snap-x snap-mandatory">
-                {trustedMedical?.images?.slice(0, 3).map((image, index) => (
-                  <div
-                    key={index}
-                    className="relative size-[250px] lg:size-[360px] rounded-[15px] lg:rounded-[25px] overflow-hidden bg-gray-100 snap-start"
-                  >
-                    <Image
-                      src={image}
-                      alt={`Image ${index + 1}`}
-                      fill
-                      priority
-                      className="object-cover"
-                    />
-                  </div>
-                ))}
+          <div className="lg:max-w-[1140px] overflow-x-auto max-w-full mx-auto">
+            {hasImages && (
+              <div
+                ref={scrollRef}
+                className="my-[50px] w-full lg:my-[100px] scrollbar-hide"
+              >
+                <div className="grid grid-cols-3 gap-[10px] px-[15px] lg:px-0 lg:gap-[30px] min-w-max snap-x snap-mandatory">
+                  {trustedMedical?.images?.slice(0, 3).map((image, index) => (
+                    <div
+                      key={index}
+                      className="relative size-[250px] lg:size-[360px] rounded-[15px] lg:rounded-[25px] overflow-hidden bg-gray-100 snap-start"
+                    >
+                      <Image
+                        src={image}
+                        alt={`Image ${index + 1}`}
+                        fill
+                        priority
+                        className="object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       )}
 
