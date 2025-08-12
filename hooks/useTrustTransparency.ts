@@ -1,8 +1,11 @@
 import supabase from "@/lib/db";
+import { getLocalizedField } from "@/lib/helper/getLocalizedField";
 import { ITrustTransparency } from "@/types/trust-transparency";
+import { useLocale } from "next-intl";
 import { useEffect, useState } from "react";
 
 export function useTrustTransparency() {
+  const locale = useLocale();
   const [items, setItems] = useState<ITrustTransparency[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -10,6 +13,7 @@ export function useTrustTransparency() {
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
+
       const { data, error } = await supabase
         .from("trust-transparency")
         .select("*")
@@ -19,14 +23,20 @@ export function useTrustTransparency() {
         console.error("Supabase error:", error);
         setError("Failed to fetch trust-transparency data");
       } else {
-        setItems(data || []);
+        const localizedItems = (data || []).map((item) => ({
+          ...item,
+          title: getLocalizedField(item, "title", locale),
+          description: getLocalizedField(item, "description", locale),
+          id: item.id.toString(),
+        }));
+        setItems(localizedItems);
       }
 
       setLoading(false);
     };
 
     fetchData();
-  }, []);
+  }, [locale]);
 
   return { items, loading, error };
 }
