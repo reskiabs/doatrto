@@ -34,6 +34,20 @@ Base System"
         </div>
       </div>
 
+      {!loading && detail && (
+        <div className="mt-[20px] lg:mt-[100px] px-[15px] lg:px-0 flex flex-col justify-center items-center">
+          <div className="w-full max-w-[1140px]">
+            <h1 className="font-extrabold text-[28px] lg:text-[40px] text-tertiary text-center lg:text-left">
+              {detail.title}
+            </h1>
+          </div>
+          <div
+            className="font-normal text-sm lg:text-xl text-justify max-w-[1140px] mt-[20px] lg:mt-[30px]"
+            dangerouslySetInnerHTML={{ __html: detail.description }}
+          />
+        </div>
+      )}
+
       <div className="mt-[50px] lg:mt-[100px] w-full flex flex-col justify-center items-center">
         <div className="w-full flex flex-col items-center max-w-[1140px]">
           <h1 className="font-extrabold text-[28px] lg:text-[40px] text-tertiary text-center lg:text-left">

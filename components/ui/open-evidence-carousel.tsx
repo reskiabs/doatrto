@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useId, useRef, useState } from "react";
 
 interface SlideData {
+  id: number;
   src: string;
 }
 
@@ -17,7 +18,6 @@ interface SlideProps {
 
 const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
   const slideRef = useRef<HTMLLIElement>(null);
-
   const xRef = useRef(0);
   const yRef = useRef(0);
   const frameRef = useRef<number | null>(null);
@@ -62,7 +62,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
     event.currentTarget.style.opacity = "1";
   };
 
-  const { src } = slide;
+  const { src, id } = slide;
 
   return (
     <div className="[perspective:1200px] [transform-style:preserve-3d]">
@@ -109,7 +109,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
           }`}
         >
           <Link
-            href={`/open-evidence/${index + 1}`}
+            href={`/open-evidence/${id}`}
             className="mt-6 flex items-center gap-1 lg:gap-2 px-4 py-2.5 lg:px-7 lg:py-3.5 bg-white/50 hover:bg-white mx-auto font-semibold text-xs lg:text-md text-tertiary rounded-full justify-center hover:shadow-xl 
               hover:shadow-white/30
               transition-all duration-300 ease-out hover:scale-[1.02] hover:cursor-pointer"
