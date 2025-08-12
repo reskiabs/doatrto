@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 
 const SessionPage = () => {
   const { items } = useFaq();
-  const { features } = useSessionFeatures();
+  const { features, loading, error } = useSessionFeatures();
   const [activeId, setActiveId] = useState<number | null>(null);
 
   useEffect(() => {
@@ -25,6 +25,7 @@ const SessionPage = () => {
   const handleToggle = (id: number) => {
     setActiveId((prevId) => (prevId === id ? null : id));
   };
+
   return (
     <div>
       <div className="flex flex-col justify-center items-center bg-gradient-to-b from-white via-[#EBF0F8] to-white pt-[50px] lg:pt-[100px]">
@@ -35,11 +36,17 @@ const SessionPage = () => {
       </div>
 
       <div className="w-full max-w-[1140px] mx-auto mt-[50px] lg:mt-[100px]">
-        <div className="flex flex-wrap justify-center gap-6 md:grid md:grid-cols-2">
-          {features.map((item) => (
-            <NewsCard key={item.id} item={item} buttonText="Book a Session" />
-          ))}
-        </div>
+        {loading ? (
+          <p className="text-center">Loading features...</p>
+        ) : error ? (
+          <p className="text-center text-red-500">{error}</p>
+        ) : (
+          <div className="flex flex-wrap justify-center gap-6 md:grid md:grid-cols-2">
+            {features.map((item) => (
+              <NewsCard key={item.id} item={item} buttonText="Book a Session" />
+            ))}
+          </div>
+        )}
       </div>
 
       <SessionGridContent />
