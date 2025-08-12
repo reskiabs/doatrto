@@ -1,10 +1,13 @@
 "use client";
 
 import supabase from "@/lib/db";
+import { getLocalizedField } from "@/lib/helper/getLocalizedField";
 import type { INews } from "@/types/news";
+import { useLocale } from "next-intl";
 import { useEffect, useState } from "react";
 
 export function useNewsDetail(id: string) {
+  const locale = useLocale();
   const [detail, setDetail] = useState<INews | null>(null);
   const [related, setRelated] = useState<INews[]>([]);
   const [loading, setLoading] = useState(true);
@@ -28,22 +31,38 @@ export function useNewsDetail(id: string) {
         return;
       }
 
-      setDetail(data);
+      const localizedDetail = {
+        ...data,
+        title: getLocalizedField(data, "title", locale),
+        description: getLocalizedField(data, "description", locale),
+      };
 
-      // Fetch related news
-      const { data: relatedNews } = await supabase
+      setDetail(localizedDetail);
+
+      const { data: relatedNews, error: relatedError } = await supabase
         .from("news")
         .select("*")
         .neq("id", id)
         .order("id", { ascending: false })
         .limit(4);
 
-      setRelated(relatedNews || []);
+      if (relatedError) {
+        console.error("Failed to fetch related news:", relatedError);
+        setRelated([]);
+      } else {
+        const mappedRelated = (relatedNews || []).map((item) => ({
+          ...item,
+          title: getLocalizedField(item, "title", locale),
+          description: getLocalizedField(item, "description", locale),
+        }));
+        setRelated(mappedRelated);
+      }
+
       setLoading(false);
     };
 
     fetchDetail();
-  }, [id]);
+  }, [id, locale]);
 
   return { detail, related, loading, error };
 }
