@@ -1,8 +1,11 @@
 import supabase from "@/lib/db";
+import { getLocalizedField } from "@/lib/helper/getLocalizedField";
 import { IOpenEvidence } from "@/types/open-evidence";
+import { useLocale } from "next-intl";
 import { useEffect, useState } from "react";
 
 export function useOpenEvidenceList() {
+  const locale = useLocale();
   const [list, setList] = useState<IOpenEvidence[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -15,14 +18,21 @@ export function useOpenEvidenceList() {
         console.error("Error fetching open evidence list:", error);
         setError("Failed to fetch list");
       } else {
-        setList(data || []);
+        setList(
+          (data || []).map((item) => ({
+            ...item,
+            id: item.id.toString(),
+            title: getLocalizedField(item, "title", locale),
+            description: getLocalizedField(item, "description", locale),
+          }))
+        );
       }
 
       setLoading(false);
     };
 
     fetch();
-  }, []);
+  }, [locale]);
 
   return { list, loading, error };
 }

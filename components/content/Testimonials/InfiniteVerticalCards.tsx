@@ -1,9 +1,11 @@
 "use client";
 
 import supabase from "@/lib/db";
+import { getLocalizedField } from "@/lib/helper/getLocalizedField";
 import { splitIntoColumns } from "@/lib/split-into-columns";
 import { ITestimonial } from "@/types/testimonial";
 import clsx from "clsx";
+import { useLocale } from "next-intl";
 import { useEffect, useState } from "react";
 import { AnimatedColumn } from "./AnimatedColumn";
 
@@ -18,6 +20,7 @@ export function InfiniteVerticalCards({
   pauseOnHover = true,
   className,
 }: Props) {
+  const locale = useLocale(); // ✅ gunakan locale dari next-intl
   const [testimonials, setTestimonials] = useState<ITestimonial[]>([]);
   const [loading, setLoading] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
@@ -40,15 +43,19 @@ export function InfiniteVerticalCards({
 
       if (error) {
         console.error("Error fetching testimonials:", error);
-      } else {
-        setTestimonials(data || []);
+      } else if (data) {
+        const mapped = data.map((item) => ({
+          ...item,
+          text: getLocalizedField(item, "text", locale),
+        }));
+        setTestimonials(mapped);
       }
 
       setLoading(false);
     };
 
     fetchTestimonials();
-  }, []);
+  }, [locale]);
 
   const cols = splitIntoColumns(testimonials, isMobile ? 1 : columns);
 

@@ -31,7 +31,7 @@ const ArticleDetailPage = () => {
     <div>
       <div className="flex flex-col justify-center items-center bg-gradient-to-b from-white via-[#EBF0F8] to-white pt-[50px] lg:pt-[100px] px-[31px] lg:px-0">
         <DetailTitle title={detail.title} href="/trust-and-transparency" />
-        <div className="relative w-[340px] lg:w-[1140px] h-[170px] lg:h-[641px] rounded-[15px] lg:rounded-[25px]rounded-[50px] overflow-hidden mt-[20px] lg:mt-[50px]">
+        <div className="relative w-[340px] lg:w-[1140px] h-[170px] lg:h-[641px] rounded-[15px] lg:rounded-[25px] overflow-hidden mt-[20px] lg:mt-[50px]">
           <Image
             src={detail.thumbnail}
             alt={detail.title}

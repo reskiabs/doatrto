@@ -11,6 +11,7 @@ export function OpenEvidenceCarousel() {
   }
 
   const slideData = list.map((item) => ({
+    id: item.id,
     src: item.thumbnail,
   }));
 

@@ -1,8 +1,11 @@
 import supabase from "@/lib/db";
+import { getLocalizedField } from "@/lib/helper/getLocalizedField";
 import { ITheDifferences } from "@/types/the-differences";
+import { useLocale } from "next-intl";
 import { useEffect, useState } from "react";
 
 export function useTheDifferences(id?: string) {
+  const locale = useLocale();
   const [items, setItems] = useState<ITheDifferences[]>([]);
   const [detail, setDetail] = useState<ITheDifferences | null>(null);
   const [loading, setLoading] = useState(true);
@@ -23,7 +26,9 @@ export function useTheDifferences(id?: string) {
           .filter((item) => !!item.thumbnail)
           .map((item) => ({
             ...item,
-            id: item.id.toString(), // Ensure string id
+            id: item.id.toString(),
+            title: getLocalizedField(item, "title", locale),
+            description: getLocalizedField(item, "description", locale),
           }));
         setItems(mapped);
       }
@@ -46,6 +51,8 @@ export function useTheDifferences(id?: string) {
         setDetail({
           ...data,
           id: data.id.toString(),
+          title: getLocalizedField(data, "title", locale),
+          description: getLocalizedField(data, "description", locale),
         });
       }
 
@@ -57,12 +64,7 @@ export function useTheDifferences(id?: string) {
     } else {
       fetchList();
     }
-  }, [id]);
+  }, [id, locale]);
 
-  return {
-    loading,
-    error,
-    items,
-    detail,
-  };
+  return { loading, error, items, detail };
 }

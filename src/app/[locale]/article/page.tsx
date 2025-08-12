@@ -12,8 +12,7 @@ const ArticlePage = () => {
       <div className="flex flex-col justify-center items-center bg-gradient-to-b from-white via-[#EBF0F8] to-white pt-[50px] lg:pt-[100px]">
         <DetailHeader
           title="The Latest News from D.O.A TRTO"
-          description="Lebih dari 500 orang sudah terbantu dan merasakan kebahagiaan
-          dengan Divine Oracular Assistance Tension Releasing Technique Online"
+          description="Lebih dari 500 orang sudah terbantu dan merasakan kebahagiaan dengan Divine Oracular Assistance Tension Releasing Technique Online"
         />
       </div>
 

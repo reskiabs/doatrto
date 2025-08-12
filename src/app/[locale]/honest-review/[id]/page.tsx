@@ -78,7 +78,9 @@ const HonestReviewDetailPage = () => {
             }}
           />
         )}
-        {review.images?.length > 0 && <ImageGrid images={review.images} />}
+        {Array.isArray(review?.images) && review.images.length > 0 && (
+          <ImageGrid images={review.images} />
+        )}
       </div>
 
       <div>

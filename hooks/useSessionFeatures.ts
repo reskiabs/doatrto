@@ -1,16 +1,20 @@
 "use client";
 
 import supabase from "@/lib/db";
+import { getLocalizedField } from "@/lib/helper/getLocalizedField";
 import { IFeature } from "@/types/feature";
+import { useLocale } from "next-intl";
 import { useEffect, useState } from "react";
 
 export function useSessionFeatures() {
+  const locale = useLocale();
   const [features, setFeatures] = useState<IFeature[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchFeatures = async () => {
+      setLoading(true);
       const { data, error } = await supabase
         .from("feature-session")
         .select("*")
@@ -19,14 +23,19 @@ export function useSessionFeatures() {
       if (error) {
         setError(error.message);
       } else {
-        setFeatures(data || []);
+        const localized = (data || []).map((item) => ({
+          ...item,
+          title: getLocalizedField(item, "title", locale),
+          description: getLocalizedField(item, "description", locale),
+        }));
+        setFeatures(localized);
       }
 
       setLoading(false);
     };
 
     fetchFeatures();
-  }, []);
+  }, [locale]);
 
   return { features, loading, error };
 }

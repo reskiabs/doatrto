@@ -1,37 +1,21 @@
 "use client";
 
+import { useHeroDetail } from "@/hooks/useHeroDetail";
 import { useMobileScrollOffset } from "@/hooks/useMobileScrollOffset";
-import supabase from "@/lib/db";
 import { koulen } from "@/src/app/fonts";
-import { IHero } from "@/types/hero";
 import Image from "next/image";
 import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
 
 const BannerDetailPage = () => {
   const params = useParams();
   const id = params.id as string;
-  const [hero, setHero] = useState<IHero | null>(null);
+  const { hero, loading, error, locale } = useHeroDetail(id);
   const scrollRef = useMobileScrollOffset(0.22, [hero]);
 
-  useEffect(() => {
-    if (id) {
-      const fetchHero = async () => {
-        const { data, error } = await supabase
-          .from("hero-section")
-          .select("*")
-          .eq("id", id)
-          .single();
-
-        if (error) console.error("Error fetching hero:", error);
-        else setHero(data);
-      };
-
-      fetchHero();
-    }
-  }, [id]);
-
   const hasImages = Array.isArray(hero?.images) && hero.images.length > 0;
+
+  if (loading) return <p className="text-center py-20">Loading...</p>;
+  if (error) return <p className="text-center py-20 text-red-500">{error}</p>;
 
   return (
     <div>
@@ -40,32 +24,31 @@ const BannerDetailPage = () => {
         {hero?.thumbnail && (
           <Image
             src={hero.thumbnail}
-            alt={hero.title || "Hero Image"}
+            alt="Hero Image"
             fill
             priority
             className="object-cover"
           />
         )}
-
-        {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
-
-        {/* Title Text */}
         <div className="absolute inset-0 flex items-center justify-center px-4 text-center">
           <h1
             className={`text-6xl lg:text-[110px] uppercase text-white leading-tight max-w-[1140px] ${koulen.className}`}
           >
-            {hero?.title}
+            {hero?.[`title_${locale}` as keyof typeof hero]}
           </h1>
         </div>
       </div>
 
-      {/* Description + Images + Quotes */}
+      {/* Content */}
       <div className="max-w-[1140px] mx-auto mt-[50px] lg:mt-[100px]">
-        {/* Description */}
+        {/* Quotes */}
         <div
           className="text-lg lg:text-[25px] leading-relaxed px-[15px] lg:px-0"
-          dangerouslySetInnerHTML={{ __html: hero?.quotes || "" }}
+          dangerouslySetInnerHTML={{
+            __html:
+              (hero?.[`quotes_${locale}` as keyof typeof hero] as string) || "",
+          }}
         />
 
         {/* First Images Row */}
@@ -75,7 +58,7 @@ const BannerDetailPage = () => {
             className="my-[50px] lg:my-[100px] px-2.5 lg:px-0 overflow-x-auto scrollbar-hide"
           >
             <div className="grid grid-cols-3 gap-[10px] lg:gap-[30px] min-w-max snap-x snap-mandatory">
-              {hero.images.slice(0, 3).map((image: string, index: number) => (
+              {hero.images!.slice(0, 3).map((image, index) => (
                 <div
                   key={index}
                   className="relative size-[250px] lg:size-[360px] rounded-[15px] lg:rounded-[25px] overflow-hidden bg-gray-300 snap-start"
@@ -93,16 +76,21 @@ const BannerDetailPage = () => {
           </div>
         )}
 
-        {/* Quotes */}
+        {/* Description */}
         <div
           className="text-sm lg:text-xl leading-relaxed px-[15px] lg:px-0"
-          dangerouslySetInnerHTML={{ __html: hero?.description || "" }}
+          dangerouslySetInnerHTML={{
+            __html:
+              (hero?.[
+                `description_${locale}` as keyof typeof hero
+              ] as string) || "",
+          }}
         />
 
         {/* Last Image */}
         {hasImages && (
           <div className="mt-[50px] flex justify-center lg:mt-[100px] lg:grid grid-cols-1 md:grid-cols-3 gap-[30px]">
-            {hero.images.slice(-1).map((image, index) => (
+            {hero.images!.slice(-1).map((image, index) => (
               <div
                 key={index}
                 className="relative size-[372px] lg:w-[1140px] lg:h-[555px] rounded-[15px] lg:rounded-[25px] overflow-hidden bg-gray-300"
