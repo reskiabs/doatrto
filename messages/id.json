@@ -97,5 +97,16 @@
       "title": "Menyembuhkan Respons Otomatis Amygdala",
       "description": "Teknik yang bertujuan menenangkan dan melatih ulang amygdala untuk mengurangi reaksi ketakutan atau stres otomatis, mendorong keseimbangan emosional dan kesejahteraan mental."
     }
+  },
+  "media": {
+    "asFeatureIn": "Media Partner"
+  },
+  "button": {
+    "playVideo": "Putar Video",
+    "seeMore": "Lihat Lainnya",
+    "readMore": "Baca Selengkapnya",
+    "watchedCount": "2000 orang telah menonton podcast ini",
+    "bookSession": "Booking Sesi",
+    "watchVideo": "Tonton Video"
   }
 }

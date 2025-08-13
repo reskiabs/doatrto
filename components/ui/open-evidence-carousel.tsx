@@ -1,5 +1,6 @@
 "use client";
 import { Play } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useId, useRef, useState } from "react";
@@ -17,6 +18,7 @@ interface SlideProps {
 }
 
 const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
+  const t = useTranslations("button");
   const slideRef = useRef<HTMLLIElement>(null);
   const xRef = useRef(0);
   const yRef = useRef(0);
@@ -114,7 +116,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
               hover:shadow-white/30
               transition-all duration-300 ease-out hover:scale-[1.02] hover:cursor-pointer"
           >
-            <Play size={20} /> Play Video
+            <Play size={20} /> {t("playVideo")}
           </Link>
         </article>
       </li>

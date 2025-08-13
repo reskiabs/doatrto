@@ -25,7 +25,7 @@ const News = () => {
           <NewsCard
             key={item.id}
             item={item}
-            buttonText="Baca Selengkapnya"
+            buttonTextKey="readMore"
             page="article"
           />
         ))}

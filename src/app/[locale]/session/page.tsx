@@ -43,7 +43,7 @@ const SessionPage = () => {
         ) : (
           <div className="flex flex-wrap justify-center gap-6 md:grid md:grid-cols-2">
             {features.map((item) => (
-              <NewsCard key={item.id} item={item} buttonText="Book a Session" />
+              <NewsCard key={item.id} item={item} buttonTextKey="bookSession" />
             ))}
           </div>
         )}

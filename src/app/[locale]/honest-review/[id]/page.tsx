@@ -63,7 +63,7 @@ const HonestReviewDetailPage = () => {
               }}
             />
             <div className="flex justify-center lg:justify-start">
-              <PrimaryButton href="#" title="Watch Video" />
+              <PrimaryButton href="#" titleKey="watchVideo" />
             </div>
           </div>
         </div>

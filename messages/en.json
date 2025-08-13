@@ -97,5 +97,16 @@
       "title": "Heal the Amygdala Automatic Response",
       "description": "Techniques aimed at calming and retraining the amygdala to reduce automatic fear or stress reactions, promoting emotional balance and mental well-being."
     }
+  },
+  "media": {
+    "asFeatureIn": "As feature in"
+  },
+  "button": {
+    "playVideo": "Play Video",
+    "seeMore": "See More",
+    "readMore": "Read More",
+    "watchedCount": "2000 people have watched this podcast",
+    "bookSession": "Book a Session",
+    "watchVideo": "Watch Video"
   }
 }

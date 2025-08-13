@@ -11,7 +11,7 @@ const Testimonials = () => {
       </div>
       <InfiniteVerticalCards />
       <div className="flex flex-col justify-center items-center mt-[20px] lg:mt-[30px]">
-        <PrimaryButton title="Lihat Lainnya" href="/testimonial" />
+        <PrimaryButton titleKey="seeMore" href="/testimonial" />
       </div>
     </main>
   );

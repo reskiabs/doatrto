@@ -12,10 +12,7 @@ const OpenEvidenceBasedSystem = () => {
       </div>
       <OpenEvidenceCarousel />
       <div className="flex flex-col justify-center items-center mt-[20px] lg:mt-[30px]">
-        <PrimaryButton
-          title="Lihat Lainnya"
-          subtitle="2000 orang telah menonton podcast ini."
-        />
+        <PrimaryButton titleKey="seeMore" subtitleKey="watchedCount" />
       </div>
     </main>
   );
