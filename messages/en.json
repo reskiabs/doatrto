@@ -6,5 +6,185 @@
   "LocalSwitcher": {
     "label": "Change Language",
     "locale": "{locale, select, de {Deutsch} en {English} other {Unknown} }"
+  },
+  "Header": {
+    "menu": {
+      "home": "Home",
+      "aboutDoa": "About DOA",
+      "whatIsDoa": "What is DOA?",
+      "storyOfCra": "Story of CRA",
+      "howItWorks": "How it Works",
+      "whenEffective": "When DOA System is Effective?",
+      "sessionProtocol": "Session Protocol",
+      "trustTransparency": "Trust & Transparency",
+      "testimonial": "Testimonial",
+      "faq": "FAQ",
+      "article": "Article",
+      "contactUs": "Contact us"
+    }
+  },
+  "Footer": {
+    "tryItNow": "Try it right now",
+    "upgradeMind": "Upgrade Your Mind. Elevate Your Life. Shape the Future.",
+    "bookSession": "Book a Session",
+    "learnMethod": "Learn the Method",
+    "programs": "Programs",
+    "programsLink1": "All Programs",
+    "programsLink2": "Become a Member",
+    "programsLink3": "Download The App",
+    "programsLink4": "Certified Coach",
+    "aboutDoa": "About DOA",
+    "aboutDoaLink1": "Who We Are",
+    "aboutDoaLink2": "Press",
+    "aboutDoaLink3": "Blog",
+    "aboutDoaLink4": "Careers",
+    "support": "Support",
+    "supportLink1": "Help Center",
+    "supportLink2": "Contact Us",
+    "supportLink3": "Status",
+    "supportLink4": "FAQ",
+    "events": "Events",
+    "eventsLink1": "Terms of Service",
+    "eventsLink2": "Privacy Policy",
+    "eventsLink3": "Membership",
+    "eventsLink4": "Code of Conduct",
+    "copyright": "© 2025, All rights reserved, DOA TRTO"
+  },
+  "ContactUs": {
+    "title": "Contact Us",
+    "phone": "+62 878-8889-3838",
+    "email": "info.doatrto@gmail.com",
+    "address": "Setiabudi District, South Jakarta, DKI Jakarta",
+    "buttonDirection": "Open in Google Maps"
+  },
+  "FeatureButtons": {
+    "session": "Session",
+    "klasses": "Klasses",
+    "facilitators": "Facilitators"
+  },
+  "ContentTitle": {
+    "trustedByMedicalExpert": "Trusted by Medical Expert",
+    "beyondConventionalTherapies": "Beyond Conventional Therapies",
+    "honestReview": "Honest Review",
+    "whatsTheDifferences": "What’s The Differences?",
+    "openEvidenceBasedSystem": "Open Evidence Based System",
+    "testimonials": "Testimonials",
+    "latestNews": "The Latest News from D.O.A TRTO"
+  },
+  "beyondConventionalTherapies": "Going Beyond Conventional Therapies",
+  "items": {
+    "1": {
+      "title": "Non Root Cause Processing",
+      "description": "A systematic approach focused on identifying and addressing the underlying factors of an issue, rather than just treating symptoms. This ensures long-term and effective solutions."
+    },
+    "2": {
+      "title": "Stage of Liberation",
+      "description": "The phase where limitations or constraints are removed, enabling growth, freedom, and transformation towards a more optimal state of being or operation."
+    },
+    "3": {
+      "title": "Repeated, Consistent Result",
+      "description": "Ensuring that processes or treatments yield reliable outcomes over time, confirming their validity and dependability through consistent repetition."
+    },
+    "4": {
+      "title": "Totally Measured and Calibrated Process",
+      "description": "A precisely controlled method where every step is accurately quantified and adjusted, guaranteeing maximum accuracy and efficiency."
+    },
+    "5": {
+      "title": "Violently Test & Recheck",
+      "description": "A rigorous and intensive testing procedure designed to challenge and verify the robustness and reliability of a system or process under extreme conditions."
+    },
+    "6": {
+      "title": "Heal the Amygdala Automatic Response",
+      "description": "Techniques aimed at calming and retraining the amygdala to reduce automatic fear or stress reactions, promoting emotional balance and mental well-being."
+    }
+  },
+  "media": {
+    "asFeatureIn": "As feature in"
+  },
+  "button": {
+    "playVideo": "Play Video",
+    "seeMore": "See More",
+    "readMore": "Read More",
+    "watchedCount": "2000 people have watched this podcast",
+    "bookSession": "Book a Session",
+    "watchVideo": "Watch Video"
+  },
+  "DetailHeader": {
+    "session": {
+      "title": "Session",
+      "description": "Explore and participate in our personalized sessions designed to support your growth and healing journey."
+    },
+    "klasses": {
+      "title": "Klasses",
+      "description": "Join our diverse classes tailored to various topics and skill levels to enhance your knowledge."
+    },
+    "facilitator": {
+      "title": "Facilitator",
+      "description": "Meet our experienced facilitators who guide and support you throughout your sessions and classes."
+    },
+    "trustedByMedicalExperts": {
+      "title": "Trusted by Medical Experts",
+      "description": "Our methods and systems are endorsed and supported by professionals in the medical community."
+    },
+    "honestReview": {
+      "title": "Honest Review",
+      "description": "Read genuine reviews and feedback from participants who have experienced our programs."
+    },
+    "theDifferences": {
+      "title": "The Differences",
+      "description": "Discover what sets our approach apart from conventional methods and why it’s effective."
+    },
+    "openEvidenceBasedSystem": {
+      "title": "Open Evidence Based System",
+      "description": "Learn about our transparent system grounded in scientific evidence and proven results."
+    },
+    "whatIsDoa": {
+      "title": "What is DOA?",
+      "description": "Understand the core principles and purpose behind the Divine Oracular Assistance system."
+    },
+    "storyOfCra": {
+      "title": "Story of CRA",
+      "description": "Explore the journey and background story of the CRA initiative and its impact."
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "description": "A clear explanation of the processes and mechanisms that make our system effective."
+    },
+    "whenDoaSystemIsEffective": {
+      "title": "When DOA System is Effective?",
+      "description": "Find out the scenarios and conditions where the DOA system delivers the best results."
+    },
+    "sessionProtocol": {
+      "title": "Session Protocol",
+      "description": "Detailed guidelines and steps followed during our sessions to ensure consistency and quality."
+    },
+    "trustAndTransparency": {
+      "title": "Trust and Transparency",
+      "description": "Our commitment to openness and honesty in all our practices and interactions."
+    },
+    "testimonial": {
+      "title": "Testimonial",
+      "description": "Hear directly from those who have benefited from our services and programs."
+    },
+    "faq": {
+      "title": "FAQ",
+      "description": "Frequently asked questions answered to help you understand more about our offerings."
+    },
+    "theLatestNewsFromDoaTrto": {
+      "title": "The Latest News from D.O.A TRTO",
+      "description": "Stay updated with the most recent announcements, events, and news from D.O.A TRTO."
+    }
+  },
+  "storyOfCra": {
+    "backgroundTitle": "Background",
+    "backgroundContent": "Allow me to share my life background. I am the eldest of three siblings, having emotional struggles in the past related to my family and trauma from the 1998 riots. I desperately wanted to feel happiness and peace within myself. I used to frequently explode in anger and had extreme fears. During major protests in Indonesia, I always fled abroad, restless and unable to sleep. Even when abroad, I spent nights closely monitoring events in Jakarta. I kept praying to God for help and answers while continuously seeking a solution.",
+
+    "answerTitle": "God's Answer",
+    "answerContent": "Finally, God answered my prayers. Exactly 10 years later, every piece of the puzzle and question was complete, marking the beginning of Divine Oracular Assistance (D.O.A), the answer to my long prayers. Initially, I used this technique to solve my own life's problems and it worked! Now, my life is calm, happy, full of peace. Not a day passes without a sincere smile and gratitude for the blessings I receive, and my family has reunited harmoniously."
+  },
+  "profileCoachRheo": {
+    "title": "Profile Coach Rheo",
+    "intro": "My name is Caezarro, but you can call me Rheo.\n\nI’m sure you’re curious about the hundreds of friends who have experienced the DOA TRTO technique and how it has transformed their lives, which is why you are here.",
+    "imageAlt": "Coach Rheo profile picture"
   }
 }

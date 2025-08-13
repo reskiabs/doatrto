@@ -1,53 +1,68 @@
+"use client";
+
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { LogoPlaceholder } from "../../lib/helper/ImagePlacholder";
 
-const footerLinks = [
-  {
-    title: "Programs",
-    links: [
-      "All Programs",
-      "Become a Member",
-      "Download The App",
-      "Certified Coach",
-    ],
-  },
-  {
-    title: "About DOA",
-    links: ["Who We Are", "Press", "Blog", "Careers"],
-  },
-  {
-    title: "Support",
-    links: ["Help Center", "Contact Us", "Status", "FAQ"],
-  },
-  {
-    title: "Events",
-    links: [
-      "Terms of Service",
-      "Privacy Policy",
-      "Membership",
-      "Code of Conduct",
-    ],
-  },
-];
-
 const Footer = () => {
+  const t = useTranslations("Footer");
+
+  const footerLinks = [
+    {
+      title: t("programs"),
+      links: [
+        t("programsLink1"),
+        t("programsLink2"),
+        t("programsLink3"),
+        t("programsLink4"),
+      ],
+    },
+    {
+      title: t("aboutDoa"),
+      links: [
+        t("aboutDoaLink1"),
+        t("aboutDoaLink2"),
+        t("aboutDoaLink3"),
+        t("aboutDoaLink4"),
+      ],
+    },
+    {
+      title: t("support"),
+      links: [
+        t("supportLink1"),
+        t("supportLink2"),
+        t("supportLink3"),
+        t("supportLink4"),
+      ],
+    },
+    {
+      title: t("events"),
+      links: [
+        t("eventsLink1"),
+        t("eventsLink2"),
+        t("eventsLink3"),
+        t("eventsLink4"),
+      ],
+    },
+  ];
+
   return (
     <div className="w-full flex flex-col justify-center items-center mt-[50px] lg:mt-[100px]">
       {/* main footer */}
       <div className="bg-gradient-to-b w-[98.5%] rounded-[20px] from-primary to-secondary h-[163px] flex flex-col justify-center items-center lg:h-[319px]">
         <h1 className="font-medium text-3xl text-white lg:text-[70px]">
-          Try it right now
+          {t("tryItNow")}
         </h1>
         <p className="font-medium text-2xs text-neutral-400 mt-1 mb-2.5 lg:text-xl lg:mt-5 lg:mb-7">
-          Upgrade Your Mind. Elevate Your Life. Shape the Future.
+          {t("upgradeMind")}
         </p>
         {/* buttons */}
         <div className="flex items-center gap-[10px] lg:gap-5">
           <button className="bg-gradient-to-r from-white to-[#EEEEEE] text-secondary text-2xs font-medium py-3.5 px-[22px] rounded-full lg:text-lg lg:py-[19px] lg:px-[30px]">
-            Book a Session
+            {t("bookSession")}
           </button>
           <button className="border border-[#DDDDDD] text-white text-2xs font-medium py-3.5 px-[22px] rounded-full lg:text-lg lg:py-[19px] lg:px-[30px] lg:border-2">
-            Pelajari Metode
+            {t("learnMethod")}
           </button>
         </div>
       </div>
@@ -92,7 +107,7 @@ const Footer = () => {
         {/* copyright */}
         <div className="border-t border-neutral-400 flex items-center justify-center py-[15px] lg:justify-start">
           <p className="text-2xs text-body font-medium lg:text-md">
-            © 2025, All rights reserved, DOA TRTO
+            {t("copyright")}
           </p>
         </div>
       </div>

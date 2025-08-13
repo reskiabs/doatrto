@@ -1,5 +1,6 @@
 "use client";
 import { motion, useScroll, useTransform } from "motion/react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -9,6 +10,7 @@ interface TimelineEntry {
 }
 
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
+  const t = useTranslations("profileCoachRheo");
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
@@ -34,22 +36,17 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         <div className="flex flex-col items-center lg:flex-row justify-between lg:w-[1080px]">
           <div className="px-[15px] lg:px-0">
             <h2 className="text-[28px] lg:text-[40px] text-center lg:text-left mb-4 text-tertiary font-extrabold">
-              Profile Coach Rheo
+              {t("title")}
             </h2>
-            <p className="text-neutral-700 dark:text-neutral-300 text-center lg:text-left text-sm lg:text-xl lg:leading-9">
-              Nama saya Caezarro, panggilan saya Rheo.
-              <br />
-              <br />
-              Saya yakin anda penasaran dengan ratusan teman-teman lain yang
-              sudah merasakan teknik DOA TRTO yang berhasil merubah hidup
-              mereka, maka Anda ada disini.
+            <p className="text-neutral-700 dark:text-neutral-300 text-center lg:text-left text-sm lg:text-xl lg:leading-9 whitespace-pre-line">
+              {t("intro")}
             </p>
           </div>
           <div className="lg:max-w-[555px] lg:ml-[100px]">
             <div className="relative w-[372px] lg:w-[554px] h-[341px] lg:h-[408px]">
               <Image
                 src="/images/coach-rheo.png"
-                alt="startup template"
+                alt={t("imageAlt")}
                 fill
                 className="object-contain"
               />

@@ -22,9 +22,8 @@ const OpenEvidenceDetailPage = () => {
     <div>
       <div className="flex flex-col justify-center items-center bg-gradient-to-b from-white via-[#EBF0F8] to-white pt-[50px] lg:pt-[100px]">
         <DetailHeader
-          title="Open Evidence
-Base System"
-          description="Lorem Ipsum is simply dummy text of the printing and typesetting industry..."
+          titleKey="openEvidenceBasedSystem"
+          descriptionKey="openEvidenceBasedSystem"
         />
         <div className="relative size-[372px] lg:w-[1140px] bg-surface lg:h-[641px] rounded-[15px] lg:rounded-[30px] overflow-hidden mt-[50px]">
           <div

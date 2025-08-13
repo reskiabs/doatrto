@@ -2,6 +2,7 @@ import Kompas from "@/public/images/kompas.svg";
 import Liputan6 from "@/public/images/liputan6.svg";
 import Suara from "@/public/images/suaradotcom.svg";
 import TribunNews from "@/public/images/tribunnews.svg";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 const data = [
@@ -11,11 +12,12 @@ const data = [
   { id: 4, alt: "liputan6", image: Liputan6 },
 ];
 const Media = () => {
+  const t = useTranslations("media");
   return (
     <main className="flex flex-col items-center w-full mt-[50px] md:mt-[80px] lg:mt-[100px] overflow-x-hidden">
       <div className="w-full max-w-[calc(100%-10px)] h-[95px] lg:h-[220px] bg-tertiary flex flex-col items-center rounded-[10px] lg:rounded-[20px] justify-center px-2">
         <p className="text-2xs lg:text-2xl font-medium text-white">
-          As feature in
+          {t("asFeatureIn")}
         </p>
 
         {/* Wrap scrolling content */}

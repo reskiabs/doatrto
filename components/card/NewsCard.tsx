@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -8,11 +9,12 @@ type NewsCardProps = {
     description: string;
     thumbnail: string;
   };
-  buttonText: string;
+  buttonTextKey: string;
   page?: string;
 };
 
-const NewsCard = ({ item, buttonText, page }: NewsCardProps) => {
+const NewsCard = ({ item, buttonTextKey, page }: NewsCardProps) => {
+  const t = useTranslations("button");
   return (
     <div
       key={item.id}
@@ -45,7 +47,7 @@ const NewsCard = ({ item, buttonText, page }: NewsCardProps) => {
           href={page ? `/${page}/${item.id}` : "#"}
           className="text-blue-600 text-2xs lg:text-md font-medium hover:underline"
         >
-          {buttonText} &gt;
+          {t(buttonTextKey)} &gt;
         </Link>
       </div>
     </div>

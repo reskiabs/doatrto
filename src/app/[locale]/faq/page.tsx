@@ -25,14 +25,7 @@ const FAQPage = () => {
     <div>
       {/* Header */}
       <div className="flex flex-col items-center justify-center bg-gradient-to-b from-white via-[#EBF0F8] to-white pt-[50px] lg:pt-[100px]">
-        <DetailHeader
-          title="FAQ"
-          description={
-            locale === "id"
-              ? "Lebih dari 500 orang sudah terbantu dan merasakan kebahagiaan dengan Divine Oracular Assistance Tension Releasing Technique Online"
-              : "More than 500 people have been helped and experienced happiness with Divine Oracular Assistance Tension Releasing Technique Online"
-          }
-        />
+        <DetailHeader titleKey="faq" descriptionKey="faq" />
       </div>
 
       {/* FAQ Items */}

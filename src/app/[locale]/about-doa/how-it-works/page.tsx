@@ -24,10 +24,7 @@ const HowItWorksPage = () => {
 
   return (
     <div className="flex flex-col justify-center items-center bg-gradient-to-b from-white via-[#EBF0F8] to-white pt-[50px] lg:pt-[100px] px-[15px] lg:px-0">
-      <DetailHeader
-        title="How It Works"
-        description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-      />
+      <DetailHeader titleKey="howItWorks" descriptionKey="howItWorks" />
       <div className="mt-[50px] lg:mt-[100px] grid grid-cols-1 lg:grid-cols-2 gap-6">
         {items.map((item, index) => (
           <div

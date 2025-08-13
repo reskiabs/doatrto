@@ -19,37 +19,36 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-
-const menuItems = [
-  { name: "Home", route: "/" },
-  {
-    name: "About DOA",
-    children: [
-      { name: "What is DOA?", route: "/about-doa/what-is-doa" },
-      { name: "Story of CRA", route: "/about-doa/story-of-cra" },
-      { name: "How it Works", route: "/about-doa/how-it-works" },
-      {
-        name: "When DOA System is Effective?",
-        route: "/about-doa/when-doa-system-is-effective",
-      },
-      {
-        name: "Session Protocol",
-        route: "/about-doa/session-protocol",
-      },
-    ],
-  },
-  { name: "Trust & Transparency", route: "/trust-and-transparency" },
-  { name: "Testimonial", route: "/testimonial" },
-  { name: "FAQ", route: "/faq" },
-  { name: "Article", route: "/article" },
-  { name: "Contact us", route: "/contact" },
-];
+import { useTranslations } from "next-intl";
 
 const Header = () => {
+  const t = useTranslations("Header.menu");
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [showContactPopup, setShowContactPopup] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const menuItems = [
+    { name: t("home"), route: "/" },
+    {
+      name: t("aboutDoa"),
+      children: [
+        { name: t("whatIsDoa"), route: "/about-doa/what-is-doa" },
+        { name: t("storyOfCra"), route: "/about-doa/story-of-cra" },
+        { name: t("howItWorks"), route: "/about-doa/how-it-works" },
+        {
+          name: t("whenEffective"),
+          route: "/about-doa/when-doa-system-is-effective",
+        },
+        { name: t("sessionProtocol"), route: "/about-doa/session-protocol" },
+      ],
+    },
+    { name: t("trustTransparency"), route: "/trust-and-transparency" },
+    { name: t("testimonial"), route: "/testimonial" },
+    { name: t("faq"), route: "/faq" },
+    { name: t("article"), route: "/article" },
+    { name: t("contactUs"), route: "/contact" },
+  ];
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -110,7 +109,7 @@ const Header = () => {
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center space-x-[38px] text-md font-normal text-shadow-text">
           {menuItems
-            .filter((item) => item.name !== "Contact us")
+            .filter((item) => item.name !== t("contactUs"))
             .map((item) => {
               const active = isRouteActive(item.route || "");
               const hasChildren = !!item.children;
@@ -168,9 +167,9 @@ const Header = () => {
 
           <button
             onClick={() => setShowContactPopup(true)}
-            className="px-5 py-2.5 text-md font-medium border-2 rounded-full border-primary text-primary hover:bg-secondary/20 transition"
+            className="px-5 py-2.5 text-md font-medium border-2 bg-white rounded-full border-primary text-primary hover:bg-secondary/20 transition"
           >
-            Contact us
+            {t("contactUs")}
           </button>
         </nav>
 
@@ -254,7 +253,6 @@ const Header = () => {
           <div className="w-full py-4 border-b border-gray-300 flex justify-center">
             <LanguageSwitcher />
           </div>
-
           <button
             onClick={() => {
               setShowContactPopup(true);
@@ -262,7 +260,7 @@ const Header = () => {
             }}
             className="w-full py-4 text-xs font-medium text-center transition border-b border-gray-300"
           >
-            Contact us
+            {t("contactUs")}
           </button>
         </div>
       )}

@@ -10,7 +10,7 @@ const SessionPrice = () => {
         <p className="text-[40px] lg:text-[70px] text-tertiary font-bold mb-[15px] lg:mb-[30px]">
           Rp 2.500.000
         </p>
-        <PrimaryButton href="#" title="Book a Session" />
+        <PrimaryButton href="#" titleKey="bookSession" />
       </div>
     </div>
   );
