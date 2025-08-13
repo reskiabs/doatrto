@@ -174,5 +174,17 @@
       "title": "Berita Terbaru dari D.O.A TRTO",
       "description": "Tetap terupdate dengan pengumuman, acara, dan berita terbaru dari D.O.A TRTO."
     }
+  },
+  "storyOfCra": {
+    "backgroundTitle": "Latar Belakang",
+    "backgroundContent": "Ijinkan saya menceritakan latar belakang hidup saya. Saya anak pertama dari 3 bersaudara, memiliki masalah emosi di masa lalu terkait keluarga dan trauma akibat kerusuhan 1998. Saya sangat ingin merasakan kebahagiaan dan ketenangan dalam diri saya. Dulu saya sering marah-marah dan memiliki ketakutan yang sangat ekstrim. Saat ada demo besar di Indonesia, saya selalu melarikan diri ke luar negeri, gelisah dan sulit tidur. Bahkan saat di luar negeri, sepanjang malam saya memantau semua kejadian di Jakarta. Saya terus berdoa kepada Tuhan memohon pertolongan dan jawaban sambil berusaha mencari jalan keluar.",
+
+    "answerTitle": "Jawaban Tuhan",
+    "answerContent": "Akhirnya Tuhan menjawab doa saya. Tepat 10 tahun kemudian, setiap potongan teka-teki dan pertanyaan saya lengkap, menandai awal terbentuknya Divine Oracular Assistance (D.O.A), jawaban dari doa panjang saya. Awalnya teknik ini saya gunakan untuk mengatasi masalah hidup saya sendiri dan ternyata berhasil! Kini hidup saya tenang, bahagia, penuh kedamaian. Tidak ada hari berlalu tanpa senyuman tulus dan rasa syukur atas nikmat Tuhan, dan keluarga saya kembali rukun."
+  },
+  "profileCoachRheo": {
+    "title": "Profil Coach Rheo",
+    "intro": "Nama saya Caezarro, panggilan saya Rheo.\n\nSaya yakin Anda penasaran dengan ratusan teman yang telah merasakan teknik DOA TRTO yang berhasil mengubah hidup mereka, maka Anda berada di sini.",
+    "imageAlt": "Foto profil Coach Rheo"
   }
 }
