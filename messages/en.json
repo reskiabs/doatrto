@@ -6,5 +6,48 @@
   "LocalSwitcher": {
     "label": "Change Language",
     "locale": "{locale, select, de {Deutsch} en {English} other {Unknown} }"
+  },
+  "Header": {
+    "menu": {
+      "home": "Home",
+      "aboutDoa": "About DOA",
+      "whatIsDoa": "What is DOA?",
+      "storyOfCra": "Story of CRA",
+      "howItWorks": "How it Works",
+      "whenEffective": "When DOA System is Effective?",
+      "sessionProtocol": "Session Protocol",
+      "trustTransparency": "Trust & Transparency",
+      "testimonial": "Testimonial",
+      "faq": "FAQ",
+      "article": "Article",
+      "contactUs": "Contact us"
+    }
+  },
+  "Footer": {
+    "tryItNow": "Try it right now",
+    "upgradeMind": "Upgrade Your Mind. Elevate Your Life. Shape the Future.",
+    "bookSession": "Book a Session",
+    "learnMethod": "Learn the Method",
+    "programs": "Programs",
+    "programsLink1": "All Programs",
+    "programsLink2": "Become a Member",
+    "programsLink3": "Download The App",
+    "programsLink4": "Certified Coach",
+    "aboutDoa": "About DOA",
+    "aboutDoaLink1": "Who We Are",
+    "aboutDoaLink2": "Press",
+    "aboutDoaLink3": "Blog",
+    "aboutDoaLink4": "Careers",
+    "support": "Support",
+    "supportLink1": "Help Center",
+    "supportLink2": "Contact Us",
+    "supportLink3": "Status",
+    "supportLink4": "FAQ",
+    "events": "Events",
+    "eventsLink1": "Terms of Service",
+    "eventsLink2": "Privacy Policy",
+    "eventsLink3": "Membership",
+    "eventsLink4": "Code of Conduct",
+    "copyright": "© 2025, All rights reserved, DOA TRTO"
   }
 }

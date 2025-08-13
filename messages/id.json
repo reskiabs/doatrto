@@ -5,6 +5,49 @@
   },
   "LocalSwitcher": {
     "label": "Ganti Bahasa",
-    "locale": "{locale, select, id {Tidak Dikenal} en {Inggris} other {Tidak Dikenal} }"
+    "locale": "{locale, select, id {Indonesia} en {Inggris} other {Tidak Dikenal} }"
+  },
+  "Header": {
+    "menu": {
+      "home": "Beranda",
+      "aboutDoa": "Tentang DOA",
+      "whatIsDoa": "Apa itu DOA?",
+      "storyOfCra": "Kisah CRA",
+      "howItWorks": "Bagaimana Cara Kerjanya",
+      "whenEffective": "Kapan Sistem DOA Efektif?",
+      "sessionProtocol": "Protokol Sesi",
+      "trustTransparency": "Kepercayaan & Transparansi",
+      "testimonial": "Testimoni",
+      "faq": "FAQ",
+      "article": "Artikel",
+      "contactUs": "Hubungi Kami"
+    }
+  },
+  "Footer": {
+    "tryItNow": "Coba Sekarang Juga",
+    "upgradeMind": "Upgrade Pikiranmu. Tingkatkan Hidupmu. Bentuk Masa Depan.",
+    "bookSession": "Pesan Sesi",
+    "learnMethod": "Pelajari Metode",
+    "programs": "Program",
+    "programsLink1": "Semua Program",
+    "programsLink2": "Jadi Member",
+    "programsLink3": "Unduh Aplikasi",
+    "programsLink4": "Pelatih Bersertifikat",
+    "aboutDoa": "Tentang DOA",
+    "aboutDoaLink1": "Siapa Kami",
+    "aboutDoaLink2": "Pers",
+    "aboutDoaLink3": "Blog",
+    "aboutDoaLink4": "Karir",
+    "support": "Dukungan",
+    "supportLink1": "Pusat Bantuan",
+    "supportLink2": "Hubungi Kami",
+    "supportLink3": "Status",
+    "supportLink4": "FAQ",
+    "events": "Acara",
+    "eventsLink1": "Syarat Layanan",
+    "eventsLink2": "Kebijakan Privasi",
+    "eventsLink3": "Keanggotaan",
+    "eventsLink4": "Kode Etik",
+    "copyright": "© 2025, Semua hak dilindungi, DOA TRTO"
   }
 }
