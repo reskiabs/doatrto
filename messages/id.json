@@ -108,5 +108,71 @@
     "watchedCount": "2000 orang telah menonton podcast ini",
     "bookSession": "Booking Sesi",
     "watchVideo": "Tonton Video"
+  },
+  "DetailHeader": {
+    "session": {
+      "title": "Sesi",
+      "description": "Jelajahi dan ikuti sesi personalisasi kami yang dirancang untuk mendukung pertumbuhan dan perjalanan penyembuhan Anda."
+    },
+    "klasses": {
+      "title": "Kelas",
+      "description": "Ikuti berbagai kelas kami yang disesuaikan dengan berbagai topik dan tingkat keahlian untuk meningkatkan pengetahuan Anda."
+    },
+    "facilitator": {
+      "title": "Fasilitator",
+      "description": "Kenali fasilitator berpengalaman kami yang membimbing dan mendukung Anda selama sesi dan kelas."
+    },
+    "trustedByMedicalExperts": {
+      "title": "Dipercaya oleh Ahli Medis",
+      "description": "Metode dan sistem kami didukung serta diakui oleh para profesional di komunitas medis."
+    },
+    "honestReview": {
+      "title": "Ulasan Jujur",
+      "description": "Baca ulasan dan feedback asli dari peserta yang telah mengalami program kami."
+    },
+    "theDifferences": {
+      "title": "Perbedaannya",
+      "description": "Temukan apa yang membedakan pendekatan kami dari metode konvensional dan mengapa ini efektif."
+    },
+    "openEvidenceBasedSystem": {
+      "title": "Sistem Berbasis Bukti Terbuka",
+      "description": "Pelajari tentang sistem transparan kami yang didasarkan pada bukti ilmiah dan hasil yang terbukti."
+    },
+    "whatIsDoa": {
+      "title": "Apa itu DOA?",
+      "description": "Pahami prinsip inti dan tujuan di balik sistem Divine Oracular Assistance."
+    },
+    "storyOfCra": {
+      "title": "Kisah CRA",
+      "description": "Jelajahi perjalanan dan latar belakang inisiatif CRA serta dampaknya."
+    },
+    "howItWorks": {
+      "title": "Cara Kerjanya",
+      "description": "Penjelasan jelas tentang proses dan mekanisme yang membuat sistem kami efektif."
+    },
+    "whenDoaSystemIsEffective": {
+      "title": "Kapan Sistem DOA Efektif?",
+      "description": "Temukan skenario dan kondisi dimana sistem DOA memberikan hasil terbaik."
+    },
+    "sessionProtocol": {
+      "title": "Protokol Sesi",
+      "description": "Panduan rinci dan langkah-langkah yang diikuti selama sesi kami untuk memastikan konsistensi dan kualitas."
+    },
+    "trustAndTransparency": {
+      "title": "Kepercayaan dan Transparansi",
+      "description": "Komitmen kami terhadap keterbukaan dan kejujuran dalam semua praktik dan interaksi."
+    },
+    "testimonial": {
+      "title": "Testimonial",
+      "description": "Dengarkan langsung dari mereka yang telah mendapatkan manfaat dari layanan dan program kami."
+    },
+    "faq": {
+      "title": "FAQ",
+      "description": "Pertanyaan yang sering diajukan beserta jawabannya untuk membantu Anda memahami lebih lanjut tentang penawaran kami."
+    },
+    "theLatestNewsFromDoaTrto": {
+      "title": "Berita Terbaru dari D.O.A TRTO",
+      "description": "Tetap terupdate dengan pengumuman, acara, dan berita terbaru dari D.O.A TRTO."
+    }
   }
 }

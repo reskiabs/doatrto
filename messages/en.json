@@ -108,5 +108,71 @@
     "watchedCount": "2000 people have watched this podcast",
     "bookSession": "Book a Session",
     "watchVideo": "Watch Video"
+  },
+  "DetailHeader": {
+    "session": {
+      "title": "Session",
+      "description": "Explore and participate in our personalized sessions designed to support your growth and healing journey."
+    },
+    "klasses": {
+      "title": "Klasses",
+      "description": "Join our diverse classes tailored to various topics and skill levels to enhance your knowledge."
+    },
+    "facilitator": {
+      "title": "Facilitator",
+      "description": "Meet our experienced facilitators who guide and support you throughout your sessions and classes."
+    },
+    "trustedByMedicalExperts": {
+      "title": "Trusted by Medical Experts",
+      "description": "Our methods and systems are endorsed and supported by professionals in the medical community."
+    },
+    "honestReview": {
+      "title": "Honest Review",
+      "description": "Read genuine reviews and feedback from participants who have experienced our programs."
+    },
+    "theDifferences": {
+      "title": "The Differences",
+      "description": "Discover what sets our approach apart from conventional methods and why it’s effective."
+    },
+    "openEvidenceBasedSystem": {
+      "title": "Open Evidence Based System",
+      "description": "Learn about our transparent system grounded in scientific evidence and proven results."
+    },
+    "whatIsDoa": {
+      "title": "What is DOA?",
+      "description": "Understand the core principles and purpose behind the Divine Oracular Assistance system."
+    },
+    "storyOfCra": {
+      "title": "Story of CRA",
+      "description": "Explore the journey and background story of the CRA initiative and its impact."
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "description": "A clear explanation of the processes and mechanisms that make our system effective."
+    },
+    "whenDoaSystemIsEffective": {
+      "title": "When DOA System is Effective?",
+      "description": "Find out the scenarios and conditions where the DOA system delivers the best results."
+    },
+    "sessionProtocol": {
+      "title": "Session Protocol",
+      "description": "Detailed guidelines and steps followed during our sessions to ensure consistency and quality."
+    },
+    "trustAndTransparency": {
+      "title": "Trust and Transparency",
+      "description": "Our commitment to openness and honesty in all our practices and interactions."
+    },
+    "testimonial": {
+      "title": "Testimonial",
+      "description": "Hear directly from those who have benefited from our services and programs."
+    },
+    "faq": {
+      "title": "FAQ",
+      "description": "Frequently asked questions answered to help you understand more about our offerings."
+    },
+    "theLatestNewsFromDoaTrto": {
+      "title": "The Latest News from D.O.A TRTO",
+      "description": "Stay updated with the most recent announcements, events, and news from D.O.A TRTO."
+    }
   }
 }

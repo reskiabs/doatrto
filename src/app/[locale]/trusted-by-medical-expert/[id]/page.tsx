@@ -24,8 +24,8 @@ const TrustedByMedicalExpertDetailPage = () => {
     <div>
       <div className="flex flex-col justify-center items-center bg-gradient-to-b from-white via-[#EBF0F8] to-white pt-[50px] lg:pt-[100px]">
         <DetailHeader
-          title="Trusted by Medical Experts"
-          description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+          titleKey="trustedByMedicalExperts"
+          descriptionKey="trustedByMedicalExperts"
         />
 
         {loading ? (

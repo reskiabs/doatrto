@@ -10,10 +10,7 @@ const KlassesPage = () => {
   return (
     <div>
       <div className="flex flex-col justify-center items-center bg-gradient-to-b from-white via-[#EBF0F8] to-white pt-[50px] lg:pt-[100px]">
-        <DetailHeader
-          title="Klasses"
-          description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-        />
+        <DetailHeader titleKey="klasses" descriptionKey="klasses" />
       </div>
 
       <div className="w-full max-w-[1140px] mx-auto mt-[50px] lg:mt-[100px]">

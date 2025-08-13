@@ -6,10 +6,7 @@ const StoryOfCRA = () => {
   return (
     <div>
       <div className="flex flex-col justify-center items-center bg-gradient-to-b from-white via-[#EBF0F8] to-white pt-[50px] lg:pt-[100px]">
-        <DetailHeader
-          title="Story of CRA"
-          description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-        />
+        <DetailHeader titleKey="storyOfCra" descriptionKey="storyOfCra" />
         <div className="relative size-[372px] lg:w-[1140px] lg:h-[641px] rounded-[15px] lg:rounded-[50px] overflow-hidden mt-[50px] lg:mt-[100px]">
           <Image
             src="https://images.unsplash.com/photo-1537511446984-935f663eb1f4?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

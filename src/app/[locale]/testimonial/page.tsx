@@ -26,11 +26,7 @@ const Testimonial = () => {
     <div>
       {/* Section Header */}
       <div className="flex flex-col justify-center items-center bg-gradient-to-b from-white via-[#EBF0F8] to-white pt-[104px]">
-        <DetailHeader
-          title="Testimonial"
-          description="Lebih dari 500 orang sudah terbantu dan merasakan kebahagiaan
-dengan Divine Oracular Assistance Tension Releasing Technique Online"
-        />
+        <DetailHeader titleKey="testimonial" descriptionKey="testimonial" />
         <InfiniteVerticalCards />
       </div>
 
