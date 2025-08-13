@@ -7,79 +7,43 @@ import Repeated from "@/public/images/beyond3.svg";
 import Lightning from "@/public/images/beyond4.svg";
 import Violently from "@/public/images/beyond5.svg";
 import Heal from "@/public/images/beyond6.svg";
+import { useTranslations } from "next-intl";
 import { StaticImageData } from "next/image";
 import BeyondCardList from "../card/BeyondCardList";
 import ContentTitle from "../typography/ContentTitle";
 
 type Item = {
   id: number;
-  title: string;
-  description: string;
   image: StaticImageData | string;
 };
 
-const data: Item[] = [
-  {
-    id: 1,
-    title: "Non Root Cause Processing",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
-    image: Flower,
-  },
-  {
-    id: 2,
-    title: "Stage of Liberation",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
-    image: Eye,
-  },
-  {
-    id: 3,
-    title: "Repeated, Consistent Result",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
-    image: Repeated,
-  },
-  {
-    id: 4,
-    title: "Totally Measured and Calibrated Process",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
-    image: Lightning,
-  },
-  {
-    id: 5,
-    title: "Violently Test & Recheck",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
-    image: Violently,
-  },
-  {
-    id: 6,
-    title: "Heal the Amygdala Automatic Response",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
-    image: Heal,
-  },
+const items: Item[] = [
+  { id: 1, image: Flower },
+  { id: 2, image: Eye },
+  { id: 3, image: Repeated },
+  { id: 4, image: Lightning },
+  { id: 5, image: Violently },
+  { id: 6, image: Heal },
 ];
 
 const GoingBeyond = () => {
   const scrollRef = useMobileScrollOffset(0.17);
+  const t = useTranslations("items"); // namespace "items"
 
   return (
     <main className="flex flex-col items-center w-full mt-[50px] md:mt-[80px] lg:mt-[100px]">
       <div className="w-full flex flex-col items-center lg:max-w-[1140px]">
         <div className="flex flex-col items-center mb-[20px] lg:mb-[30px]">
-          <ContentTitle title="Beyond Conventional Therapies" />
+          <ContentTitle titleKey="beyondConventionalTherapies" />
         </div>
 
         <div ref={scrollRef} className="w-full overflow-x-auto scrollbar-hide">
           <div className="grid grid-cols-3 gap-3.5 lg:gap-6 min-w-max snap-x snap-mandatory px-[15px] lg:px-0">
-            {data.map((item) => (
+            {items.map((item) => (
               <div key={item.id} className="snap-start">
                 <BeyondCardList
-                  title={item.title}
-                  description={item.description}
+                  title={t(`${item.id}.title`)}
+                  description={t(`${item.id}.description`)}
                   image={item.image}
                 />
               </div>

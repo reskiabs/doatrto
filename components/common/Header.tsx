@@ -167,7 +167,7 @@ const Header = () => {
 
           <button
             onClick={() => setShowContactPopup(true)}
-            className="px-5 py-2.5 text-md font-medium border-2 rounded-full border-primary text-primary hover:bg-secondary/20 transition"
+            className="px-5 py-2.5 text-md font-medium border-2 bg-white rounded-full border-primary text-primary hover:bg-secondary/20 transition"
           >
             {t("contactUs")}
           </button>

@@ -37,7 +37,7 @@ export function HonestReview() {
   return (
     <div className="w-full h-full mt-[50px] md:mt-[80px] lg:mt-[100px]">
       <div className="flex flex-col items-center -mb-[20px] lg:mb-[30px]">
-        <ContentTitle title="Honest Review" />
+        <ContentTitle titleKey="honestReview" />
       </div>
       <HonestReviewCarousel items={cards} />
     </div>

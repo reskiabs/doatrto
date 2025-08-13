@@ -49,5 +49,53 @@
     "eventsLink3": "Keanggotaan",
     "eventsLink4": "Kode Etik",
     "copyright": "© 2025, Semua hak dilindungi, DOA TRTO"
+  },
+  "ContactUs": {
+    "title": "Hubungi Kami",
+    "phone": "+62 878-8889-3838",
+    "email": "info.doatrto@gmail.com",
+    "address": "Kec. Setiabudi, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+    "buttonDirection": "Direction Google Maps"
+  },
+  "FeatureButtons": {
+    "session": "Sesi",
+    "klasses": "Kelas",
+    "facilitators": "Fasilitator"
+  },
+  "ContentTitle": {
+    "trustedByMedicalExpert": "Dipercaya oleh Pakar Medis",
+    "beyondConventionalTherapies": "Melampaui Terapi Konvensional",
+    "honestReview": "Ulasan Jujur",
+    "whatsTheDifferences": "Apa Bedanya?",
+    "openEvidenceBasedSystem": "Sistem Berbasis Bukti Terbuka",
+    "testimonials": "Testimoni",
+    "latestNews": "Berita Terbaru dari D.O.A TRTO"
+  },
+  "beyondConventionalTherapies": "Melebihi Terapi Konvensional",
+  "items": {
+    "1": {
+      "title": "Proses Non Root Cause",
+      "description": "Pendekatan sistematis yang fokus mengidentifikasi dan menangani faktor-faktor dasar dari suatu masalah, bukan hanya gejalanya. Ini menjamin solusi jangka panjang yang efektif."
+    },
+    "2": {
+      "title": "Tahap Pembebasan",
+      "description": "Fase dimana batasan atau kendala dihilangkan, memungkinkan pertumbuhan, kebebasan, dan transformasi menuju keadaan yang lebih optimal."
+    },
+    "3": {
+      "title": "Hasil Berulang dan Konsisten",
+      "description": "Memastikan bahwa proses atau perawatan menghasilkan hasil yang dapat diandalkan sepanjang waktu, mengkonfirmasi validitas dan ketergantungan melalui pengulangan yang konsisten."
+    },
+    "4": {
+      "title": "Proses Terukur dan Terkalibrasi Sepenuhnya",
+      "description": "Metode yang dikontrol secara tepat dimana setiap langkah diukur dan disesuaikan dengan akurat, menjamin ketepatan dan efisiensi maksimal."
+    },
+    "5": {
+      "title": "Pengujian dan Pemeriksaan Ketat",
+      "description": "Prosedur pengujian yang rigor dan intensif yang dirancang untuk menguji dan memverifikasi ketangguhan serta keandalan sistem atau proses dalam kondisi ekstrim."
+    },
+    "6": {
+      "title": "Menyembuhkan Respons Otomatis Amygdala",
+      "description": "Teknik yang bertujuan menenangkan dan melatih ulang amygdala untuk mengurangi reaksi ketakutan atau stres otomatis, mendorong keseimbangan emosional dan kesejahteraan mental."
+    }
   }
 }

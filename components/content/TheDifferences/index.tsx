@@ -6,7 +6,7 @@ const TheDifferences = () => {
   return (
     <main className="mt-[50px] md:mt-[80px] lg:mt-[100px]">
       <div className="flex flex-col justify-center items-center mb-[20px] lg:mb-[30px]">
-        <ContentTitle title="What’s The Differences?" />
+        <ContentTitle titleKey="whatsTheDifferences" />
       </div>
       <DifferentContinuousCarousel />
     </main>

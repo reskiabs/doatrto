@@ -49,5 +49,53 @@
     "eventsLink3": "Membership",
     "eventsLink4": "Code of Conduct",
     "copyright": "© 2025, All rights reserved, DOA TRTO"
+  },
+  "ContactUs": {
+    "title": "Contact Us",
+    "phone": "+62 878-8889-3838",
+    "email": "info.doatrto@gmail.com",
+    "address": "Setiabudi District, South Jakarta, DKI Jakarta",
+    "buttonDirection": "Open in Google Maps"
+  },
+  "FeatureButtons": {
+    "session": "Session",
+    "klasses": "Klasses",
+    "facilitators": "Facilitators"
+  },
+  "ContentTitle": {
+    "trustedByMedicalExpert": "Trusted by Medical Expert",
+    "beyondConventionalTherapies": "Beyond Conventional Therapies",
+    "honestReview": "Honest Review",
+    "whatsTheDifferences": "What’s The Differences?",
+    "openEvidenceBasedSystem": "Open Evidence Based System",
+    "testimonials": "Testimonials",
+    "latestNews": "The Latest News from D.O.A TRTO"
+  },
+  "beyondConventionalTherapies": "Going Beyond Conventional Therapies",
+  "items": {
+    "1": {
+      "title": "Non Root Cause Processing",
+      "description": "A systematic approach focused on identifying and addressing the underlying factors of an issue, rather than just treating symptoms. This ensures long-term and effective solutions."
+    },
+    "2": {
+      "title": "Stage of Liberation",
+      "description": "The phase where limitations or constraints are removed, enabling growth, freedom, and transformation towards a more optimal state of being or operation."
+    },
+    "3": {
+      "title": "Repeated, Consistent Result",
+      "description": "Ensuring that processes or treatments yield reliable outcomes over time, confirming their validity and dependability through consistent repetition."
+    },
+    "4": {
+      "title": "Totally Measured and Calibrated Process",
+      "description": "A precisely controlled method where every step is accurately quantified and adjusted, guaranteeing maximum accuracy and efficiency."
+    },
+    "5": {
+      "title": "Violently Test & Recheck",
+      "description": "A rigorous and intensive testing procedure designed to challenge and verify the robustness and reliability of a system or process under extreme conditions."
+    },
+    "6": {
+      "title": "Heal the Amygdala Automatic Response",
+      "description": "Techniques aimed at calming and retraining the amygdala to reduce automatic fear or stress reactions, promoting emotional balance and mental well-being."
+    }
   }
 }
