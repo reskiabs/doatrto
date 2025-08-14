@@ -22,15 +22,14 @@ export function useHonestReviews(id?: string) {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchReviews = async () => {
+    const fetchData = async () => {
       setLoading(true);
 
       if (id) {
+        // Fetch detail
         const { data, error } = await supabase
           .from("honest-review")
-          .select(
-            `id, name, title_id, title_en, description_id, description_en, thumbnail, images`
-          )
+          .select("*")
           .eq("id", id)
           .single();
 
@@ -39,48 +38,37 @@ export function useHonestReviews(id?: string) {
           setError("Failed to fetch honest review detail");
         } else if (data) {
           setReview({
-            id: data.id,
-            name: data.name,
+            ...data,
             title: getLocalizedField(data, "title", locale),
             description: getLocalizedField(data, "description", locale),
-            thumbnail: data.thumbnail,
-            images: data.images,
           });
         }
       } else {
+        // Fetch list
         const { data, error } = await supabase
           .from("honest-review")
-          .select(
-            `id, name, title_id, title_en, description_id, description_en, thumbnail, images`
-          );
+          .select("*")
+          .order("id", { ascending: true });
 
         if (error) {
           console.error("Error fetching honest reviews:", error);
           setError("Failed to fetch honest reviews");
         } else {
-          const mapped =
-            data?.map((item) => ({
-              id: item.id,
-              name: item.name,
+          setReviews(
+            (data || []).map((item) => ({
+              ...item,
               title: getLocalizedField(item, "title", locale),
               description: getLocalizedField(item, "description", locale),
-              thumbnail: item.thumbnail,
-              images: item.images,
-            })) || [];
-          setReviews(mapped);
+            }))
+          );
         }
       }
 
       setLoading(false);
     };
 
-    fetchReviews();
+    fetchData();
   }, [id, locale]);
 
-  return {
-    reviews,
-    review,
-    loading,
-    error,
-  };
+  return { reviews, review, loading, error };
 }

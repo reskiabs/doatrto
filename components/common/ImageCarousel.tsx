@@ -53,15 +53,16 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
               <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
 
               {/* Teks Title dan Tombol */}
-              <div className="absolute top-1/2 left-[5%] -translate-y-1/2 max-w-[50%] text-white">
-                <h2 className="text-6xl lg:text-6xl font-extrabold leading-tight drop-shadow-lg">
+              <div className="absolute top-1/2 left-[5%] -translate-y-1/2 max-w-[75%] sm:max-w-[60%] lg:max-w-[50%] text-white">
+                <h2 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold leading-tight drop-shadow-lg">
                   {title}
                 </h2>
                 <Link
                   href={`/banner/${id}`}
-                  className="mt-6 inline-flex items-center px-6 py-3 gap-2 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full text-white font-medium hover:opacity-90 transition"
+                  className="mt-4 sm:mt-5 lg:mt-6 inline-flex items-center px-4 py-2 sm:px-5 sm:py-2.5 lg:px-6 lg:py-3 gap-1 sm:gap-2 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full text-white font-medium hover:opacity-90 transition text-sm sm:text-base lg:text-lg"
                 >
-                  {t("seeDetail")} <MoveRight size={20} />
+                  {t("seeDetail")}{" "}
+                  <MoveRight size={16} className="sm:w-5 sm:h-5" />
                 </Link>
               </div>
             </div>

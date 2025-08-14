@@ -28,48 +28,44 @@ export function useTrustedMedical(id?: string) {
       setLoading(true);
 
       if (id) {
-        // DETAIL → ambil semua bahasa
+        // Fetch detail
         const { data, error } = await supabase
           .from("trusted-medical-expert")
-          .select(
-            `id, title_id, title_en, description_id, description_en, speaker, thumbnail, video, images`
-          )
+          .select("*")
           .eq("id", id)
           .single();
 
         if (error) {
+          console.error("Error fetching medical expert detail:", error);
           setError("Failed to fetch medical expert detail");
-          console.error("Supabase detail error:", error);
         } else if (data) {
           setDetail({
-            id: data.id,
+            ...data,
             title: getLocalizedField(data, "title", locale),
             description: getLocalizedField(data, "description", locale),
-            speaker: data.speaker,
-            thumbnail: data.thumbnail,
-            video: data.video,
-            images: data.images,
           });
         }
       } else {
-        // LIST → ambil semua bahasa (kalau mau title lokal juga)
+        // Fetch list
         const { data, error } = await supabase
           .from("trusted-medical-expert")
-          .select(`id, title_id, title_en, thumbnail`);
+          .select("*")
+          .order("id", { ascending: true });
 
         if (error) {
+          console.error("Error fetching medical experts list:", error);
           setError("Failed to fetch medical experts list");
-          console.error("Supabase list error:", error);
         } else {
-          const mapped = (data || [])
-            .filter((item) => !!item.thumbnail)
-            .map((item) => ({
-              id: item.id.toString(),
-              image: item.thumbnail,
-              url: `/trusted-by-medical-expert/${item.id}`,
-              title: getLocalizedField(item, "title", locale), // opsional
-            }));
-          setItems(mapped);
+          setItems(
+            (data || [])
+              .filter((item) => !!item.thumbnail)
+              .map((item) => ({
+                id: item.id.toString(),
+                image: item.thumbnail,
+                url: `/trusted-by-medical-expert/${item.id}`,
+                title: getLocalizedField(item, "title", locale),
+              }))
+          );
         }
       }
 
@@ -79,10 +75,5 @@ export function useTrustedMedical(id?: string) {
     fetchData();
   }, [id, locale]);
 
-  return {
-    loading,
-    error,
-    items,
-    detail,
-  };
+  return { items, detail, loading, error };
 }

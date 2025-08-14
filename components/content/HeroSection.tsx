@@ -1,7 +1,7 @@
 import { useHero } from "@/hooks/useHero"; // ganti import
-import { ImageDown } from "lucide-react";
 import { useTranslations } from "next-intl";
 import ImageCarousel from "../common/ImageCarousel";
+import ImageLoading from "../common/skeleton/ImageLoading";
 import MainOutlineButton from "./MainOutlineButton";
 
 const HeroSection = () => {
@@ -13,9 +13,7 @@ const HeroSection = () => {
   return (
     <div className="flex flex-col justify-center items-center">
       {loading ? (
-        <div className="relative w-[95%] lg:w-[98.5%] lg:h-[770px] h-[482px] rounded-[20px] lg:rounded-[40px] overflow-hidden bg-surface flex justify-center items-center">
-          <ImageDown className="animate-bounce text-muted" size={150} />
-        </div>
+        <ImageLoading />
       ) : (
         <ImageCarousel images={allThumbnails || []} />
       )}

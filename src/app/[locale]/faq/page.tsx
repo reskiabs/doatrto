@@ -3,12 +3,10 @@
 import FaqAccordionItem from "@/components/content/FaqAccordion";
 import DetailHeader from "@/components/typography/DetailHeader";
 import { useFaq } from "@/hooks/useFaq";
-import { useLocale } from "next-intl";
 import { useEffect, useState } from "react";
 
 const FAQPage = () => {
   const { items, loading, error } = useFaq();
-  const locale = useLocale();
   const [activeId, setActiveId] = useState<number | null>(null);
 
   useEffect(() => {

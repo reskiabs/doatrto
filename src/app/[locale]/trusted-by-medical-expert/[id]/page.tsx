@@ -1,10 +1,11 @@
 "use client";
 
+import { DescriptionSkeleton } from "@/components/common/skeleton/DescriptionSkeleton";
+import ImageLoading from "@/components/common/skeleton/ImageLoading";
 import TrustByMedicalExpert from "@/components/content/TrustedByMedicalExpert";
 import DetailHeader from "@/components/typography/DetailHeader";
 import { useMobileScrollOffset } from "@/hooks/useMobileScrollOffset";
 import { useTrustedMedical } from "@/hooks/useTrustedMedical";
-import { ImageDown } from "lucide-react";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 
@@ -29,8 +30,8 @@ const TrustedByMedicalExpertDetailPage = () => {
         />
 
         {loading ? (
-          <div className="relative size-[372px] lg:w-[1140px] lg:h-[641px] rounded-[15px] lg:rounded-[50px] mt-[50px] overflow-hidden bg-surface flex justify-center items-center">
-            <ImageDown className="animate-bounce text-muted" size={150} />
+          <div className="mt-[50px] flex justify-center w-[372px] lg:w-[1140px]">
+            <ImageLoading />
           </div>
         ) : (
           <div className="relative size-[372px] bg-surface lg:w-[1140px] lg:h-[641px] rounded-[15px] lg:rounded-[30px] overflow-hidden mt-[50px]">
@@ -42,7 +43,7 @@ const TrustedByMedicalExpertDetailPage = () => {
         )}
       </div>
 
-      {!loading && trustedMedical && (
+      {loading && trustedMedical ? (
         <div className="mt-[20px] lg:mt-[100px] px-[15px] lg:px-0 w-full flex flex-col justify-center items-center">
           <div className="w-full max-w-[1140px]">
             <h1 className="font-extrabold text-[28px] lg:text-[40px] text-tertiary text-left">
@@ -84,6 +85,10 @@ const TrustedByMedicalExpertDetailPage = () => {
               </div>
             )}
           </div>
+        </div>
+      ) : (
+        <div className="mt-[20px] lg:mt-[100px] px-[15px] lg:px-0 w-full flex flex-col justify-center items-center">
+          <DescriptionSkeleton />
         </div>
       )}
 
