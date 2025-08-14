@@ -1,6 +1,7 @@
 "use client";
 
 import LoaderContent from "@/components/common/LoaderContent";
+import SomethingWentWrong from "@/components/common/SomethingWentWrong";
 import { useTheDifferences } from "@/hooks/useTheDifferences";
 import { ITheDifferences } from "@/types/the-differences";
 import { DifferentCarouselCard } from "./DifferentCarouselCard";
@@ -37,7 +38,7 @@ export function DifferentContinuousCarousel() {
   const { items, loading, error } = useTheDifferences();
 
   if (loading) return <LoaderContent />;
-  if (error) return <p className="text-center text-red-500">{error}</p>;
+  if (error) return <SomethingWentWrong />;
 
   const mid = Math.ceil(items.length / 2);
   const carouselRow1 = items.slice(0, mid);

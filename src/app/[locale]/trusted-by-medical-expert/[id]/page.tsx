@@ -1,6 +1,7 @@
 "use client";
 
 import LoaderContent from "@/components/common/LoaderContent";
+import SomethingWentWrong from "@/components/common/SomethingWentWrong";
 import TrustByMedicalExpert from "@/components/content/TrustedByMedicalExpert";
 import DetailHeader from "@/components/typography/DetailHeader";
 import { useMobileScrollOffset } from "@/hooks/useMobileScrollOffset";
@@ -12,10 +13,11 @@ const TrustedByMedicalExpertDetailPage = () => {
   const params = useParams();
   const id = params.id as string;
 
-  const { detail: trustedMedical, loading } = useTrustedMedical(id);
+  const { detail: trustedMedical, loading, error } = useTrustedMedical(id);
   const scrollRef = useMobileScrollOffset(0.27, [trustedMedical]);
 
   if (loading) return <LoaderContent />;
+  if (error) return <SomethingWentWrong />;
 
   const hasImages =
     !loading &&

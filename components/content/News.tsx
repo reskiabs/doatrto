@@ -4,18 +4,13 @@ import ContentTitle from "@/components/typography/ContentTitle";
 import { useNews } from "@/hooks/useNews";
 import NewsCard from "../card/NewsCard";
 import LoaderContent from "../common/LoaderContent";
+import SomethingWentWrong from "../common/SomethingWentWrong";
 
 const News = () => {
   const { news, loading, error } = useNews();
 
-  if (loading) {
-    return <LoaderContent />;
-  }
-
-  if (error) {
-    return <p>{error}</p>;
-  }
-
+  if (loading) return <LoaderContent />;
+  if (error) return <SomethingWentWrong />;
   return (
     <main className="mt-[50px] md:mt-[80px] lg:mt-[100px]">
       <div className="flex flex-col justify-center items-center mb-[20px] lg:mb-[30px]">

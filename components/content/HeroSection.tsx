@@ -2,14 +2,15 @@ import { useHero } from "@/hooks/useHero"; // ganti import
 import { useTranslations } from "next-intl";
 import ImageCarousel from "../common/ImageCarousel";
 import LoaderContent from "../common/LoaderContent";
+import SomethingWentWrong from "../common/SomethingWentWrong";
 import MainOutlineButton from "./MainOutlineButton";
 
 const HeroSection = () => {
   const t = useTranslations("FeatureButtons");
   const { loading, error, allThumbnails } = useHero();
 
-  if (error) return <div>{error}</div>;
   if (loading) return <LoaderContent />;
+  if (error) return <SomethingWentWrong />;
 
   return (
     <div className="flex flex-col justify-center items-center">

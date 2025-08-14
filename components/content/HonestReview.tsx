@@ -3,6 +3,7 @@
 import { useHonestReviews } from "@/hooks/useHonestReviews";
 import HonestReviewContent from "../common/HonestReviewContent";
 import LoaderContent from "../common/LoaderContent";
+import SomethingWentWrong from "../common/SomethingWentWrong";
 import ContentTitle from "../typography/ContentTitle";
 import { HonestReviewCard } from "../ui/honest-review/card";
 import { HonestReviewCarousel } from "../ui/honest-review/carousel";
@@ -10,11 +11,8 @@ import { HonestReviewCarousel } from "../ui/honest-review/carousel";
 export function HonestReview() {
   const { reviews, loading, error } = useHonestReviews();
 
-  if (loading) {
-    return <LoaderContent />;
-  }
-
-  if (error) return <div className="text-center text-red-500">{error}</div>;
+  if (loading) return <LoaderContent />;
+  if (error) return <SomethingWentWrong />;
 
   const cards = reviews.map((review, index) => (
     <HonestReviewCard

@@ -1,6 +1,7 @@
 "use client";
 
 import LoaderContent from "@/components/common/LoaderContent";
+import SomethingWentWrong from "@/components/common/SomethingWentWrong";
 import supabase from "@/lib/db";
 import { getLocalizedField } from "@/lib/helper/getLocalizedField";
 import { splitIntoColumns } from "@/lib/split-into-columns";
@@ -21,14 +22,15 @@ export function InfiniteVerticalCards({
   pauseOnHover = true,
   className,
 }: Props) {
-  const locale = useLocale(); // ✅ gunakan locale dari next-intl
+  const locale = useLocale();
   const [testimonials, setTestimonials] = useState<ITestimonial[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const checkScreen = () => {
-      setIsMobile(window.innerWidth < 768); // breakpoint md
+      setIsMobile(window.innerWidth < 768);
     };
     checkScreen();
     window.addEventListener("resize", checkScreen);
@@ -44,6 +46,7 @@ export function InfiniteVerticalCards({
 
       if (error) {
         console.error("Error fetching testimonials:", error);
+        setError("Failed to fetch testimonials");
       } else if (data) {
         const mapped = data.map((item) => ({
           ...item,
@@ -71,6 +74,7 @@ export function InfiniteVerticalCards({
   const offsets = ["0px"];
 
   if (loading) return <LoaderContent />;
+  if (error) return <SomethingWentWrong />;
 
   return (
     <section
