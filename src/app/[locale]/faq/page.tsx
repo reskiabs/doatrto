@@ -1,6 +1,7 @@
 "use client";
 
-import ContentLoader from "@/components/common/ContentLoader";
+import LoaderContent from "@/components/common/LoaderContent";
+import SomethingWentWrong from "@/components/common/SomethingWentWrong";
 import FaqAccordionItem from "@/components/content/FaqAccordion";
 import DetailHeader from "@/components/typography/DetailHeader";
 import { useFaq } from "@/hooks/useFaq";
@@ -20,8 +21,8 @@ const FAQPage = () => {
     setActiveId((prevId) => (prevId === id ? null : id));
   };
 
-  if (loading) return <ContentLoader />;
-  if (error) return <div className="text-center text-red-500">{error}</div>;
+  if (loading) return <LoaderContent />;
+  if (error) return <SomethingWentWrong />;
 
   return (
     <div>

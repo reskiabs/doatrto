@@ -1,14 +1,15 @@
 "use client";
 
-import ContentLoader from "@/components/common/ContentLoader";
+import LoaderContent from "@/components/common/LoaderContent";
+import SomethingWentWrong from "@/components/common/SomethingWentWrong";
 import DetailHeader from "@/components/typography/DetailHeader";
 import { useHowItWorks } from "@/hooks/useHowItWorks";
 
 const HowItWorksPage = () => {
   const { items, loading, error } = useHowItWorks();
 
-  if (loading) return <ContentLoader />;
-  if (error) return <div className="text-center text-red-500">{error}</div>;
+  if (loading) return <LoaderContent />;
+  if (error) return <SomethingWentWrong />;
 
   return (
     <div className="flex flex-col justify-center items-center bg-gradient-to-b from-white via-[#EBF0F8] to-white pt-[50px] lg:pt-[100px] px-[15px] lg:px-0">

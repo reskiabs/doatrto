@@ -3,7 +3,8 @@
 import ImageGrid from "@/components/content/ImageGrid";
 import DetailHeader from "@/components/typography/DetailHeader";
 import { useInformationalPages } from "@/hooks/useInformationalPages";
-import ContentLoader from "../common/ContentLoader";
+import LoaderContent from "../common/LoaderContent";
+import SomethingWentWrong from "../common/SomethingWentWrong";
 
 interface InformationalDetailPageProps {
   index: number;
@@ -18,8 +19,8 @@ const InformationalDetailPage: React.FC<InformationalDetailPageProps> = ({
 }) => {
   const { item, loading, error } = useInformationalPages();
 
-  if (loading) return <ContentLoader />;
-  if (error) return <div className="text-center text-red-500">{error}</div>;
+  if (loading) return <LoaderContent />;
+  if (error) return <SomethingWentWrong />;
 
   const data = item[index];
 

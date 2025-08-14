@@ -1,6 +1,7 @@
 "use client";
 
-import ContentLoader from "@/components/common/ContentLoader";
+import LoaderContent from "@/components/common/LoaderContent";
+import SomethingWentWrong from "@/components/common/SomethingWentWrong";
 import { InfiniteVerticalCards } from "@/components/content/Testimonials/InfiniteVerticalCards";
 import { ContinuousCarousel } from "@/components/content/TrustedByMedicalExpert/ContinuousCarousel";
 import DetailHeader from "@/components/typography/DetailHeader";
@@ -23,8 +24,8 @@ const Testimonial = () => {
     setButtonActive(id);
   };
 
-  if (loading) return <ContentLoader />;
-  if (error) return <div className="text-center text-red-500">{error}</div>;
+  if (loading) return <LoaderContent />;
+  if (error) return <SomethingWentWrong />;
 
   return (
     <div>

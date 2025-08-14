@@ -2,7 +2,8 @@
 
 import { HoverEffect } from "@/components/ui/card-hover-effect";
 import { useTrustTransparency } from "@/hooks/useTrustTransparency";
-import ContentLoader from "../common/ContentLoader";
+import LoaderContent from "../common/LoaderContent";
+import SomethingWentWrong from "../common/SomethingWentWrong";
 
 export function TrustAndTransparencyListCard() {
   const { items, loading, error } = useTrustTransparency();
@@ -13,8 +14,8 @@ export function TrustAndTransparencyListCard() {
     link: `/trust-and-transparency/${item.id}`,
   }));
 
-  if (loading) return <ContentLoader />;
-  if (error) return <div className="text-center text-red-500">{error}</div>;
+  if (loading) return <LoaderContent />;
+  if (error) return <SomethingWentWrong />;
 
   return (
     <div className="max-w-[1140px]">

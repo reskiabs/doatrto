@@ -1,6 +1,6 @@
 "use client";
 
-import ContentLoader from "@/components/common/ContentLoader";
+import LoaderContent from "@/components/common/LoaderContent";
 import { useTheDifferences } from "@/hooks/useTheDifferences";
 import { ITheDifferences } from "@/types/the-differences";
 import { DifferentCarouselCard } from "./DifferentCarouselCard";
@@ -36,7 +36,7 @@ function ScrollRow({ items, animationClass, pauseOnHover }: RowProps) {
 export function DifferentContinuousCarousel() {
   const { items, loading, error } = useTheDifferences();
 
-  if (loading) return <ContentLoader />;
+  if (loading) return <LoaderContent />;
   if (error) return <p className="text-center text-red-500">{error}</p>;
 
   const mid = Math.ceil(items.length / 2);

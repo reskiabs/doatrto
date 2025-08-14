@@ -2,13 +2,13 @@
 
 import { useOpenEvidenceList } from "@/hooks/useOpenEvidenceList";
 import { Carousel } from "../ui/open-evidence-carousel";
-import ContentLoader from "./ContentLoader";
+import LoaderContent from "./LoaderContent";
 
 export function OpenEvidenceCarousel() {
   const { list, loading } = useOpenEvidenceList();
 
   if (loading) {
-    return <ContentLoader />;
+    return <LoaderContent />;
   }
 
   const slideData = list.map((item) => ({

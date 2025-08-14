@@ -1,7 +1,8 @@
 "use client";
 
 import PrimaryButton from "@/components/button/PrimaryButton";
-import ContentLoader from "@/components/common/ContentLoader";
+import LoaderContent from "@/components/common/LoaderContent";
+import SomethingWentWrong from "@/components/common/SomethingWentWrong";
 import { HonestReview } from "@/components/content/HonestReview";
 import ImageGrid from "@/components/content/ImageGrid";
 import DetailHeader from "@/components/typography/DetailHeader";
@@ -12,17 +13,11 @@ import { useParams } from "next/navigation";
 
 const HonestReviewDetailPage = () => {
   const { id } = useParams<{ id: string }>();
-  const { review, loading } = useHonestReviews(id);
+  const { review, loading, error } = useHonestReviews(id);
 
-  if (loading) return <ContentLoader />;
-
-  if (!review) {
-    return (
-      <div className="w-full h-screen flex justify-center items-center">
-        <p className="text-xl text-muted-foreground">Review not found.</p>
-      </div>
-    );
-  }
+  if (!review) return null;
+  if (loading) return <LoaderContent />;
+  if (error) return <SomethingWentWrong />;
 
   const { short, remaining } = splitDescription(review.description || "");
 

@@ -1,7 +1,8 @@
 "use client";
 
-import ContentLoader from "@/components/common/ContentLoader";
 import HonestReviewContent from "@/components/common/HonestReviewContent";
+import LoaderContent from "@/components/common/LoaderContent";
+import SomethingWentWrong from "@/components/common/SomethingWentWrong";
 import DetailHeader from "@/components/typography/DetailHeader";
 import { HonestReviewCard } from "@/components/ui/honest-review/card";
 import { HonestReviewCarousel } from "@/components/ui/honest-review/carousel";
@@ -10,16 +11,16 @@ import { useFeatureFacilitator } from "@/hooks/useFeatureFacilitator";
 const FacilitatorsPage = () => {
   const { facilitators, loading, error } = useFeatureFacilitator();
 
-  const cards = facilitators.map((facilitator, index) => ({
+  const cards = facilitators.map((facilitator) => ({
     name: facilitator.name,
-    review: facilitator.role, // sudah localized via hook
+    review: facilitator.role,
     src: facilitator.image,
     content: <HonestReviewContent />,
     url: `/honest-review/${facilitator.id}`,
   }));
 
-  if (loading) return <ContentLoader />;
-  if (error) return <div className="text-center text-red-500">{error}</div>;
+  if (loading) return <LoaderContent />;
+  if (error) return <SomethingWentWrong />;
 
   return (
     <div>

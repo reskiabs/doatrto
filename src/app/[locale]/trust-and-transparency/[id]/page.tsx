@@ -1,9 +1,9 @@
 "use client";
 
-import ContentLoader from "@/components/common/ContentLoader";
+import LoaderContent from "@/components/common/LoaderContent";
+import SomethingWentWrong from "@/components/common/SomethingWentWrong";
 import DetailTitle from "@/components/typography/DetailTitle";
 import { useTrustTransparency } from "@/hooks/useTrustTransparency";
-import { ImageDown } from "lucide-react";
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useMemo } from "react";
@@ -24,19 +24,9 @@ export default function TrustAndTransparencyDetailPage() {
     }
   }, [loading, detail, router]);
 
-  if (loading) {
-    return (
-      <div className="flex flex-col justify-center items-center bg-gradient-to-b from-white via-[#EBF0F8] to-white pt-[50px] lg:pt-[100px] px-[31px] lg:px-0">
-        <div className="relative w-[340px] lg:w-[1140px] h-[170px] flex justify-center items-center bg-surface lg:h-[641px] rounded-[15px] lg:rounded-[30px] overflow-hidden mt-[20px] lg:mt-[50px]">
-          <ImageDown className="animate-bounce text-muted" size={150} />
-        </div>
-      </div>
-    );
-  }
-
   if (!detail) return null;
-  if (loading) return <ContentLoader />;
-  if (error) return <div className="text-center text-red-500">{error}</div>;
+  if (loading) return <LoaderContent />;
+  if (error) return <SomethingWentWrong />;
 
   return (
     <div>

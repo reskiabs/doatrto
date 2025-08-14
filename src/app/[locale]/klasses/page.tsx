@@ -1,15 +1,16 @@
 "use client";
 
 import NewsCard from "@/components/card/NewsCard";
-import ContentLoader from "@/components/common/ContentLoader";
+import LoaderContent from "@/components/common/LoaderContent";
+import SomethingWentWrong from "@/components/common/SomethingWentWrong";
 import DetailHeader from "@/components/typography/DetailHeader";
 import { useKlassesFeatures } from "@/hooks/useKlassesFeatures";
 
 const KlassesPage = () => {
   const { features, loading, error } = useKlassesFeatures();
 
-  if (loading) return <ContentLoader />;
-  if (error) return <div className="text-center text-red-500">{error}</div>;
+  if (loading) return <LoaderContent />;
+  if (error) return <SomethingWentWrong />;
 
   return (
     <div>

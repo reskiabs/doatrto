@@ -1,7 +1,8 @@
 "use client";
 
 import NewsCard from "@/components/card/NewsCard";
-import ContentLoader from "@/components/common/ContentLoader";
+import LoaderContent from "@/components/common/LoaderContent";
+import SomethingWentWrong from "@/components/common/SomethingWentWrong";
 import DetailTitle from "@/components/typography/DetailTitle";
 import { useNewsDetail } from "@/hooks/useNewsDetail";
 import Image from "next/image";
@@ -12,14 +13,10 @@ const ArticleDetailPage = () => {
   const { detail, related, loading, error } = useNewsDetail(id as string);
 
   if (error || !detail) {
-    return (
-      <p className="text-center text-red-500 text-lg mt-10">
-        {error || "Article not found"}
-      </p>
-    );
+    return <SomethingWentWrong />;
   }
 
-  if (loading) return <ContentLoader />;
+  if (loading) return <LoaderContent />;
 
   return (
     <div>

@@ -3,13 +3,13 @@
 import ContentTitle from "@/components/typography/ContentTitle";
 import { useNews } from "@/hooks/useNews";
 import NewsCard from "../card/NewsCard";
-import ContentLoader from "../common/ContentLoader";
+import LoaderContent from "../common/LoaderContent";
 
 const News = () => {
   const { news, loading, error } = useNews();
 
   if (loading) {
-    return <ContentLoader />;
+    return <LoaderContent />;
   }
 
   if (error) {

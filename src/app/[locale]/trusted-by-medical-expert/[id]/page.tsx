@@ -1,6 +1,6 @@
 "use client";
 
-import ContentLoader from "@/components/common/ContentLoader";
+import LoaderContent from "@/components/common/LoaderContent";
 import TrustByMedicalExpert from "@/components/content/TrustedByMedicalExpert";
 import DetailHeader from "@/components/typography/DetailHeader";
 import { useMobileScrollOffset } from "@/hooks/useMobileScrollOffset";
@@ -15,7 +15,7 @@ const TrustedByMedicalExpertDetailPage = () => {
   const { detail: trustedMedical, loading } = useTrustedMedical(id);
   const scrollRef = useMobileScrollOffset(0.27, [trustedMedical]);
 
-  if (loading) return <ContentLoader />;
+  if (loading) return <LoaderContent />;
 
   const hasImages =
     !loading &&

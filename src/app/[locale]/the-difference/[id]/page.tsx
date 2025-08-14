@@ -1,6 +1,7 @@
 "use client";
 
-import ContentLoader from "@/components/common/ContentLoader";
+import LoaderContent from "@/components/common/LoaderContent";
+import SomethingWentWrong from "@/components/common/SomethingWentWrong";
 import DetailHeader from "@/components/typography/DetailHeader";
 import { useMobileScrollOffset } from "@/hooks/useMobileScrollOffset";
 import { useTheDifferences } from "@/hooks/useTheDifferences";
@@ -17,8 +18,9 @@ const TheDifferenceDetailPage = () => {
 
   const hasImages = Array.isArray(detail?.images) && detail.images.length > 0;
 
-  if (loading) return <ContentLoader />;
-  if (error) return <div className="text-center text-red-500">{error}</div>;
+  if (loading) return <LoaderContent />;
+  if (error) return <SomethingWentWrong />;
+
   return (
     <div>
       {/* Header */}

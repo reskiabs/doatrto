@@ -1,8 +1,8 @@
 "use client";
 
 import { useHonestReviews } from "@/hooks/useHonestReviews";
-import ContentLoader from "../common/ContentLoader";
 import HonestReviewContent from "../common/HonestReviewContent";
+import LoaderContent from "../common/LoaderContent";
 import ContentTitle from "../typography/ContentTitle";
 import { HonestReviewCard } from "../ui/honest-review/card";
 import { HonestReviewCarousel } from "../ui/honest-review/carousel";
@@ -11,7 +11,7 @@ export function HonestReview() {
   const { reviews, loading, error } = useHonestReviews();
 
   if (loading) {
-    return <ContentLoader />;
+    return <LoaderContent />;
   }
 
   if (error) return <div className="text-center text-red-500">{error}</div>;

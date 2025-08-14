@@ -1,7 +1,7 @@
 "use client";
 
-import ContentLoader from "@/components/common/ContentLoader";
-import { DescriptionSkeleton } from "@/components/common/skeleton/DescriptionSkeleton";
+import LoaderContent from "@/components/common/LoaderContent";
+import SomethingWentWrong from "@/components/common/SomethingWentWrong";
 import { useHero } from "@/hooks/useHero"; // ganti import
 import { useMobileScrollOffset } from "@/hooks/useMobileScrollOffset";
 import { koulen } from "@/src/app/fonts";
@@ -16,8 +16,8 @@ const BannerDetailPage = () => {
 
   const hasImages = Array.isArray(hero?.images) && hero.images.length > 0;
 
-  if (loading) return <ContentLoader />;
-  if (error) return <p className="text-center py-20 text-red-500">{error}</p>;
+  if (loading) return <LoaderContent />;
+  if (error) return <SomethingWentWrong />;
 
   return (
     <div>
@@ -41,10 +41,6 @@ const BannerDetailPage = () => {
         </div>
       </div>
 
-      {/* Content */}
-      <div className="max-w-[1140px] mx-auto mt-[50px] lg:mt-[100px]">
-        <DescriptionSkeleton />
-      </div>
       <div className="max-w-[1140px] mx-auto mt-[50px] lg:mt-[100px]">
         {/* Quotes */}
         <div
