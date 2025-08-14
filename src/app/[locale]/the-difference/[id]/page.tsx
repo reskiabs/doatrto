@@ -1,9 +1,10 @@
 "use client";
 
+import { DescriptionSkeleton } from "@/components/common/skeleton/DescriptionSkeleton";
+import ImageLoading from "@/components/common/skeleton/ImageLoading";
 import DetailHeader from "@/components/typography/DetailHeader";
 import { useMobileScrollOffset } from "@/hooks/useMobileScrollOffset";
 import { useTheDifferences } from "@/hooks/useTheDifferences";
-import { ImageDown } from "lucide-react";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 
@@ -28,8 +29,8 @@ const TheDifferenceDetailPage = () => {
 
         {/* Thumbnail */}
         {loading ? (
-          <div className="relative size-[372px] lg:w-[1140px] lg:h-[641px] rounded-[15px] lg:rounded-[50px] mt-[50px] overflow-hidden bg-surface flex justify-center items-center">
-            <ImageDown className="animate-bounce text-muted" size={150} />
+          <div className="w-full mt-[50px] lg:w-[1140px] flex justify-center items-center">
+            <ImageLoading />
           </div>
         ) : (
           <div className="relative size-[372px] lg:w-[1140px] lg:h-[641px] rounded-[15px] lg:rounded-[50px] overflow-hidden mt-[50px]">
@@ -47,7 +48,7 @@ const TheDifferenceDetailPage = () => {
       </div>
 
       {/* Deskripsi */}
-      {!loading && detail && (
+      {!loading && detail ? (
         <div className="mt-[20px] lg:mt-[100px] px-[15px] lg:px-0 flex flex-col justify-center items-center">
           <div className="w-full max-w-[1140px]">
             <h1 className="font-extrabold text-[28px] lg:text-[40px] text-tertiary text-center lg:text-left">
@@ -58,6 +59,10 @@ const TheDifferenceDetailPage = () => {
             className="font-normal text-sm lg:text-xl text-justify max-w-[1140px] mt-[20px] lg:mt-[30px]"
             dangerouslySetInnerHTML={{ __html: detail.description }}
           />
+        </div>
+      ) : (
+        <div className="mt-[20px] lg:mt-[100px] px-[15px] lg:px-0 flex flex-col justify-center items-center">
+          <DescriptionSkeleton />
         </div>
       )}
 

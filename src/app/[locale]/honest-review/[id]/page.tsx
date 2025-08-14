@@ -1,12 +1,13 @@
 "use client";
 
 import PrimaryButton from "@/components/button/PrimaryButton";
+import { DescriptionSkeleton } from "@/components/common/skeleton/DescriptionSkeleton";
+import ImageLoading from "@/components/common/skeleton/ImageLoading";
 import { HonestReview } from "@/components/content/HonestReview";
 import ImageGrid from "@/components/content/ImageGrid";
 import DetailHeader from "@/components/typography/DetailHeader";
 import { useHonestReviews } from "@/hooks/useHonestReviews";
 import { splitDescription } from "@/lib/splitDescription";
-import { ImageDown } from "lucide-react";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 
@@ -16,8 +17,9 @@ const HonestReviewDetailPage = () => {
 
   if (loading) {
     return (
-      <div className="w-full h-screen flex justify-center items-center">
-        <ImageDown className="animate-bounce text-muted" size={80} />
+      <div className="w-full gap-y-7  flex flex-col justify-center items-center">
+        <ImageLoading />
+        <DescriptionSkeleton />
       </div>
     );
   }
