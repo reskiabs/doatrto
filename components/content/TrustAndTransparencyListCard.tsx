@@ -2,7 +2,7 @@
 
 import { HoverEffect } from "@/components/ui/card-hover-effect";
 import { useTrustTransparency } from "@/hooks/useTrustTransparency";
-import { DescriptionSkeleton } from "../common/skeleton/DescriptionSkeleton";
+import ContentLoader from "../common/ContentLoader";
 
 export function TrustAndTransparencyListCard() {
   const { items, loading, error } = useTrustTransparency();
@@ -13,13 +13,8 @@ export function TrustAndTransparencyListCard() {
     link: `/trust-and-transparency/${item.id}`,
   }));
 
-  if (loading)
-    return (
-      <p className="text-center my-10">
-        <DescriptionSkeleton />
-      </p>
-    );
-  if (error) return <p className="text-center text-red-500">{error}</p>;
+  if (loading) return <ContentLoader />;
+  if (error) return <div className="text-center text-red-500">{error}</div>;
 
   return (
     <div className="max-w-[1140px]">

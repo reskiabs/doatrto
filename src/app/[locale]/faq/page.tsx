@@ -20,6 +20,9 @@ const FAQPage = () => {
     setActiveId((prevId) => (prevId === id ? null : id));
   };
 
+  if (loading) return <ContentLoader />;
+  if (error) return <div className="text-center text-red-500">{error}</div>;
+
   return (
     <div>
       {/* Header */}
@@ -29,8 +32,6 @@ const FAQPage = () => {
 
       {/* FAQ Items */}
       <div className="mx-auto px-[15px] lg:px-0 mt-[50px] lg:mt-[100px] max-w-[1140px] space-y-6">
-        {loading && <ContentLoader />}
-        {error && <p className="text-center text-red-500">{error}</p>}
         {!loading &&
           items.map((item) => (
             <FaqAccordionItem

@@ -1,7 +1,7 @@
 "use client";
 
 import { useHonestReviews } from "@/hooks/useHonestReviews";
-import { ImageDown } from "lucide-react";
+import ContentLoader from "../common/ContentLoader";
 import HonestReviewContent from "../common/HonestReviewContent";
 import ContentTitle from "../typography/ContentTitle";
 import { HonestReviewCard } from "../ui/honest-review/card";
@@ -11,11 +11,7 @@ export function HonestReview() {
   const { reviews, loading, error } = useHonestReviews();
 
   if (loading) {
-    return (
-      <div className="relative w-full h-[500px] rounded-[50px] mt-[50px] overflow-hidden bg-surface flex justify-center items-center">
-        <ImageDown className="animate-bounce text-muted" size={150} />
-      </div>
-    );
+    return <ContentLoader />;
   }
 
   if (error) return <div className="text-center text-red-500">{error}</div>;

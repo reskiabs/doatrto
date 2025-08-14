@@ -1,8 +1,7 @@
 "use client";
 
 import PrimaryButton from "@/components/button/PrimaryButton";
-import { DescriptionSkeleton } from "@/components/common/skeleton/DescriptionSkeleton";
-import ImageLoading from "@/components/common/skeleton/ImageLoading";
+import ContentLoader from "@/components/common/ContentLoader";
 import { HonestReview } from "@/components/content/HonestReview";
 import ImageGrid from "@/components/content/ImageGrid";
 import DetailHeader from "@/components/typography/DetailHeader";
@@ -15,14 +14,7 @@ const HonestReviewDetailPage = () => {
   const { id } = useParams<{ id: string }>();
   const { review, loading } = useHonestReviews(id);
 
-  if (loading) {
-    return (
-      <div className="w-full gap-y-7  flex flex-col justify-center items-center">
-        <ImageLoading />
-        <DescriptionSkeleton />
-      </div>
-    );
-  }
+  if (loading) return <ContentLoader />;
 
   if (!review) {
     return (

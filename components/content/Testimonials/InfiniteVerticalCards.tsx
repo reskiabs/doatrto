@@ -1,5 +1,6 @@
 "use client";
 
+import ContentLoader from "@/components/common/ContentLoader";
 import supabase from "@/lib/db";
 import { getLocalizedField } from "@/lib/helper/getLocalizedField";
 import { splitIntoColumns } from "@/lib/split-into-columns";
@@ -69,7 +70,7 @@ export function InfiniteVerticalCards({
 
   const offsets = ["0px"];
 
-  if (loading) return <div>Loading testimonials...</div>;
+  if (loading) return <ContentLoader />;
 
   return (
     <section

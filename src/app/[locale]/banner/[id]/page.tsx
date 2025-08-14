@@ -1,7 +1,7 @@
 "use client";
 
+import ContentLoader from "@/components/common/ContentLoader";
 import { DescriptionSkeleton } from "@/components/common/skeleton/DescriptionSkeleton";
-import ImageLoading from "@/components/common/skeleton/ImageLoading";
 import { useHero } from "@/hooks/useHero"; // ganti import
 import { useMobileScrollOffset } from "@/hooks/useMobileScrollOffset";
 import { koulen } from "@/src/app/fonts";
@@ -16,92 +16,55 @@ const BannerDetailPage = () => {
 
   const hasImages = Array.isArray(hero?.images) && hero.images.length > 0;
 
+  if (loading) return <ContentLoader />;
   if (error) return <p className="text-center py-20 text-red-500">{error}</p>;
 
   return (
     <div>
-      {/* Banner */}
-      {loading ? (
-        <div className="w-full flex items-center justify-center">
-          <ImageLoading />
+      <div className="w-full h-[540px] lg:h-[740px] relative">
+        {hero?.thumbnail && (
+          <Image
+            src={hero.thumbnail}
+            alt="Hero Image"
+            fill
+            priority
+            className="object-cover"
+          />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
+        <div className="absolute inset-0 flex items-center justify-center px-4 text-center">
+          <h1
+            className={`text-6xl lg:text-[110px] uppercase bg-gradient-to-b from-white to-tertiary via-secondary bg-clip-text text-transparent leading-tight max-w-[1140px] ${koulen.className}`}
+          >
+            {hero?.title}
+          </h1>
         </div>
-      ) : (
-        <div className="w-full h-[540px] lg:h-[740px] relative">
-          {hero?.thumbnail && (
-            <Image
-              src={hero.thumbnail}
-              alt="Hero Image"
-              fill
-              priority
-              className="object-cover"
-            />
-          )}
-          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
-          <div className="absolute inset-0 flex items-center justify-center px-4 text-center">
-            <h1
-              className={`text-6xl lg:text-[110px] uppercase bg-gradient-to-b from-white to-tertiary via-secondary bg-clip-text text-transparent leading-tight max-w-[1140px] ${koulen.className}`}
-            >
-              {hero?.title}
-            </h1>
-          </div>
-        </div>
-      )}
+      </div>
 
       {/* Content */}
-      {loading ? (
-        <div className="max-w-[1140px] mx-auto mt-[50px] lg:mt-[100px]">
-          <DescriptionSkeleton />
-        </div>
-      ) : (
-        <div className="max-w-[1140px] mx-auto mt-[50px] lg:mt-[100px]">
-          {/* Quotes */}
+      <div className="max-w-[1140px] mx-auto mt-[50px] lg:mt-[100px]">
+        <DescriptionSkeleton />
+      </div>
+      <div className="max-w-[1140px] mx-auto mt-[50px] lg:mt-[100px]">
+        {/* Quotes */}
+        <div
+          className="text-lg lg:text-[25px] leading-relaxed px-[15px] lg:px-0"
+          dangerouslySetInnerHTML={{
+            __html: hero?.quotes || "",
+          }}
+        />
+
+        {/* First Images Row */}
+        {hasImages && (
           <div
-            className="text-lg lg:text-[25px] leading-relaxed px-[15px] lg:px-0"
-            dangerouslySetInnerHTML={{
-              __html: hero?.quotes || "",
-            }}
-          />
-
-          {/* First Images Row */}
-          {hasImages && (
-            <div
-              ref={scrollRef}
-              className="my-[50px] lg:my-[100px] px-2.5 lg:px-0 overflow-x-auto scrollbar-hide"
-            >
-              <div className="grid grid-cols-3 gap-[10px] lg:gap-[30px] min-w-max snap-x snap-mandatory">
-                {hero.images!.slice(0, 3).map((image, index) => (
-                  <div
-                    key={index}
-                    className="relative size-[250px] lg:size-[360px] rounded-[15px] lg:rounded-[25px] overflow-hidden bg-gray-300 snap-start"
-                  >
-                    <Image
-                      src={image}
-                      alt={`Image ${index + 1}`}
-                      fill
-                      priority
-                      className="object-cover"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Description */}
-          <div
-            className="text-sm lg:text-xl leading-relaxed px-[15px] lg:px-0"
-            dangerouslySetInnerHTML={{
-              __html: hero?.description || "",
-            }}
-          />
-
-          {/* Last Image */}
-          {hasImages && (
-            <div className="mt-[50px] flex justify-center lg:mt-[100px] lg:grid grid-cols-1 md:grid-cols-3 gap-[30px]">
-              {hero.images!.slice(-1).map((image, index) => (
+            ref={scrollRef}
+            className="my-[50px] lg:my-[100px] px-2.5 lg:px-0 overflow-x-auto scrollbar-hide"
+          >
+            <div className="grid grid-cols-3 gap-[10px] lg:gap-[30px] min-w-max snap-x snap-mandatory">
+              {hero.images!.slice(0, 3).map((image, index) => (
                 <div
                   key={index}
-                  className="relative size-[372px] lg:w-[1140px] lg:h-[555px] rounded-[15px] lg:rounded-[25px] overflow-hidden bg-gray-300"
+                  className="relative size-[250px] lg:size-[360px] rounded-[15px] lg:rounded-[25px] overflow-hidden bg-gray-300 snap-start"
                 >
                   <Image
                     src={image}
@@ -113,9 +76,37 @@ const BannerDetailPage = () => {
                 </div>
               ))}
             </div>
-          )}
-        </div>
-      )}
+          </div>
+        )}
+
+        {/* Description */}
+        <div
+          className="text-sm lg:text-xl leading-relaxed px-[15px] lg:px-0"
+          dangerouslySetInnerHTML={{
+            __html: hero?.description || "",
+          }}
+        />
+
+        {/* Last Image */}
+        {hasImages && (
+          <div className="mt-[50px] flex justify-center lg:mt-[100px] lg:grid grid-cols-1 md:grid-cols-3 gap-[30px]">
+            {hero.images!.slice(-1).map((image, index) => (
+              <div
+                key={index}
+                className="relative size-[372px] lg:w-[1140px] lg:h-[555px] rounded-[15px] lg:rounded-[25px] overflow-hidden bg-gray-300"
+              >
+                <Image
+                  src={image}
+                  alt={`Image ${index + 1}`}
+                  fill
+                  priority
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

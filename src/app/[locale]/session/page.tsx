@@ -1,6 +1,7 @@
 "use client";
 
 import NewsCard from "@/components/card/NewsCard";
+import ContentLoader from "@/components/common/ContentLoader";
 import FaqAccordionItem from "@/components/content/FaqAccordion";
 import SessionFaq from "@/components/content/session/SessionFaq";
 import SessionGridContent from "@/components/content/session/SessionGridContent";
@@ -26,6 +27,9 @@ const SessionPage = () => {
     setActiveId((prevId) => (prevId === id ? null : id));
   };
 
+  if (loading) return <ContentLoader />;
+  if (error) return <div className="text-center text-red-500">{error}</div>;
+
   return (
     <div>
       <div className="flex flex-col justify-center items-center bg-gradient-to-b from-white via-[#EBF0F8] to-white pt-[50px] lg:pt-[100px]">
@@ -33,23 +37,17 @@ const SessionPage = () => {
       </div>
 
       <div className="w-full max-w-[1140px] mx-auto mt-[50px] lg:mt-[100px]">
-        {loading ? (
-          <p className="text-center">Loading features...</p>
-        ) : error ? (
-          <p className="text-center text-red-500">{error}</p>
-        ) : (
-          <div className="flex flex-wrap justify-center gap-6 md:grid md:grid-cols-2">
-            {features.map((item) => (
-              <NewsCard key={item.id} item={item} buttonTextKey="bookSession" />
-            ))}
-          </div>
-        )}
+        <div className="flex flex-wrap justify-center gap-6 md:grid md:grid-cols-2">
+          {features?.map((item) => (
+            <NewsCard key={item.id} item={item} buttonTextKey="bookSession" />
+          ))}
+        </div>
       </div>
 
       <SessionGridContent />
       <SessionPrice />
       <SessionFaq>
-        {items.slice(0, 4).map((item: FaqLocalized) => (
+        {items?.slice(0, 4).map((item: FaqLocalized) => (
           <FaqAccordionItem
             key={item.id}
             item={item}

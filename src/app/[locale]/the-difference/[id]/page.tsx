@@ -1,7 +1,6 @@
 "use client";
 
-import { DescriptionSkeleton } from "@/components/common/skeleton/DescriptionSkeleton";
-import ImageLoading from "@/components/common/skeleton/ImageLoading";
+import ContentLoader from "@/components/common/ContentLoader";
 import DetailHeader from "@/components/typography/DetailHeader";
 import { useMobileScrollOffset } from "@/hooks/useMobileScrollOffset";
 import { useTheDifferences } from "@/hooks/useTheDifferences";
@@ -12,12 +11,14 @@ const TheDifferenceDetailPage = () => {
   const params = useParams();
   const id = params.id as string;
 
-  const { items, loading } = useTheDifferences();
+  const { items, loading, error } = useTheDifferences();
   const detail = items.find((item) => item.id.toString() === id);
   const scrollRef = useMobileScrollOffset(0.22, [detail]);
 
   const hasImages = Array.isArray(detail?.images) && detail.images.length > 0;
 
+  if (loading) return <ContentLoader />;
+  if (error) return <div className="text-center text-red-500">{error}</div>;
   return (
     <div>
       {/* Header */}
@@ -28,27 +29,22 @@ const TheDifferenceDetailPage = () => {
         />
 
         {/* Thumbnail */}
-        {loading ? (
-          <div className="w-full mt-[50px] lg:w-[1140px] flex justify-center items-center">
-            <ImageLoading />
-          </div>
-        ) : (
-          <div className="relative size-[372px] lg:w-[1140px] lg:h-[641px] rounded-[15px] lg:rounded-[50px] overflow-hidden mt-[50px]">
-            {detail?.thumbnail && (
-              <Image
-                src={detail.thumbnail}
-                alt={detail.title || "The Difference Thumbnail"}
-                fill
-                priority
-                className="object-cover"
-              />
-            )}
-          </div>
-        )}
+
+        <div className="relative size-[372px] lg:w-[1140px] lg:h-[641px] rounded-[15px] lg:rounded-[50px] overflow-hidden mt-[50px]">
+          {detail?.thumbnail && (
+            <Image
+              src={detail.thumbnail}
+              alt={detail.title || "The Difference Thumbnail"}
+              fill
+              priority
+              className="object-cover"
+            />
+          )}
+        </div>
       </div>
 
       {/* Deskripsi */}
-      {!loading && detail ? (
+      {!loading && detail && (
         <div className="mt-[20px] lg:mt-[100px] px-[15px] lg:px-0 flex flex-col justify-center items-center">
           <div className="w-full max-w-[1140px]">
             <h1 className="font-extrabold text-[28px] lg:text-[40px] text-tertiary text-center lg:text-left">
@@ -59,10 +55,6 @@ const TheDifferenceDetailPage = () => {
             className="font-normal text-sm lg:text-xl text-justify max-w-[1140px] mt-[20px] lg:mt-[30px]"
             dangerouslySetInnerHTML={{ __html: detail.description }}
           />
-        </div>
-      ) : (
-        <div className="mt-[20px] lg:mt-[100px] px-[15px] lg:px-0 flex flex-col justify-center items-center">
-          <DescriptionSkeleton />
         </div>
       )}
 

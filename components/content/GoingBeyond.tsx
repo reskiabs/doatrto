@@ -28,7 +28,7 @@ const items: Item[] = [
 
 const GoingBeyond = () => {
   const scrollRef = useMobileScrollOffset(0.17);
-  const t = useTranslations("items"); // namespace "items"
+  const t = useTranslations("items");
 
   return (
     <main className="flex flex-col items-center w-full mt-[50px] md:mt-[80px] lg:mt-[100px]">

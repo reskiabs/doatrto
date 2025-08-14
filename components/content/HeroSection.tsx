@@ -1,7 +1,7 @@
 import { useHero } from "@/hooks/useHero"; // ganti import
 import { useTranslations } from "next-intl";
+import ContentLoader from "../common/ContentLoader";
 import ImageCarousel from "../common/ImageCarousel";
-import ImageLoading from "../common/skeleton/ImageLoading";
 import MainOutlineButton from "./MainOutlineButton";
 
 const HeroSection = () => {
@@ -9,14 +9,11 @@ const HeroSection = () => {
   const { loading, error, allThumbnails } = useHero();
 
   if (error) return <div>{error}</div>;
+  if (loading) return <ContentLoader />;
 
   return (
     <div className="flex flex-col justify-center items-center">
-      {loading ? (
-        <ImageLoading />
-      ) : (
-        <ImageCarousel images={allThumbnails || []} />
-      )}
+      <ImageCarousel images={allThumbnails || []} />
 
       <div className="flex w-[95%] lg:w-[97%] items-center gap-[10px] lg:gap-[18px] mt-[15px] lg:mt-[25px]">
         <MainOutlineButton href="/session" text={t("session")} />

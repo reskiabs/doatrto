@@ -1,6 +1,6 @@
 "use client";
 
-import ImageLoading from "@/components/common/skeleton/ImageLoading";
+import ContentLoader from "@/components/common/ContentLoader";
 import { InfiniteVerticalCards } from "@/components/content/Testimonials/InfiniteVerticalCards";
 import { ContinuousCarousel } from "@/components/content/TrustedByMedicalExpert/ContinuousCarousel";
 import DetailHeader from "@/components/typography/DetailHeader";
@@ -23,12 +23,14 @@ const Testimonial = () => {
     setButtonActive(id);
   };
 
+  if (loading) return <ContentLoader />;
+  if (error) return <div className="text-center text-red-500">{error}</div>;
+
   return (
     <div>
-      {/* Section Header */}
       <div className="flex flex-col justify-center items-center bg-gradient-to-b from-white via-[#EBF0F8] to-white pt-[104px]">
         <DetailHeader titleKey="testimonial" descriptionKey="testimonial" />
-        {loading ? <ImageLoading /> : <InfiniteVerticalCards />}
+        <InfiniteVerticalCards />
       </div>
 
       {/* Filter Buttons */}
