@@ -16,8 +16,9 @@ const SomethingWentWrong = () => {
 
       {/* Subtext */}
       <p className="text-sm sm:text-base text-center text-gray-600 mb-6 max-w-xs sm:max-w-md">
-        We&apos;re having trouble loading this page. Please try again later or
-        go back to the homepage.
+        We&apos;re having trouble loading this page. Please{" "}
+        <span className="font-bold">refresh the page</span> or go back to the
+        homepage.
       </p>
 
       {/* Button */}
