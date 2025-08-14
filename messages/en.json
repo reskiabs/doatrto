@@ -55,7 +55,7 @@
     "phone": "+62 878-8889-3838",
     "email": "info.doatrto@gmail.com",
     "address": "Setiabudi District, South Jakarta, DKI Jakarta",
-    "buttonDirection": "Open in Google Maps"
+    "buttonDirection": "Direction Google Maps"
   },
   "FeatureButtons": {
     "session": "Session",
@@ -104,6 +104,7 @@
   "button": {
     "playVideo": "Play Video",
     "seeMore": "See More",
+    "seeDetail": "See Detail",
     "readMore": "Read More",
     "watchedCount": "2000 people have watched this podcast",
     "bookSession": "Book a Session",
