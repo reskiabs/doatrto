@@ -1,5 +1,6 @@
 "use client";
 
+import ContentLoader from "@/components/common/ContentLoader";
 import FaqAccordionItem from "@/components/content/FaqAccordion";
 import DetailHeader from "@/components/typography/DetailHeader";
 import { useFaq } from "@/hooks/useFaq";
@@ -28,7 +29,7 @@ const FAQPage = () => {
 
       {/* FAQ Items */}
       <div className="mx-auto px-[15px] lg:px-0 mt-[50px] lg:mt-[100px] max-w-[1140px] space-y-6">
-        {loading && <p className="text-center text-xl">Loading...</p>}
+        {loading && <ContentLoader />}
         {error && <p className="text-center text-red-500">{error}</p>}
         {!loading &&
           items.map((item) => (

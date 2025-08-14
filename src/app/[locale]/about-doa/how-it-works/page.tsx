@@ -1,5 +1,6 @@
 "use client";
 
+import ContentLoader from "@/components/common/ContentLoader";
 import DetailHeader from "@/components/typography/DetailHeader";
 import { useHowItWorks } from "@/hooks/useHowItWorks";
 
@@ -7,11 +8,7 @@ const HowItWorksPage = () => {
   const { items, loading, error } = useHowItWorks();
 
   if (loading) {
-    return (
-      <div className="flex justify-center items-center min-h-[300px]">
-        Loading...
-      </div>
-    );
+    return <ContentLoader />;
   }
 
   if (error) {

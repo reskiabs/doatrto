@@ -1,5 +1,6 @@
 "use client";
 
+import ContentLoader from "@/components/common/ContentLoader";
 import { useTrustedMedical } from "@/hooks/useTrustedMedical";
 import ContentTitle from "../../typography/ContentTitle";
 import { ContinuousCarousel } from "./ContinuousCarousel";
@@ -14,7 +15,7 @@ const TrustByMedicalExpert = () => {
       </div>
 
       {loading ? (
-        <p className="text-center text-gray-500">Loading...</p>
+        <ContentLoader />
       ) : error ? (
         <p className="text-center text-red-500">{error}</p>
       ) : (

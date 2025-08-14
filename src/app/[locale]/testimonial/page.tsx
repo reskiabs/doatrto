@@ -1,5 +1,6 @@
 "use client";
 
+import ImageLoading from "@/components/common/skeleton/ImageLoading";
 import { InfiniteVerticalCards } from "@/components/content/Testimonials/InfiniteVerticalCards";
 import { ContinuousCarousel } from "@/components/content/TrustedByMedicalExpert/ContinuousCarousel";
 import DetailHeader from "@/components/typography/DetailHeader";
@@ -27,7 +28,7 @@ const Testimonial = () => {
       {/* Section Header */}
       <div className="flex flex-col justify-center items-center bg-gradient-to-b from-white via-[#EBF0F8] to-white pt-[104px]">
         <DetailHeader titleKey="testimonial" descriptionKey="testimonial" />
-        <InfiniteVerticalCards />
+        {loading ? <ImageLoading /> : <InfiniteVerticalCards />}
       </div>
 
       {/* Filter Buttons */}

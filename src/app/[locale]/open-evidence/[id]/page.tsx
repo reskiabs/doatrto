@@ -1,5 +1,7 @@
 "use client";
 
+import { DescriptionSkeleton } from "@/components/common/skeleton/DescriptionSkeleton";
+import ImageLoading from "@/components/common/skeleton/ImageLoading";
 import OpenEvidenceAutoSlider from "@/components/content/OpenEvidenceAutoSlider";
 import DetailHeader from "@/components/typography/DetailHeader";
 import { useOpenEvidenceDetail } from "@/hooks/useOpenEvidenceDetail";
@@ -15,9 +17,6 @@ const OpenEvidenceDetailPage = () => {
     src: item.thumbnail,
   }));
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
   return (
     <div>
       <div className="flex flex-col justify-center items-center bg-gradient-to-b from-white via-[#EBF0F8] to-white pt-[50px] lg:pt-[100px]">
@@ -25,15 +24,19 @@ const OpenEvidenceDetailPage = () => {
           titleKey="openEvidenceBasedSystem"
           descriptionKey="openEvidenceBasedSystem"
         />
-        <div className="relative size-[372px] lg:w-[1140px] bg-surface lg:h-[641px] rounded-[15px] lg:rounded-[30px] overflow-hidden mt-[50px]">
-          <div
-            className="w-full aspect-video"
-            dangerouslySetInnerHTML={{ __html: detail?.video || "" }}
-          />
+        <div className="relative size-[372px] lg:w-[1140px] bg-gray-100 lg:h-[641px] rounded-[15px] lg:rounded-[30px] overflow-hidden mt-[50px]">
+          {!loading ? (
+            <ImageLoading />
+          ) : (
+            <div
+              className="w-full aspect-video"
+              dangerouslySetInnerHTML={{ __html: detail?.video || "" }}
+            />
+          )}
         </div>
       </div>
 
-      {!loading && detail && (
+      {loading && detail ? (
         <div className="mt-[20px] lg:mt-[100px] px-[15px] lg:px-0 flex flex-col justify-center items-center">
           <div className="w-full max-w-[1140px]">
             <h1 className="font-extrabold text-[28px] lg:text-[40px] text-tertiary text-center lg:text-left">
@@ -44,6 +47,10 @@ const OpenEvidenceDetailPage = () => {
             className="font-normal text-sm lg:text-xl text-justify max-w-[1140px] mt-[20px] lg:mt-[30px]"
             dangerouslySetInnerHTML={{ __html: detail.description }}
           />
+        </div>
+      ) : (
+        <div className="w-full flex lg:w-[1140px] mx-auto flex-col items-center justify-center mt-[50px] lg:mt-[80px]">
+          <DescriptionSkeleton />
         </div>
       )}
 

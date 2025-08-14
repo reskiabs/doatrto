@@ -3,6 +3,8 @@
 import ImageGrid from "@/components/content/ImageGrid";
 import DetailHeader from "@/components/typography/DetailHeader";
 import { useInformationalPages } from "@/hooks/useInformationalPages";
+import { DescriptionSkeleton } from "../common/skeleton/DescriptionSkeleton";
+import ImageLoading from "../common/skeleton/ImageLoading";
 
 interface InformationalDetailPageProps {
   index: number;
@@ -19,8 +21,9 @@ const InformationalDetailPage: React.FC<InformationalDetailPageProps> = ({
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center min-h-[300px]">
-        Loading...
+      <div className="flex justify-center w-[1140px] mx-auto items-center min-h-[300px] flex-col gap-y-[50px]">
+        <ImageLoading />
+        <DescriptionSkeleton />
       </div>
     );
   }
