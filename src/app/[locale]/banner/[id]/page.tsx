@@ -34,7 +34,7 @@ const BannerDetailPage = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
         <div className="absolute inset-0 flex items-center justify-center px-4 text-center">
           <h1
-            className={`text-6xl lg:text-[110px] uppercase bg-gradient-to-b from-white to-tertiary via-secondary bg-clip-text text-transparent leading-tight max-w-[1140px] ${koulen.className}`}
+            className={`text-6xl lg:text-[110px] uppercase text-white text-shadow-[7px_7px_7px] text-shadow-gray-600 leading-tight max-w-[1140px] ${koulen.className}`}
           >
             {hero?.title}
           </h1>

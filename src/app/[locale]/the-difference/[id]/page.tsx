@@ -13,6 +13,7 @@ const TheDifferenceDetailPage = () => {
   const id = params.id as string;
 
   const { items, loading, error } = useTheDifferences();
+  console.log("🔍 > TheDifferenceDetailPage > items:", items[2]?.description);
   const detail = items.find((item) => item.id.toString() === id);
   const scrollRef = useMobileScrollOffset(0.22, [detail]);
 
@@ -50,11 +51,11 @@ const TheDifferenceDetailPage = () => {
         <div className="mt-[20px] lg:mt-[100px] px-[15px] lg:px-0 flex flex-col justify-center items-center">
           <div className="w-full max-w-[1140px]">
             <h1 className="font-extrabold text-[28px] lg:text-[40px] text-tertiary text-center lg:text-left">
-              Description
+              {detail.title}
             </h1>
           </div>
           <div
-            className="font-normal text-sm lg:text-xl text-justify max-w-[1140px] mt-[20px] lg:mt-[30px]"
+            className="font-normal text-sm lg:text-xl max-w-[1140px] mt-[20px] lg:mt-[30px]"
             dangerouslySetInnerHTML={{ __html: detail.description }}
           />
         </div>

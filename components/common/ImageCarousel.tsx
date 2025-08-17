@@ -24,7 +24,7 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
     if (images.length === 0) return;
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000);
+    }, 10000);
     return () => clearInterval(interval);
   }, [images]);
 
