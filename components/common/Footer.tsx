@@ -89,7 +89,7 @@ const Footer = () => {
                 <h4 className="font-extrabold text-2xs lg:text-md">
                   {section.title}
                 </h4>
-                <div className="grid grid-cols-3 gap-y-1.5 lg:gap-y-5 lg:flex lg:flex-col">
+                <div className="grid grid-cols-3 lg:gap-y-1.5 lg:flex lg:flex-col">
                   {section.links.map((link, linkIdx) => (
                     <p
                       key={linkIdx}
