@@ -7,13 +7,13 @@ import LoaderContent from "../common/LoaderContent";
 import SomethingWentWrong from "../common/SomethingWentWrong";
 
 interface InformationalDetailPageProps {
-  index: number;
+  pageId: number;
   headerTitle: string;
   headerDescription: string;
 }
 
 const InformationalDetailPage: React.FC<InformationalDetailPageProps> = ({
-  index,
+  pageId,
   headerTitle,
   headerDescription,
 }) => {
@@ -22,7 +22,7 @@ const InformationalDetailPage: React.FC<InformationalDetailPageProps> = ({
   if (loading) return <LoaderContent />;
   if (error) return <SomethingWentWrong />;
 
-  const data = item[index];
+  const data = item.find((d) => d.id === pageId);
 
   if (!data) {
     return (

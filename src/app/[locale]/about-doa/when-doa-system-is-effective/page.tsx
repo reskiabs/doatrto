@@ -3,7 +3,7 @@ import InformationalDetailPage from "@/components/content/InformationalDetailPag
 const WhenDoaEffectivePage = () => {
   return (
     <InformationalDetailPage
-      index={0}
+      pageId={11}
       headerTitle="whenDoaSystemIsEffective"
       headerDescription="whenDoaSystemIsEffective"
     />

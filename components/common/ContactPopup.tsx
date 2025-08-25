@@ -23,7 +23,7 @@ const ContactPopup = ({ onClose }: ContactPopupProps) => {
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute text-gray-600 top-4 right-4 md:top-6 md:right-6 hover:text-black"
+          className="absolute text-gray-600 top-4 right-4 md:top-6 md:right-6 hover:text-black hover:cursor-pointer transition-colors"
           aria-label={t("title")}
         >
           <X className="size-5 md:size-[25px]" />
@@ -75,7 +75,7 @@ const ContactPopup = ({ onClose }: ContactPopupProps) => {
             href={mapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full flex items-center justify-center h-[32px] md:h-[40px] bg-tertiary rounded-full text-white text-[12px] md:text-base font-medium text-center"
+            className="w-full flex items-center justify-center h-[32px] md:h-[40px] bg-tertiary rounded-full text-white text-[12px] md:text-base font-medium text-center hover:cursor-pointer transition-colors"
           >
             {t("buttonDirection")}
           </a>

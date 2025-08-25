@@ -5,7 +5,7 @@ import InformationalDetailPage from "@/components/content/InformationalDetailPag
 const WhatIsDoaPage = () => {
   return (
     <InformationalDetailPage
-      index={2}
+      pageId={10}
       headerTitle="whatIsDoa"
       headerDescription="whatIsDoa"
     />

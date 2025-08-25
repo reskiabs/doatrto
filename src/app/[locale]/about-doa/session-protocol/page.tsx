@@ -3,7 +3,7 @@ import InformationalDetailPage from "@/components/content/InformationalDetailPag
 const SessionProtocolPage = () => {
   return (
     <InformationalDetailPage
-      index={1}
+      pageId={12}
       headerTitle="sessionProtocol"
       headerDescription="sessionProtocol"
     />

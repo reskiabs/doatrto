@@ -167,7 +167,7 @@ const Header = () => {
 
           <button
             onClick={() => setShowContactPopup(true)}
-            className="px-5 py-2.5 text-md font-medium border-2 bg-white rounded-full border-primary text-primary hover:bg-secondary/20 transition"
+            className="px-5 py-2.5 text-md font-medium border-2 bg-white rounded-full border-primary text-primary hover:bg-secondary/20 hover:cursor-pointer transition-colors"
           >
             {t("contactUs")}
           </button>
@@ -258,7 +258,7 @@ const Header = () => {
               setShowContactPopup(true);
               setMenuOpen(false);
             }}
-            className="w-full py-4 text-xs font-medium text-center transition border-b border-gray-300"
+            className="w-full py-4 text-xs font-medium text-center border-b border-gray-300 hover:cursor-pointer transition-colors"
           >
             {t("contactUs")}
           </button>
