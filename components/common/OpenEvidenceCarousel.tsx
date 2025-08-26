@@ -17,7 +17,7 @@ export function OpenEvidenceCarousel() {
   }));
 
   return (
-    <div className="relative overflow-hidden w-full h-full">
+    <div className="relative overflow-hidden w-full pb-6 lg:pb-8 h-full">
       <Carousel slides={slideData} />
     </div>
   );
