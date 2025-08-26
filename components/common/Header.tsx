@@ -1,11 +1,9 @@
 "use client";
 
-import { routing } from "@/src/i18n/routing";
+import { Link, usePathname } from "@/src/i18n/navigation"; // ✅ pakai i18n navigation
 import clsx from "clsx";
 import { AlignJustify, X } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { LogoPlaceholder } from "../../lib/helper/ImagePlacholder";
 import ContactPopup from "./ContactPopup";
@@ -62,27 +60,13 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const removeLocale = (path: string) => {
-    const locales = routing.locales;
-    const parts = path.split("/");
-    if (
-      parts.length > 1 &&
-      locales.includes(parts[1] as (typeof locales)[number])
-    ) {
-      return "/" + parts.slice(2).join("/");
-    }
-    return path;
-  };
-
   const isRouteActive = (route: string) => {
-    const cleanPath = removeLocale(pathname);
-    if (route === "/") return cleanPath === "/";
-    return cleanPath === route || cleanPath.startsWith(`${route}/`);
+    if (route === "/") return pathname === "/";
+    return pathname === route || pathname.startsWith(`${route}/`);
   };
 
   const isAboutDOARoute = () => {
-    const cleanPath = removeLocale(pathname);
-    return cleanPath.startsWith("/about-doa");
+    return pathname.startsWith("/about-doa");
   };
 
   return (
@@ -189,12 +173,11 @@ const Header = () => {
       {menuOpen && (
         <div className="fixed inset-0 z-40 flex flex-col items-center px-8 pt-24 bg-white text-gray-800 md:hidden">
           {menuItems
-            .filter((item) => item.name !== "Contact us")
+            .filter((item) => item.name !== t("contactUs"))
             .map((item) => {
               const active = isRouteActive(item.route || "");
               const hasChildren = !!item.children;
 
-              // Khusus untuk About DOA → pakai Dialog
               if (item.name === "About DOA" && hasChildren) {
                 return (
                   <Dialog key={item.name}>
@@ -220,9 +203,7 @@ const Header = () => {
                           <Link
                             key={child.name}
                             href={child.route}
-                            onClick={() => {
-                              setMenuOpen(false);
-                            }}
+                            onClick={() => setMenuOpen(false)}
                             className="px-4 py-3 text-sm text-primary hover:bg-secondary/10 border-b border-gray-200 last:border-none"
                           >
                             {child.name}
@@ -234,7 +215,6 @@ const Header = () => {
                 );
               }
 
-              // Default item
               return (
                 <Link
                   key={item.name}

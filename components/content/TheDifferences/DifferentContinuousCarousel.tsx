@@ -13,7 +13,7 @@ interface RowProps {
 }
 
 function ScrollRow({ items, animationClass, pauseOnHover }: RowProps) {
-  const doubled = [...items, ...items];
+  const doubled = Array(3).fill(items).flat();
 
   return (
     <div className="relative w-full overflow-hidden">
