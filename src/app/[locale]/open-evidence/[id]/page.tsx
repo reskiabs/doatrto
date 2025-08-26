@@ -27,9 +27,9 @@ const OpenEvidenceDetailPage = () => {
           titleKey="openEvidenceBasedSystem"
           descriptionKey="openEvidenceBasedSystem"
         />
-        <div className="relative size-[372px] lg:w-[1140px] bg-gray-100 lg:h-[641px] rounded-[15px] lg:rounded-[30px] overflow-hidden mt-[50px]">
+        <div className="relative w-full  max-w-[360px] lg:max-w-[1140px] aspect-video bg-surface rounded-[15px] lg:rounded-[25px] overflow-hidden mt-[50px]">
           <div
-            className="w-full aspect-video"
+            className="absolute inset-0 w-full h-full [&>iframe]:w-full [&>iframe]:h-full [&>iframe]:absolute [&>iframe]:top-0 [&>iframe]:left-0"
             dangerouslySetInnerHTML={{ __html: detail?.video || "" }}
           />
         </div>
