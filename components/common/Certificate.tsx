@@ -30,14 +30,14 @@ const certList = [
 const Certificate = () => {
   return (
     <div className="w-full flex flex-col justify-center items-center mt-[50px] lg:mt-[100px]">
-      <div className="h-[116px] lg:h-[223px] justify-center flex bg-surface overflow-hidden">
+      <div className="py-3 lg:py-6 justify-center flex bg-surface overflow-hidden">
         <div className="animate-scroll-slow flex justify-center items-center gap-[25px] lg:gap-[50px]">
           {[...certList, ...certList].map((item, index) => (
             <div
               key={index}
               className="flex flex-col items-center min-w-[200px] lg:min-w-[250px]"
             >
-              <div className="relative size-[32px] lg:size-[80px] mb-2.5">
+              <div className="relative size-[50px] lg:size-[80px] lg:mb-2.5">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -48,7 +48,7 @@ const Certificate = () => {
               <p className="text-xs lg:text-md font-bold text-center text-body">
                 {item.title}
               </p>
-              <p className="text-2xs lg:text-xs font-normal text-center text-muted">
+              <p className="text-2xs lg:text-xs -mt-0.5 font-normal text-center text-muted">
                 {item.subtitle}
               </p>
             </div>

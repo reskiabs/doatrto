@@ -16,12 +16,12 @@ const ContentTitle = ({
   return (
     <div className="mx-2.5 lg:max-w-[1140px]">
       {/* Subtitle */}
-      <p className="text-sm lg:text-xl text-gray-400 text-center font-medium">
+      <p className="text-xs lg:text-lg uppercase text-gray-400 text-center font-medium">
         {t(`${titleKey}.subtitle`)}
       </p>
 
       {/* Title */}
-      <h1 className="text-accent font-extrabold text-[28px] text-center lg:text-[40px]">
+      <h1 className="text-accent font-semibold text-[28px] text-center lg:text-[40px]">
         {t(`${titleKey}.title`)}
       </h1>
 
