@@ -145,18 +145,16 @@ export function Carousel({ slides }: CarouselProps) {
     setCurrent((prev) => (prev + 1) % slides.length);
   };
 
-  const id = useId();
-
   useEffect(() => {
     const isMobile = window.innerWidth < 1024;
     if (!isMobile) return;
-
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
     }, 5000);
-
     return () => clearInterval(interval);
   }, [slides.length]);
+
+  const id = useId();
 
   return (
     <div
@@ -166,7 +164,7 @@ export function Carousel({ slides }: CarouselProps) {
       {/* Button Prev */}
       <button
         onClick={handlePrev}
-        className="hidden lg:flex absolute top-1/2 -left-6 transform -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white p-3 rounded-full z-20 transition"
+        className="hidden lg:flex absolute top-1/2 -left-26 transform -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white p-3 rounded-full z-20 transition"
       >
         <ChevronLeft size={28} />
       </button>
@@ -174,13 +172,13 @@ export function Carousel({ slides }: CarouselProps) {
       {/* Button Next */}
       <button
         onClick={handleNext}
-        className="hidden lg:flex absolute top-1/2 -right-6 transform -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white p-3 rounded-full z-20 transition"
+        className="hidden lg:flex absolute top-1/2 -right-30 transform -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white p-3 rounded-full z-20 transition"
       >
         <ChevronRight size={28} />
       </button>
 
       <ul
-        className="absolute flex mx-[-0.1vmin] transition-transform duration-1000 ease-in-out"
+        className="absolute flex mx-[-0.1vmin] justify-center items-center transition-transform duration-1000 ease-in-out"
         style={{
           transform: `translateX(-${current * (100 / slides.length)}%)`,
         }}
