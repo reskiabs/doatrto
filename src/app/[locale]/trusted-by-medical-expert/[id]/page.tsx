@@ -2,14 +2,14 @@
 
 import LoaderContent from "@/components/common/LoaderContent";
 import SomethingWentWrong from "@/components/common/SomethingWentWrong";
-import TrustByMedicalExpert from "@/components/content/appreciatedByMedicalExpert";
+import TrustByMedicalExpert from "@/components/content/TrustedByMedicalExpert";
 import DetailHeader from "@/components/typography/DetailHeader";
 import { useMobileScrollOffset } from "@/hooks/useMobileScrollOffset";
 import { useTrustedMedical } from "@/hooks/useTrustedMedical";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 
-const appreciatedByMedicalExpertDetailPage = () => {
+const TrustedByMedicalExpertDetailPage = () => {
   const params = useParams();
   const id = params.id as string;
 
@@ -92,4 +92,4 @@ const appreciatedByMedicalExpertDetailPage = () => {
   );
 };
 
-export default appreciatedByMedicalExpertDetailPage;
+export default TrustedByMedicalExpertDetailPage;
