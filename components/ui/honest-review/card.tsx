@@ -71,7 +71,7 @@ export const HonestReviewCard = ({
         />
 
         {/* Wrapper dengan gradient biru */}
-        <div className="pointer-events-none pl-7 flex justify-center flex-col absolute inset-x-0 bottom-8 z-30 bg-gradient-to-r from-[#0B55C8] to-[#052A62/10]">
+        {/* <div className="pointer-events-none pl-7 flex justify-center flex-col absolute inset-x-0 bottom-8 z-30 bg-gradient-to-r from-[#0B55C8] to-[#052A62/10]">
           <motion.p
             layoutId={layout ? `title-${card.name}` : undefined}
             className="truncate overflow-hidden whitespace-nowrap max-w-xs text-left font-sans text-xl font-extrabold uppercase text-white md:text-[23px]"
@@ -84,7 +84,7 @@ export const HonestReviewCard = ({
           >
             {card.review}
           </motion.p>
-        </div>
+        </div> */}
       </motion.button>
     </Link>
   );

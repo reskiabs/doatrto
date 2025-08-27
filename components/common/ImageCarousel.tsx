@@ -1,6 +1,6 @@
 "use client";
 
-import { MoveRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, MoveRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,6 +16,8 @@ interface ImageCarouselProps {
   images: CarouselImage[];
 }
 
+// ...imports & interfaces tetap
+
 const ImageCarousel = ({ images }: ImageCarouselProps) => {
   const t = useTranslations("button");
   const [activeIndex, setActiveIndex] = useState(0);
@@ -28,13 +30,21 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
     return () => clearInterval(interval);
   }, [images]);
 
+  const handlePrev = () => {
+    setActiveIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+  const handleNext = () => {
+    setActiveIndex((prev) => (prev + 1) % images.length);
+  };
+
   if (images.length === 0) {
     return <div className="w-full h-[400px] bg-gray-100">No images found.</div>;
   }
 
   return (
     <>
-      <div className="relative w-[95%] lg:w-[98.5%] lg:h-[770px] h-[482px] rounded-[20px] lg:rounded-[40px] overflow-hidden bg-gray-50">
+      {/* tambahkan `group` di wrapper */}
+      <div className="relative w-[90%] lg:w-[90%] lg:h-[770px] h-[482px] rounded-[20px] lg:rounded-[40px] overflow-hidden bg-gray-50 group">
         {images.map(({ id, src, title }, index) => (
           <div key={id}>
             <div
@@ -49,10 +59,8 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
                 className="object-cover"
                 priority={index === 0}
               />
-              {/* Overlay Gradient */}
               <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
 
-              {/* Teks Title dan Tombol */}
               <div className="absolute top-1/2 left-[5%] -translate-y-1/2 max-w-[75%] sm:max-w-[60%] lg:max-w-[50%] text-white">
                 <h2 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold leading-tight drop-shadow-lg">
                   {title}
@@ -68,14 +76,33 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
             </div>
           </div>
         ))}
+
+        {/* Tombol Navigasi Kiri/Kanan */}
+        <button
+          onClick={handlePrev}
+          aria-label="Previous slide"
+          className="absolute left-4 bottom-4 bg-white/40 hover:bg-white/60 text-white p-1.5 lg:p-2 rounded-full flex z-30 transition-opacity lg:opacity-0 lg:group-hover:opacity-100 lg:pointer-events-none lg:group-hover:pointer-events-auto backdrop-blur-sm hover:cursor-pointer"
+        >
+          <ChevronLeft className="size-5 lg:size-7" />
+        </button>
+
+        <button
+          onClick={handleNext}
+          aria-label="Next slide"
+          className="absolute right-4 bottom-4 bg-white/40 hover:bg-white/60 text-white p-1.5 lg:p-2 rounded-full flex z-30 transition-opacity lg:opacity-0 lg:group-hover:opacity-100 lg:pointer-events-none lg:group-hover:pointer-events-auto backdrop-blur-sm hover:cursor-pointer"
+        >
+          <ChevronRight className="size-5 lg:size-7" />
+        </button>
       </div>
 
       {/* Dots */}
       <div className="flex justify-center mt-3 space-x-2 md:space-x-[15px] lg:space-x-[20px] md:mt-5">
         {images.map((_, i) => (
-          <div
+          <button
             key={i}
-            className={`rounded-full transition-all duration-300 ${
+            onClick={() => setActiveIndex(i)}
+            aria-label={`Go to slide ${i + 1}`}
+            className={`rounded-full transition-all duration-300 hover:cursor-pointer ${
               i === activeIndex
                 ? "bg-primary h-2 w-4 lg:w-7 lg:h-3"
                 : "bg-gray-300 size-2 lg:size-3"

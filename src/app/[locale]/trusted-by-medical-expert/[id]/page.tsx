@@ -2,14 +2,14 @@
 
 import LoaderContent from "@/components/common/LoaderContent";
 import SomethingWentWrong from "@/components/common/SomethingWentWrong";
-import TrustByMedicalExpert from "@/components/content/TrustedByMedicalExpert";
+import TrustByMedicalExpert from "@/components/content/appreciatedByMedicalExpert";
 import DetailHeader from "@/components/typography/DetailHeader";
 import { useMobileScrollOffset } from "@/hooks/useMobileScrollOffset";
 import { useTrustedMedical } from "@/hooks/useTrustedMedical";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 
-const TrustedByMedicalExpertDetailPage = () => {
+const appreciatedByMedicalExpertDetailPage = () => {
   const params = useParams();
   const id = params.id as string;
 
@@ -28,8 +28,8 @@ const TrustedByMedicalExpertDetailPage = () => {
     <div>
       <div className="flex flex-col justify-center items-center bg-gradient-to-b from-white via-[#EBF0F8] to-white pt-[50px] lg:pt-[100px]">
         <DetailHeader
-          titleKey="trustedByMedicalExperts"
-          descriptionKey="trustedByMedicalExperts"
+          titleKey="appreciatedByMedicalExperts"
+          descriptionKey="appreciatedByMedicalExperts"
         />
 
         <div className="relative w-full  max-w-[360px] lg:max-w-[1140px] aspect-video bg-surface rounded-[15px] lg:rounded-[25px] overflow-hidden mt-[50px]">
@@ -92,4 +92,4 @@ const TrustedByMedicalExpertDetailPage = () => {
   );
 };
 
-export default TrustedByMedicalExpertDetailPage;
+export default appreciatedByMedicalExpertDetailPage;

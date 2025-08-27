@@ -5,7 +5,7 @@ const SessionGridContent = () => {
   const row1Ref = useMobileScrollOffset(0.2);
   const row2Ref = useMobileScrollOffset(0.2);
   return (
-    <div className="w-full max-w-[1140px] px-[15px] lg:px-0 mx-auto space-y-[15px] lg:space-y-[30px] mt-[50px] md:mt-[80px] lg:mt-[100px]">
+    <div className="w-full max-w-[1140px] px-[15px] lg:px-0 mx-auto space-y-[15px] lg:space-y-[30px] mt-[30px] md:mt-[60px] lg:mt-[80px]">
       {/* Row 1 */}
       <div ref={row1Ref} className="overflow-x-auto scrollbar-hide">
         <div className="flex items-center gap-[10px] lg:gap-[30px] min-w-max">

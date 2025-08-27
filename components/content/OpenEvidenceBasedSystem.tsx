@@ -6,7 +6,7 @@ import { OpenEvidenceCarousel } from "../common/OpenEvidenceCarousel";
 
 const OpenEvidenceBasedSystem = () => {
   return (
-    <main className="mt-[50px] md:mt-[80px] lg:mt-[100px]">
+    <main className="mt-[30px] md:mt-[60px] lg:mt-[80px]">
       <div className="flex flex-col justify-center items-center mb-[20px] lg:mb-[30px]">
         <ContentTitle titleKey="openEvidenceBasedSystem" />
       </div>

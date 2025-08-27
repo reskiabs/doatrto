@@ -29,7 +29,7 @@ export function HonestReview() {
   ));
 
   return (
-    <div className="w-full h-full mt-[50px] md:mt-[80px] lg:mt-[100px]">
+    <div className="w-full h-full mt-[30px] md:mt-[60px] lg:mt-[80px]">
       <div className="flex flex-col items-center -mb-[20px] lg:mb-[30px]">
         <ContentTitle titleKey="honestReview" />
       </div>

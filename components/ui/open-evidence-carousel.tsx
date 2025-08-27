@@ -1,5 +1,5 @@
 "use client";
-import { Play } from "lucide-react";
+import { ChevronLeft, ChevronRight, Play } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
@@ -70,7 +70,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
     <div className="[perspective:1200px] [transform-style:preserve-3d]">
       <li
         ref={slideRef}
-        className="flex flex-1 flex-col items-center justify-center relative text-center text-white opacity-100 transition-all duration-300 ease-in-out w-[372px] lg:w-[1140px] h-[186px] lg:h-[585px] mx-[0.1vmin] z-10 "
+        className="flex flex-1 flex-col items-center justify-center relative text-center text-white opacity-100 transition-all duration-300 ease-in-out w-[340px] lg:w-[1140px] h-[191px] lg:h-[641px] mx-[0.1vmin] z-10 "
         onClick={() => handleSlideClick(index)}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
@@ -81,7 +81,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
         }}
       >
         <div
-          className="absolute top-0 left-0 w-full h-full bg-[#1D1F2F] rounded-[20px] overflow-hidden transition-all duration-150 ease-out"
+          className="absolute top-0 w-full h-full bg-[#1D1F2F] rounded-[10px] lg:rounded-[20px] overflow-hidden transition-all duration-150 ease-out"
           style={{
             transform:
               current === index
@@ -129,7 +129,7 @@ interface CarouselProps {
 }
 
 export function Carousel({ slides }: CarouselProps) {
-  const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState(1);
 
   const handleSlideClick = (index: number) => {
     if (current !== index) {
@@ -137,27 +137,48 @@ export function Carousel({ slides }: CarouselProps) {
     }
   };
 
-  const id = useId();
+  const handlePrev = () => {
+    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  const handleNext = () => {
+    setCurrent((prev) => (prev + 1) % slides.length);
+  };
 
   useEffect(() => {
-    // Cek apakah perangkat mobile (kurang dari 1024px)
     const isMobile = window.innerWidth < 1024;
     if (!isMobile) return;
-
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
-    }, 3000); // ganti slide setiap 3 detik
-
+    }, 5000);
     return () => clearInterval(interval);
   }, [slides.length]);
 
+  const id = useId();
+
   return (
     <div
-      className="relative w-[372px] lg:w-[1140px] h-[186px] lg:h-[585px] mx-auto"
+      className="relative w-[340px] lg:w-[1140px] h-[191px] lg:h-[641px] mx-auto"
       aria-labelledby={`carousel-heading-${id}`}
     >
+      {/* Button Prev */}
+      <button
+        onClick={handlePrev}
+        className="hidden lg:flex absolute top-1/2 -left-26 transform -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white p-3 rounded-full z-20 transition"
+      >
+        <ChevronLeft size={28} />
+      </button>
+
+      {/* Button Next */}
+      <button
+        onClick={handleNext}
+        className="hidden lg:flex absolute top-1/2 -right-30 transform -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white p-3 rounded-full z-20 transition"
+      >
+        <ChevronRight size={28} />
+      </button>
+
       <ul
-        className="absolute flex mx-[-0.1vmin] transition-transform duration-1000 ease-in-out"
+        className="absolute flex mx-[-0.1vmin] justify-center items-center transition-transform duration-1000 ease-in-out"
         style={{
           transform: `translateX(-${current * (100 / slides.length)}%)`,
         }}

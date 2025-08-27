@@ -31,7 +31,7 @@ const GoingBeyond = () => {
   const t = useTranslations("items");
 
   return (
-    <main className="flex flex-col items-center w-full mt-[50px] md:mt-[80px] lg:mt-[100px]">
+    <main className="flex flex-col items-center w-full mt-[30px] md:mt-[60px] lg:mt-[80px]">
       <div className="w-full flex flex-col items-center lg:max-w-[1140px]">
         <div className="flex flex-col items-center mb-[20px] lg:mb-[30px]">
           <ContentTitle titleKey="beyondConventionalTherapies" />

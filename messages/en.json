@@ -48,7 +48,7 @@
     "eventsLink2": "Privacy Policy",
     "eventsLink3": "Membership",
     "eventsLink4": "Code of Conduct",
-    "copyright": "© 2025, All rights reserved, DOA TRTO"
+    "copyright": "© 2025, All rights reserved, PT. Daya Otentika Adikarya"
   },
   "ContactUs": {
     "title": "Contact Us",
@@ -61,14 +61,43 @@
     "facilitators": "Facilitators"
   },
   "ContentTitle": {
-    "trustedByMedicalExpert": "Trusted by Medical Expert",
-    "beyondConventionalTherapies": "Beyond Conventional Therapies",
-    "honestReview": "Honest Review",
-    "whatsTheDifferences": "What’s The Differences?",
-    "openEvidenceBasedSystem": "Open Evidence Based System",
-    "testimonials": "Testimonials",
-    "latestNews": "The Latest News from D.O.A TRTO"
+    "appreciatedByMedicalExpert": {
+      "title": "Appreciated by Medical Experts",
+      "subtitle": "Trusted by Professionals",
+      "description": "Endorsed and valued by medical experts who recognize its scientific foundation and real-world impact. Their support reflects the credibility and effectiveness of our approach in addressing real health needs. This recognition strengthens our mission to bridge innovation with trusted medical practices."
+    },
+    "beyondConventionalTherapies": {
+      "title": "Beyond Conventional Therapies",
+      "subtitle": "Innovating Healthcare",
+      "description": "Offering solutions that go beyond traditional therapies, blending modern technology with evidence-based methods. Our approach opens new possibilities for more effective, accessible, and personalized treatments. By combining science and innovation, we aim to redefine the future of healthcare."
+    },
+    "honestReview": {
+      "title": "Honest Review",
+      "subtitle": "Real Stories, Real Impact",
+      "description": "Hear genuine feedback from users and experts, highlighting the real benefits and challenges of our approach. These stories showcase how lives are being improved, while also giving transparent insights into the process. Each review serves as a reflection of authenticity and accountability."
+    },
+    "whatsTheDifferences": {
+      "title": "What’s The Differences?",
+      "subtitle": "Standing Out from the Rest",
+      "description": "Discover what makes our system unique compared to conventional methods and why it matters for your journey. Our solutions are designed with a balance of innovation, transparency, and real results. By understanding these differences, you can make more informed decisions for your health and growth."
+    },
+    "openEvidenceBasedSystem": {
+      "title": "Open Evidence Based System",
+      "subtitle": "Science at the Core",
+      "description": "Built on transparency and evidence, ensuring every step is supported by reliable scientific research. We believe in open access to data, empowering both professionals and individuals to trust the process. This system ensures accountability, credibility, and continuous improvement."
+    },
+    "testimonials": {
+      "title": "Testimonials",
+      "subtitle": "Voices of Experience",
+      "description": "Read personal testimonials that reflect real experiences, outcomes, and transformations. These stories capture the emotional and practical impact of our work on people’s lives. Every voice adds to a collective narrative of trust, progress, and shared hope."
+    },
+    "latestNews": {
+      "title": "The Latest News from D.O.A TRTO",
+      "subtitle": "Stay Informed",
+      "description": "Get the latest updates, breakthroughs, and stories from D.O.A TRTO. From new innovations to important announcements, we keep you connected with everything that matters. Stay informed and be part of the journey as we continue to grow and make an impact."
+    }
   },
+
   "beyondConventionalTherapies": "Going Beyond Conventional Therapies",
   "items": {
     "1": {
@@ -121,7 +150,7 @@
       "title": "Facilitator",
       "description": "Meet our experienced facilitators who guide and support you throughout your sessions and classes."
     },
-    "trustedByMedicalExperts": {
+    "appreciatedByMedicalExperts": {
       "title": "Trusted by Medical Experts",
       "description": "Our methods and systems are endorsed and supported by professionals in the medical community."
     },
@@ -185,5 +214,9 @@
     "title": "Profile Coach Rheo",
     "intro": "My name is Caezarro, but you can call me Rheo.\n\nI’m sure you’re curious about the hundreds of friends who have experienced the DOA TRTO technique and how it has transformed their lives, which is why you are here.",
     "imageAlt": "Coach Rheo profile picture"
+  },
+  "DetailTitle": {
+    "back": "Back",
+    "uploadedOn": "Uploaded on"
   }
 }
