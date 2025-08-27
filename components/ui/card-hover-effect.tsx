@@ -49,9 +49,12 @@ export const HoverEffect = ({
           </AnimatePresence>
           <Card>
             <div className="flex-1 lg:pr-8">
-              <CardTitle>{item.title}</CardTitle>
+              <CardTitle className="line-clamp-2">{item.title}</CardTitle>
               <CardDescription>
-                <div dangerouslySetInnerHTML={{ __html: item.description }} />
+                <div
+                  className="line-clamp-4"
+                  dangerouslySetInnerHTML={{ __html: item.description }}
+                />
               </CardDescription>
             </div>
             <div className="relative mt-2.5 lg:mt-0 w-[315px] lg:w-[480px] h-[192px] lg:h-[270px] rounded-[12px] lg:rounded-[20px] overflow-hidden">

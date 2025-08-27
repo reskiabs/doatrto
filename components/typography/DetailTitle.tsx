@@ -1,5 +1,6 @@
 import dayjs from "dayjs";
 import { MoveLeft } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 interface DetailTitleProps {
@@ -8,6 +9,7 @@ interface DetailTitleProps {
   href?: string;
 }
 const DetailTitle = ({ title, date, href }: DetailTitleProps) => {
+  const t = useTranslations("DetailTitle");
   return (
     <div className="min-w-[340px] lg:min-w-[1140px] max-w-[1140px]">
       <Link
@@ -15,13 +17,13 @@ const DetailTitle = ({ title, date, href }: DetailTitleProps) => {
         className="flex items-center gap-1.5 md:gap-2.5 font-medium text-xs text-tertiary md:text-md"
       >
         <MoveLeft className="size-3.5 md:size-5" />
-        Kembali
+        {t("back")}
       </Link>
       <h1 className="text-[28px] lg:text-[50px] mt-2 text-left font-extrabold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">
         {title}
       </h1>
       <p className="text-xs lg:text-md font-medium text-muted mt-2.5 lg:mt-5">
-        Diunggah pada {dayjs(date).format("DD MMM YYYY")}
+        {t("uploadedOn")} {dayjs(date).format("DD MMM YYYY")}
       </p>
     </div>
   );

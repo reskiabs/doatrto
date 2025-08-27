@@ -30,7 +30,7 @@ const certList = [
 const Certificate = () => {
   return (
     <div className="w-full flex flex-col justify-center items-center mt-[50px] lg:mt-[100px]">
-      <div className="w-[95%] h-[116px] lg:h-[223px] rounded-[10px] justify-center flex lg:rounded-[20px] bg-surface overflow-hidden">
+      <div className="h-[116px] lg:h-[223px] justify-center flex bg-surface overflow-hidden">
         <div className="animate-scroll-slow flex justify-center items-center gap-[25px] lg:gap-[50px]">
           {[...certList, ...certList].map((item, index) => (
             <div

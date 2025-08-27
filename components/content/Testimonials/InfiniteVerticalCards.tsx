@@ -64,7 +64,7 @@ export function InfiniteVerticalCards({
   const cols = splitIntoColumns(testimonials, isMobile ? 1 : columns);
 
   const animationMap = isMobile
-    ? ["animate-scroll-y-fast"]
+    ? ["animate-scroll-y-slow"]
     : [
         "animate-scroll-y-slow",
         "animate-scroll-y-fast",

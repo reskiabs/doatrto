@@ -48,7 +48,7 @@
     "eventsLink2": "Kebijakan Privasi",
     "eventsLink3": "Keanggotaan",
     "eventsLink4": "Kode Etik",
-    "copyright": "© 2025, Semua hak dilindungi, DOA TRTO"
+    "copyright": "© 2025, Semua hak dilindungi, PT. Daya Otentika Adikarya"
   },
   "ContactUs": {
     "title": "Hubungi Kami",
@@ -61,13 +61,41 @@
     "facilitators": "Fasilitator"
   },
   "ContentTitle": {
-    "trustedByMedicalExpert": "Dipercaya oleh Pakar Medis",
-    "beyondConventionalTherapies": "Melampaui Terapi Konvensional",
-    "honestReview": "Ulasan Jujur",
-    "whatsTheDifferences": "Apa Bedanya?",
-    "openEvidenceBasedSystem": "Sistem Berbasis Bukti Terbuka",
-    "testimonials": "Testimoni",
-    "latestNews": "Berita Terbaru dari D.O.A TRTO"
+    "appreciatedByMedicalExpert": {
+      "title": "Diapresiasi oleh Ahli Medis",
+      "subtitle": "Dipercaya Profesional",
+      "description": "Diakui dan diapresiasi oleh para ahli medis yang memahami dasar ilmiah serta dampaknya di dunia nyata. Dukungan mereka mencerminkan kredibilitas dan efektivitas pendekatan kami dalam menjawab kebutuhan kesehatan. Pengakuan ini memperkuat misi kami untuk menjembatani inovasi dengan praktik medis yang terpercaya."
+    },
+    "beyondConventionalTherapies": {
+      "title": "Melampaui Terapi Konvensional",
+      "subtitle": "Inovasi dalam Perawatan",
+      "description": "Memberikan solusi yang melampaui terapi konvensional, menggabungkan teknologi modern dengan metode berbasis bukti. Pendekatan ini membuka peluang baru untuk perawatan yang lebih efektif, mudah diakses, dan dipersonalisasi. Dengan memadukan ilmu pengetahuan dan inovasi, kami berupaya mendefinisikan ulang masa depan kesehatan."
+    },
+    "honestReview": {
+      "title": "Ulasan Jujur",
+      "subtitle": "Cerita Nyata, Dampak Nyata",
+      "description": "Dengarkan ulasan jujur dari pengguna dan ahli, yang menyoroti manfaat nyata serta tantangan dari pendekatan kami. Kisah-kisah ini menunjukkan bagaimana hidup berubah, sekaligus memberikan gambaran transparan tentang proses yang dilalui. Setiap ulasan adalah wujud dari keaslian dan tanggung jawab kami."
+    },
+    "whatsTheDifferences": {
+      "title": "Apa Bedanya?",
+      "subtitle": "Perbedaan yang Signifikan",
+      "description": "Temukan apa yang membuat sistem kami berbeda dari metode konvensional dan mengapa hal ini penting bagi perjalanan Anda. Solusi yang kami hadirkan dirancang dengan keseimbangan inovasi, transparansi, dan hasil nyata. Dengan memahami perbedaan ini, Anda bisa membuat keputusan yang lebih bijak untuk kesehatan dan perkembangan Anda."
+    },
+    "openEvidenceBasedSystem": {
+      "title": "Sistem Berbasis Bukti Terbuka",
+      "subtitle": "Ilmu sebagai Dasar",
+      "description": "Dibangun di atas transparansi dan bukti, memastikan setiap langkah didukung oleh riset ilmiah yang terpercaya. Kami percaya pada keterbukaan data, sehingga baik profesional maupun individu bisa mempercayai proses yang ada. Sistem ini menjamin akuntabilitas, kredibilitas, serta perbaikan yang berkelanjutan."
+    },
+    "testimonials": {
+      "title": "Testimoni",
+      "subtitle": "Suara Pengalaman",
+      "description": "Baca testimoni pribadi yang mencerminkan pengalaman nyata, hasil, serta transformasi. Cerita-cerita ini menggambarkan dampak emosional dan praktis dari karya kami dalam kehidupan orang lain. Setiap suara menambah narasi kolektif tentang kepercayaan, kemajuan, dan harapan bersama."
+    },
+    "latestNews": {
+      "title": "Berita Terbaru dari D.O.A TRTO",
+      "subtitle": "Selalu Terupdate",
+      "description": "Dapatkan informasi terbaru, terobosan, dan cerita terkini dari D.O.A TRTO. Mulai dari inovasi baru hingga pengumuman penting, kami menjaga Anda tetap terhubung dengan hal-hal yang relevan. Selalu terupdate dan ikut menjadi bagian dari perjalanan kami menuju dampak yang lebih luas."
+    }
   },
   "beyondConventionalTherapies": "Melebihi Terapi Konvensional",
   "items": {
@@ -121,7 +149,7 @@
       "title": "Fasilitator",
       "description": "Kenali fasilitator berpengalaman kami yang membimbing dan mendukung Anda selama sesi dan kelas."
     },
-    "trustedByMedicalExperts": {
+    "appreciatedByMedicalExperts": {
       "title": "Dipercaya oleh Ahli Medis",
       "description": "Metode dan sistem kami didukung serta diakui oleh para profesional di komunitas medis."
     },
@@ -185,5 +213,9 @@
     "title": "Profil Coach Rheo",
     "intro": "Nama saya Caezarro, panggilan saya Rheo.\n\nSaya yakin Anda penasaran dengan ratusan teman yang telah merasakan teknik DOA TRTO yang berhasil mengubah hidup mereka, maka Anda berada di sini.",
     "imageAlt": "Foto profil Coach Rheo"
+  },
+  "DetailTitle": {
+    "back": "Kembali",
+    "uploadedOn": "Diunggah pada"
   }
 }

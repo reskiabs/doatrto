@@ -14,8 +14,8 @@ const data = [
 const Media = () => {
   const t = useTranslations("media");
   return (
-    <main className="flex flex-col items-center w-full mt-[50px] md:mt-[80px] lg:mt-[100px] overflow-x-hidden">
-      <div className="w-full max-w-[calc(100%-10px)] h-[95px] lg:h-[220px] bg-tertiary flex flex-col items-center rounded-[10px] lg:rounded-[20px] justify-center px-2">
+    <main className="flex flex-col items-center w-full mt-[30px] md:mt-[60px] lg:mt-[80px] overflow-x-hidden">
+      <div className="w-full h-[95px] lg:h-[220px] bg-tertiary flex flex-col items-center justify-center">
         <p className="text-2xs lg:text-2xl font-medium text-white">
           {t("asFeatureIn")}
         </p>
