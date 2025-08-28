@@ -29,8 +29,8 @@ const certList = [
 
 const Certificate = () => {
   return (
-    <div className="w-full flex flex-col justify-center items-center mt-[50px] lg:mt-[100px]">
-      <div className="py-3 lg:py-6 justify-center flex bg-surface overflow-hidden">
+    <div className="flex flex-col justify-center items-center mt-[50px] lg:mt-[100px]">
+      <div className="py-3 w-full  lg:py-6 justify-center flex bg-surface overflow-hidden">
         <div className="animate-scroll-slow flex justify-center items-center gap-[25px] lg:gap-[50px]">
           {[...certList, ...certList].map((item, index) => (
             <div

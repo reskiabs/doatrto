@@ -1,8 +1,8 @@
 "use client";
 
 import Certificate from "@/components/common/Certificate";
+import Banner from "@/components/content/Banner";
 import GoingBeyond from "@/components/content/GoingBeyond";
-import HeroSection from "@/components/content/HeroSection";
 import { HonestReview } from "@/components/content/HonestReview";
 import Media from "@/components/content/Media";
 import News from "@/components/content/News";
@@ -14,7 +14,7 @@ import TrustByMedicalExpert from "@/components/content/TrustedByMedicalExpert";
 export default function Home() {
   return (
     <main>
-      <HeroSection />
+      <Banner />
       <TrustByMedicalExpert />
       <GoingBeyond />
       <Media />

@@ -2,7 +2,7 @@
 
 import LoaderContent from "@/components/common/LoaderContent";
 import SomethingWentWrong from "@/components/common/SomethingWentWrong";
-import { useHero } from "@/hooks/useHero"; // ganti import
+import { useBanner } from "@/hooks/useBanner";
 import { useMobileScrollOffset } from "@/hooks/useMobileScrollOffset";
 import { koulen } from "@/src/app/fonts";
 import Image from "next/image";
@@ -11,7 +11,7 @@ import { useParams } from "next/navigation";
 const BannerDetailPage = () => {
   const params = useParams();
   const id = params.id as string;
-  const { hero, loading, error } = useHero(id);
+  const { hero, loading, error } = useBanner(id);
   const scrollRef = useMobileScrollOffset(0.22, [hero]);
 
   const hasImages = Array.isArray(hero?.images) && hero.images.length > 0;
