@@ -16,7 +16,7 @@ const Banner = () => {
     <div className="flex flex-col justify-center items-center">
       <ImageCarousel images={allThumbnails || []} />
 
-      <div className="flex w-[90%] lg:w-[90%] items-center gap-[10px] lg:gap-[18px] mt-[30px] md:mt-[60px] lg:mt-[80px]">
+      <div className="flex w-[90%] lg:w-[90%] items-center gap-[12px] lg:gap-[22px] mt-[30px] md:mt-[60px] lg:mt-[80px]">
         <MainOutlineButton href="/session" text={t("session")} />
         <MainOutlineButton href="/klasses" text={t("klasses")} />
         <MainOutlineButton href="/facilitators" text={t("facilitators")} />

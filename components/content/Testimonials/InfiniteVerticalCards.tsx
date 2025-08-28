@@ -32,13 +32,14 @@ export function InfiniteVerticalCards({
   }, []);
 
   const cols = splitIntoColumns(testimonials, isMobile ? 1 : columns);
+  const duplicatedCols = cols.map((col) => [...col, ...col]);
 
   const animationMap = isMobile
     ? ["animate-scroll-y-slow"]
     : [
         "animate-scroll-y-slow",
-        "animate-scroll-y-fast",
         "animate-scroll-y-medium",
+        "animate-scroll-y-slow",
       ];
 
   const offsets = ["0px"];
@@ -53,7 +54,7 @@ export function InfiniteVerticalCards({
         className
       )}
     >
-      {cols.map((items, idx) => (
+      {duplicatedCols.map((items, idx) => (
         <AnimatedColumn
           key={idx}
           items={items}

@@ -60,15 +60,6 @@
     }
   }
 
-  @keyframes scrollReverse {
-    0% {
-      transform: translateX(-50%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-
   @keyframes scrollY {
     0% {
       transform: translateY(0);
@@ -77,26 +68,15 @@
       transform: translateY(-50%);
     }
   }
-  @keyframes scrollYReverse {
-    0% {
-      transform: translateY(-50%);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
 
   --animate-scroll-fast: scroll 40s linear infinite;
   --animate-scroll-slow: scroll 60s linear infinite;
-  --animate-scroll-fast-reverse: scrollReverse 20s linear infinite;
-  --animate-scroll-slow-reverse: scrollReverse 40s linear infinite;
 
   /* scroll y */
   --animate-scroll-y-slowest: scrollY 80s linear infinite;
   --animate-scroll-y-slow: scrollY 60s linear infinite;
   --animate-scroll-y-medium: scrollY 45s linear infinite;
   --animate-scroll-y-fast: scrollY 30s linear infinite;
-  --animate-scroll-y-reverse: scrollYReverse 50s linear infinite;
 }
 
 :root {

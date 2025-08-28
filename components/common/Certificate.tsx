@@ -4,26 +4,38 @@ const certList = [
   {
     id: 1,
     image: "/images/mc-certificate.svg",
+    title: "Certified Trainer",
+    subtitle: "Source of Body Mind and Soul",
+  },
+  {
+    id: 2,
+    image: "/images/mc-certificate.svg",
     title: "Associate Meta Coach",
     subtitle: "International Society of Neuro-Semantics",
   },
   {
-    id: 2,
+    id: 3,
     image: "/images/mc-certificate.svg",
     title: "Certified Hypnotherapist",
     subtitle: "Indonesian Board of Hypnotherapy",
   },
   {
-    id: 3,
+    id: 4,
     image: "/images/ibh-certificate.svg",
     title: "Certified Hypnotist",
     subtitle: "Indonesian Board of Hypnotherapy",
   },
   {
-    id: 4,
+    id: 5,
     image: "/images/mc-certificate.svg",
     title: "Certified Trainer",
     subtitle: "Source of Body Mind and Soul",
+  },
+  {
+    id: 6,
+    image: "/images/mc-certificate.svg",
+    title: "Associate Meta Coach",
+    subtitle: "International Society of Neuro-Semantics",
   },
 ];
 
@@ -37,7 +49,7 @@ const Certificate = () => {
               key={index}
               className="flex flex-col items-center min-w-[200px] lg:min-w-[250px]"
             >
-              <div className="relative size-[50px] lg:size-[80px] lg:mb-2.5">
+              <div className="relative size-[50px] lg:size-[80px] lg:mb-1.5">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -45,10 +57,10 @@ const Certificate = () => {
                   className="object-contain"
                 />
               </div>
-              <p className="text-xs lg:text-md font-bold text-center text-body">
+              <p className="text-xs lg:text-lg font-bold text-center text-body">
                 {item.title}
               </p>
-              <p className="text-2xs lg:text-xs -mt-0.5 font-normal text-center text-muted">
+              <p className="text-2xs lg:text-sm -mt-0.5 font-normal text-center text-muted line-clamp-1">
                 {item.subtitle}
               </p>
             </div>

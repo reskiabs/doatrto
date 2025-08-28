@@ -35,15 +35,6 @@ const Footer = () => {
         t("supportLink4"),
       ],
     },
-    {
-      title: t("events"),
-      links: [
-        t("eventsLink1"),
-        t("eventsLink2"),
-        t("eventsLink3"),
-        t("eventsLink4"),
-      ],
-    },
   ];
 
   return (
