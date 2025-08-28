@@ -2,39 +2,14 @@
 
 import supabase from "@/lib/db";
 import { getLocalizedField } from "@/lib/helper/getLocalizedField";
+import { LocalizedBanner, UseBannerReturn } from "@/types/banner";
 import { useLocale } from "next-intl";
 import { useEffect, useState } from "react";
 
-export type HeroRow = {
-  id: string;
-  title_id: string;
-  title_en: string;
-  quotes_id: string;
-  quotes_en: string;
-  description_id: string;
-  description_en: string;
-  thumbnail: string | null;
-  images: string[] | null;
-};
-
-type LocalizedHero = HeroRow & {
-  title: string;
-  quotes: string;
-  description: string;
-};
-
-type UseHeroReturn = {
-  heros?: LocalizedHero[];
-  hero?: LocalizedHero;
-  allThumbnails?: { id: string; src: string; title: string }[];
-  loading: boolean;
-  error: string | null;
-};
-
-export function useHero(id?: string): UseHeroReturn {
+export function useBanner(id?: string): UseBannerReturn {
   const locale = useLocale();
-  const [heros, setHeros] = useState<LocalizedHero[]>();
-  const [hero, setHero] = useState<LocalizedHero>();
+  const [heros, setBanners] = useState<LocalizedBanner[]>();
+  const [hero, setBanner] = useState<LocalizedBanner>();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -44,7 +19,7 @@ export function useHero(id?: string): UseHeroReturn {
 
       if (id) {
         const { data, error } = await supabase
-          .from("hero-section")
+          .from("banner")
           .select("*")
           .eq("id", id)
           .single();
@@ -53,7 +28,7 @@ export function useHero(id?: string): UseHeroReturn {
           console.error("Error fetching hero:", error);
           setError("Failed to fetch hero");
         } else if (data) {
-          setHero({
+          setBanner({
             ...data,
             title: getLocalizedField(data, "title", locale),
             quotes: getLocalizedField(data, "quotes", locale),
@@ -62,7 +37,7 @@ export function useHero(id?: string): UseHeroReturn {
         }
       } else {
         const { data, error } = await supabase
-          .from("hero-section")
+          .from("banner")
           .select("*")
           .order("id", { ascending: true });
 
@@ -76,7 +51,7 @@ export function useHero(id?: string): UseHeroReturn {
             quotes: getLocalizedField(item, "quotes", locale),
             description: getLocalizedField(item, "description", locale),
           }));
-          setHeros(localized);
+          setBanners(localized);
         }
       }
 

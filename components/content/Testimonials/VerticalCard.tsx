@@ -32,7 +32,9 @@ export function VerticalCard({ item, className }: Props) {
         </div>
         <div className="flex flex-col">
           <span className="font-bold text-lg">{item.name}</span>
-          <span className="text-md font-normal">{item.email}</span>
+          <span className="text-md font-normal text-muted">
+            {item.role || "Reviewer"}
+          </span>
         </div>
       </div>
       <div

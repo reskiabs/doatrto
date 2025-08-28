@@ -20,8 +20,7 @@ const Media = () => {
           {t("asFeatureIn")}
         </p>
 
-        {/* Wrap scrolling content */}
-        <div className="lg:mt-5 w-full overflow-hidden">
+        <div className="-mt-1 lg:mt-2 w-full overflow-hidden">
           <div className="animate-scroll-slow flex gap-[25px] lg:gap-[50px]">
             {[...data, ...data].map((item, index) => (
               <div
