@@ -2,14 +2,15 @@
 
 import LoaderContent from "@/components/common/LoaderContent";
 import SomethingWentWrong from "@/components/common/SomethingWentWrong";
-import { useBeyond } from "@/hooks/useBeyond";
+import { useBeyondOptimized } from "@/hooks/optimized/useBeyondOptimized";
 import { useMobileScrollOffset } from "@/hooks/useMobileScrollOffset";
+import { memo } from "react";
 import BeyondCardList from "../card/BeyondCardList";
 import ContentTitle from "../typography/ContentTitle";
 
-const GoingBeyond = () => {
+const GoingBeyond = memo(() => {
   const scrollRef = useMobileScrollOffset(0.17);
-  const { beyond, loading, error } = useBeyond();
+  const { beyond, loading, error } = useBeyondOptimized();
 
   if (loading) return <LoaderContent />;
   if (error) return <SomethingWentWrong />;
@@ -37,6 +38,8 @@ const GoingBeyond = () => {
       </div>
     </main>
   );
-};
+});
+
+GoingBeyond.displayName = 'GoingBeyond';
 
 export default GoingBeyond;

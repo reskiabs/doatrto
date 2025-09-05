@@ -4,10 +4,10 @@ import NewsCard from "@/components/card/NewsCard";
 import LoaderContent from "@/components/common/LoaderContent";
 import SomethingWentWrong from "@/components/common/SomethingWentWrong";
 import DetailHeader from "@/components/typography/DetailHeader";
-import { useKlassesFeatures } from "@/hooks/useKlassesFeatures";
+import { useKlassesFeaturesOptimized } from "@/hooks/optimized/useKlassesFeaturesOptimized";
 
 const KlassesPage = () => {
-  const { features, loading, error } = useKlassesFeatures();
+  const { features, loading, error } = useKlassesFeaturesOptimized();
 
   if (loading) return <LoaderContent />;
   if (error) return <SomethingWentWrong />;

@@ -8,14 +8,14 @@ import SessionFaq from "@/components/content/session/SessionFaq";
 import SessionGridContent from "@/components/content/session/SessionGridContent";
 import SessionPrice from "@/components/content/session/SessionPrice";
 import DetailHeader from "@/components/typography/DetailHeader";
-import { useFaq } from "@/hooks/useFaq";
-import { useSessionFeatures } from "@/hooks/useSessionFeatures";
+import { useFaqOptimized } from "@/hooks/optimized/useFaqOptimized";
+import { useSessionFeaturesOptimized } from "@/hooks/optimized/useSessionFeaturesOptimized";
 import { FaqLocalized } from "@/types/faq";
 import { useEffect, useState } from "react";
 
 const SessionPage = () => {
-  const { items } = useFaq();
-  const { features, loading, error } = useSessionFeatures();
+  const { items } = useFaqOptimized();
+  const { features, loading, error } = useSessionFeaturesOptimized();
   const [activeId, setActiveId] = useState<number | null>(null);
 
   useEffect(() => {

@@ -1,6 +1,7 @@
 "use client";
 
-import { useHonestReviews } from "@/hooks/useHonestReviews";
+import { useHonestReviewsOptimized } from "@/hooks/optimized/useHonestReviewsOptimized";
+import { memo } from "react";
 import HonestReviewContent from "../common/HonestReviewContent";
 import LoaderContent from "../common/LoaderContent";
 import SomethingWentWrong from "../common/SomethingWentWrong";
@@ -8,8 +9,8 @@ import ContentTitle from "../typography/ContentTitle";
 import { HonestReviewCard } from "../ui/honest-review/card";
 import { HonestReviewCarousel } from "../ui/honest-review/carousel";
 
-export function HonestReview() {
-  const { reviews, loading, error } = useHonestReviews();
+export const HonestReview = memo(function HonestReview() {
+  const { reviews, loading, error } = useHonestReviewsOptimized();
 
   if (loading) return <LoaderContent />;
   if (error) return <SomethingWentWrong />;
@@ -36,4 +37,4 @@ export function HonestReview() {
       <HonestReviewCarousel items={cards} />
     </div>
   );
-}
+});

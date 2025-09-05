@@ -2,10 +2,10 @@
 
 import LoaderContent from "@/components/common/LoaderContent";
 import SomethingWentWrong from "@/components/common/SomethingWentWrong";
-import { useTestimonials } from "@/hooks/useTestimonials";
+import { useTestimonialsOptimized } from "@/hooks/optimized/useTestimonialsOptimized";
 import { splitIntoColumns } from "@/lib/split-into-columns";
 import clsx from "clsx";
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { AnimatedColumn } from "./AnimatedColumn";
 
 interface Props {
@@ -14,12 +14,12 @@ interface Props {
   className?: string;
 }
 
-export function InfiniteVerticalCards({
+export const InfiniteVerticalCards = memo(function InfiniteVerticalCards({
   columns = 3,
   pauseOnHover = true,
   className,
 }: Props) {
-  const { testimonials, loading, error } = useTestimonials();
+  const { testimonials, loading, error } = useTestimonialsOptimized();
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -67,4 +67,4 @@ export function InfiniteVerticalCards({
       ))}
     </section>
   );
-}
+});

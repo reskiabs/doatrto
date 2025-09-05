@@ -2,12 +2,13 @@
 
 import LoaderContent from "@/components/common/LoaderContent";
 import SomethingWentWrong from "@/components/common/SomethingWentWrong";
-import { useTrustedMedical } from "@/hooks/useTrustedMedical";
+import { useTrustedMedicalOptimized } from "@/hooks/optimized/useTrustedMedicalOptimized";
+import { memo } from "react";
 import ContentTitle from "../../typography/ContentTitle";
 import { ContinuousCarousel } from "./ContinuousCarousel";
 
-const TrustByMedicalExpert = () => {
-  const { items, loading, error } = useTrustedMedical();
+const TrustByMedicalExpert = memo(() => {
+  const { items, loading, error } = useTrustedMedicalOptimized();
 
   if (loading) return <LoaderContent />;
   if (error) return <SomethingWentWrong />;
@@ -20,6 +21,8 @@ const TrustByMedicalExpert = () => {
       <ContinuousCarousel items={items} />
     </main>
   );
-};
+});
+
+TrustByMedicalExpert.displayName = 'TrustByMedicalExpert';
 
 export default TrustByMedicalExpert;

@@ -4,13 +4,13 @@ import NewsCard from "@/components/card/NewsCard";
 import LoaderContent from "@/components/common/LoaderContent";
 import SomethingWentWrong from "@/components/common/SomethingWentWrong";
 import DetailTitle from "@/components/typography/DetailTitle";
-import { useNewsDetail } from "@/hooks/useNewsDetail";
+import { useNewsDetailOptimized } from "@/hooks/optimized/useNewsDetailOptimized";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 
 const ArticleDetailPage = () => {
   const { id } = useParams<{ id: string }>();
-  const { detail, related, loading, error } = useNewsDetail(id as string);
+  const { detail, related, loading, error } = useNewsDetailOptimized(id as string);
 
   if (error || !detail) {
     return <SomethingWentWrong />;

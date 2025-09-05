@@ -6,10 +6,10 @@ import SomethingWentWrong from "@/components/common/SomethingWentWrong";
 import DetailHeader from "@/components/typography/DetailHeader";
 import { HonestReviewCard } from "@/components/ui/honest-review/card";
 import { HonestReviewCarousel } from "@/components/ui/honest-review/carousel";
-import { useFeatureFacilitator } from "@/hooks/useFeatureFacilitator";
+import { useFeatureFacilitatorOptimized } from "@/hooks/optimized/useFeatureFacilitatorOptimized";
 
 const FacilitatorsPage = () => {
-  const { facilitators, loading, error } = useFeatureFacilitator();
+  const { facilitators, loading, error } = useFeatureFacilitatorOptimized();
 
   const cards = facilitators.map((facilitator) => ({
     name: facilitator.name,

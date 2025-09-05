@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 interface CarouselImage {
-  id: string;
+  id: number;
   src: string;
   title: string;
 }

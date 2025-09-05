@@ -1,13 +1,14 @@
 "use client";
 
 import ContentTitle from "@/components/typography/ContentTitle";
-import { useNews } from "@/hooks/useNews";
+import { useNewsOptimized } from "@/hooks/optimized/useNewsOptimized";
+import { memo } from "react";
 import NewsCard from "../card/NewsCard";
 import LoaderContent from "../common/LoaderContent";
 import SomethingWentWrong from "../common/SomethingWentWrong";
 
-const News = () => {
-  const { news, loading, error } = useNews();
+const News = memo(() => {
+  const { news, loading, error } = useNewsOptimized();
 
   if (loading) return <LoaderContent />;
   if (error) return <SomethingWentWrong />;
@@ -28,6 +29,8 @@ const News = () => {
       </div>
     </main>
   );
-};
+});
+
+News.displayName = 'News';
 
 export default News;

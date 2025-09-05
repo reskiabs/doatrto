@@ -4,7 +4,7 @@ import LoaderContent from "@/components/common/LoaderContent";
 import SomethingWentWrong from "@/components/common/SomethingWentWrong";
 import DetailHeader from "@/components/typography/DetailHeader";
 import { useMobileScrollOffset } from "@/hooks/useMobileScrollOffset";
-import { useTheDifferences } from "@/hooks/useTheDifferences";
+import { useTheDifferencesOptimized } from "@/hooks/optimized/useTheDifferencesOptimized";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 
@@ -12,7 +12,7 @@ const TheDifferenceDetailPage = () => {
   const params = useParams();
   const id = params.id as string;
 
-  const { items, loading, error } = useTheDifferences();
+  const { items, loading, error } = useTheDifferencesOptimized();
   console.log("🔍 > TheDifferenceDetailPage > items:", items[2]?.description);
   const detail = items.find((item) => item.id.toString() === id);
   const scrollRef = useMobileScrollOffset(0.22, [detail]);

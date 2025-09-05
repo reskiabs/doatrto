@@ -5,7 +5,7 @@ import SomethingWentWrong from "@/components/common/SomethingWentWrong";
 import TrustByMedicalExpert from "@/components/content/TrustedByMedicalExpert";
 import DetailHeader from "@/components/typography/DetailHeader";
 import { useMobileScrollOffset } from "@/hooks/useMobileScrollOffset";
-import { useTrustedMedical } from "@/hooks/useTrustedMedical";
+import { useTrustedMedicalOptimized } from "@/hooks/optimized/useTrustedMedicalOptimized";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 
@@ -13,7 +13,7 @@ const TrustedByMedicalExpertDetailPage = () => {
   const params = useParams();
   const id = params.id as string;
 
-  const { detail: trustedMedical, loading, error } = useTrustedMedical(id);
+  const { detail: trustedMedical, loading, error } = useTrustedMedicalOptimized(id);
   const scrollRef = useMobileScrollOffset(0.27, [trustedMedical]);
 
   if (loading) return <LoaderContent />;

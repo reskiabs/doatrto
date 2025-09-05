@@ -1,12 +1,13 @@
 "use client";
 
-import { useOpenEvidenceList } from "@/hooks/useOpenEvidenceList";
+import { useOpenEvidenceListOptimized } from "@/hooks/optimized/useOpenEvidenceListOptimized";
+import { memo } from "react";
 import { Carousel } from "../ui/open-evidence-carousel";
 import LoaderContent from "./LoaderContent";
 import SomethingWentWrong from "./SomethingWentWrong";
 
-export function OpenEvidenceCarousel() {
-  const { list, loading, error } = useOpenEvidenceList();
+export const OpenEvidenceCarousel = memo(function OpenEvidenceCarousel() {
+  const { list, loading, error } = useOpenEvidenceListOptimized();
 
   if (loading) return <LoaderContent />;
   if (error) return <SomethingWentWrong />;
@@ -21,4 +22,4 @@ export function OpenEvidenceCarousel() {
       <Carousel slides={slideData} />
     </div>
   );
-}
+});
