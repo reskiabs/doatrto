@@ -2,8 +2,9 @@
 
 import LoaderContent from "@/components/common/LoaderContent";
 import SomethingWentWrong from "@/components/common/SomethingWentWrong";
-import { useTheDifferences } from "@/hooks/useTheDifferences";
+import { useTheDifferencesOptimized } from "@/hooks/optimized/useTheDifferencesOptimized";
 import { ITheDifferences } from "@/types/the-differences";
+import { memo } from "react";
 import { DifferentCarouselCard } from "./DifferentCarouselCard";
 
 interface RowProps {
@@ -34,8 +35,8 @@ function ScrollRow({ items, animationClass, pauseOnHover }: RowProps) {
   );
 }
 
-export function DifferentContinuousCarousel() {
-  const { items, loading, error } = useTheDifferences();
+export const DifferentContinuousCarousel = memo(function DifferentContinuousCarousel() {
+  const { items, loading, error } = useTheDifferencesOptimized();
 
   if (loading) return <LoaderContent />;
   if (error) return <SomethingWentWrong />;
@@ -58,4 +59,4 @@ export function DifferentContinuousCarousel() {
       />
     </section>
   );
-}
+});

@@ -3,10 +3,10 @@
 import LoaderContent from "@/components/common/LoaderContent";
 import SomethingWentWrong from "@/components/common/SomethingWentWrong";
 import DetailHeader from "@/components/typography/DetailHeader";
-import { useHowItWorks } from "@/hooks/useHowItWorks";
+import { useHowItWorksOptimized } from "@/hooks/optimized/useHowItWorksOptimized";
 
 const HowItWorksPage = () => {
-  const { items, loading, error } = useHowItWorks();
+  const { items, loading, error } = useHowItWorksOptimized();
 
   if (loading) return <LoaderContent />;
   if (error) return <SomethingWentWrong />;

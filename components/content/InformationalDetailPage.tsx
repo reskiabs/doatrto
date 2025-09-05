@@ -2,7 +2,8 @@
 
 import ImageGrid from "@/components/content/ImageGrid";
 import DetailHeader from "@/components/typography/DetailHeader";
-import { useInformationalPages } from "@/hooks/useInformationalPages";
+import { useInformationalPagesOptimized } from "@/hooks/optimized/useInformationalPagesOptimized";
+import { memo } from "react";
 import LoaderContent from "../common/LoaderContent";
 import SomethingWentWrong from "../common/SomethingWentWrong";
 
@@ -12,12 +13,12 @@ interface InformationalDetailPageProps {
   headerDescription: string;
 }
 
-const InformationalDetailPage: React.FC<InformationalDetailPageProps> = ({
+const InformationalDetailPage: React.FC<InformationalDetailPageProps> = memo(({
   pageId,
   headerTitle,
   headerDescription,
 }) => {
-  const { item, loading, error } = useInformationalPages();
+  const { item, loading, error } = useInformationalPagesOptimized();
 
   if (loading) return <LoaderContent />;
   if (error) return <SomethingWentWrong />;
@@ -61,6 +62,8 @@ const InformationalDetailPage: React.FC<InformationalDetailPageProps> = ({
       </div>
     </div>
   );
-};
+});
+
+InformationalDetailPage.displayName = 'InformationalDetailPage';
 
 export default InformationalDetailPage;

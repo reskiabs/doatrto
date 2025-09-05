@@ -1,5 +1,6 @@
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
+import { SWRProvider } from "@/lib/providers/SWRProvider";
 import type { Metadata } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -41,11 +42,13 @@ export default async function RootLayout({
      ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NextIntlClientProvider>
-          <div className="lg:flex lg:flex-col lg:min-h-screen">
-            <Header />
-            <main className="flex-1 mt-[75px] md:mt-0">{children}</main>
-            <Footer />
-          </div>
+          <SWRProvider>
+            <div className="lg:flex lg:flex-col lg:min-h-screen">
+              <Header />
+              <main className="flex-1 mt-[75px] md:mt-0">{children}</main>
+              <Footer />
+            </div>
+          </SWRProvider>
         </NextIntlClientProvider>
       </body>
     </html>

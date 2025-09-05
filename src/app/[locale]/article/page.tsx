@@ -4,10 +4,10 @@ import NewsCard from "@/components/card/NewsCard";
 import LoaderContent from "@/components/common/LoaderContent";
 import SomethingWentWrong from "@/components/common/SomethingWentWrong";
 import DetailHeader from "@/components/typography/DetailHeader";
-import { useNews } from "@/hooks/useNews";
+import { useNewsOptimized } from "@/hooks/optimized/useNewsOptimized";
 
 const ArticlePage = () => {
-  const { news, loading, error } = useNews();
+  const { news, loading, error } = useNewsOptimized();
 
   if (loading) return <LoaderContent />;
   if (error) return <SomethingWentWrong />;

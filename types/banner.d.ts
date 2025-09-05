@@ -1,5 +1,5 @@
 export type BannerRow = {
-  id: string;
+  id: number;
   title_id: string;
   title_en: string;
   quotes_id: string;
@@ -19,7 +19,8 @@ export type LocalizedBanner = BannerRow & {
 export type UseBannerReturn = {
   heros?: LocalizedBanner[];
   hero?: LocalizedBanner;
-  allThumbnails?: { id: string; src: string; title: string }[];
+  allThumbnails?: { id: number; src: string; title: string }[];
   loading: boolean;
   error: string | null;
+  mutate?: () => Promise<any>;
 };

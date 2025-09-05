@@ -4,11 +4,11 @@ import LoaderContent from "@/components/common/LoaderContent";
 import SomethingWentWrong from "@/components/common/SomethingWentWrong";
 import FaqAccordionItem from "@/components/content/FaqAccordion";
 import DetailHeader from "@/components/typography/DetailHeader";
-import { useFaq } from "@/hooks/useFaq";
+import { useFaqOptimized } from "@/hooks/optimized/useFaqOptimized";
 import { useEffect, useState } from "react";
 
 const FAQPage = () => {
-  const { items, loading, error } = useFaq();
+  const { items, loading, error } = useFaqOptimized();
   const [activeId, setActiveId] = useState<number | null>(null);
 
   useEffect(() => {

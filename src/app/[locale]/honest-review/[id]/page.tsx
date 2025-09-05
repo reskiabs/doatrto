@@ -6,14 +6,14 @@ import SomethingWentWrong from "@/components/common/SomethingWentWrong";
 import { HonestReview } from "@/components/content/HonestReview";
 import ImageGrid from "@/components/content/ImageGrid";
 import DetailHeader from "@/components/typography/DetailHeader";
-import { useHonestReviews } from "@/hooks/useHonestReviews";
+import { useHonestReviewsOptimized } from "@/hooks/optimized/useHonestReviewsOptimized";
 import { splitDescription } from "@/lib/splitDescription";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 
 const HonestReviewDetailPage = () => {
   const { id } = useParams<{ id: string }>();
-  const { review, loading, error } = useHonestReviews(id);
+  const { review, loading, error } = useHonestReviewsOptimized(id);
 
   if (!review) return null;
   if (loading) return <LoaderContent />;

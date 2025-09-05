@@ -5,7 +5,7 @@ import SomethingWentWrong from "@/components/common/SomethingWentWrong";
 import { InfiniteVerticalCards } from "@/components/content/Testimonials/InfiniteVerticalCards";
 import { ContinuousCarousel } from "@/components/content/TrustedByMedicalExpert/ContinuousCarousel";
 import DetailHeader from "@/components/typography/DetailHeader";
-import { useTrustedMedical } from "@/hooks/useTrustedMedical";
+import { useTrustedMedicalOptimized } from "@/hooks/optimized/useTrustedMedicalOptimized";
 import clsx from "clsx";
 import { useState } from "react";
 
@@ -18,7 +18,7 @@ const buttonList = [
 
 const Testimonial = () => {
   const [buttonActive, setButtonActive] = useState(1);
-  const { items, loading, error } = useTrustedMedical();
+  const { items, loading, error } = useTrustedMedicalOptimized();
 
   const handleButtonClick = (id: number) => {
     setButtonActive(id);

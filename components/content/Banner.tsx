@@ -1,13 +1,14 @@
-import { useBanner } from "@/hooks/useBanner";
+import { useBannerOptimized } from "@/hooks/optimized/useBannerOptimized";
 import { useTranslations } from "next-intl";
+import { memo } from "react";
 import ImageCarousel from "../common/ImageCarousel";
 import LoaderContent from "../common/LoaderContent";
 import SomethingWentWrong from "../common/SomethingWentWrong";
 import MainOutlineButton from "./MainOutlineButton";
 
-const Banner = () => {
+const Banner = memo(() => {
   const t = useTranslations("FeatureButtons");
-  const { loading, error, allThumbnails } = useBanner();
+  const { loading, error, allThumbnails } = useBannerOptimized();
 
   if (loading) return <LoaderContent />;
   if (error) return <SomethingWentWrong />;
@@ -23,6 +24,8 @@ const Banner = () => {
       </div>
     </div>
   );
-};
+});
+
+Banner.displayName = 'Banner';
 
 export default Banner;

@@ -1,12 +1,13 @@
 "use client";
 
 import { HoverEffect } from "@/components/ui/card-hover-effect";
-import { useTrustTransparency } from "@/hooks/useTrustTransparency";
+import { useTrustTransparencyOptimized } from "@/hooks/optimized/useTrustTransparencyOptimized";
+import { memo } from "react";
 import LoaderContent from "../common/LoaderContent";
 import SomethingWentWrong from "../common/SomethingWentWrong";
 
-export function TrustAndTransparencyListCard() {
-  const { items, loading, error } = useTrustTransparency();
+export const TrustAndTransparencyListCard = memo(function TrustAndTransparencyListCard() {
+  const { items, loading, error } = useTrustTransparencyOptimized();
 
   const projects = items.map((item) => ({
     title: item.title,
@@ -22,4 +23,4 @@ export function TrustAndTransparencyListCard() {
       <HoverEffect items={projects} />
     </div>
   );
-}
+});

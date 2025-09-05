@@ -4,14 +4,14 @@ import LoaderContent from "@/components/common/LoaderContent";
 import SomethingWentWrong from "@/components/common/SomethingWentWrong";
 import OpenEvidenceAutoSlider from "@/components/content/OpenEvidenceAutoSlider";
 import DetailHeader from "@/components/typography/DetailHeader";
-import { useOpenEvidenceDetail } from "@/hooks/useOpenEvidenceDetail";
-import { useOpenEvidenceList } from "@/hooks/useOpenEvidenceList";
+import { useOpenEvidenceDetailOptimized } from "@/hooks/optimized/useOpenEvidenceDetailOptimized";
+import { useOpenEvidenceListOptimized } from "@/hooks/optimized/useOpenEvidenceListOptimized";
 import { useParams } from "next/navigation";
 
 const OpenEvidenceDetailPage = () => {
   const { id } = useParams<{ id: string }>();
-  const { detail, loading, error } = useOpenEvidenceDetail(id);
-  const { list } = useOpenEvidenceList();
+  const { detail, loading, error } = useOpenEvidenceDetailOptimized(id);
+  const { list } = useOpenEvidenceListOptimized();
 
   const slideData = list.map((item) => ({
     src: item.thumbnail,

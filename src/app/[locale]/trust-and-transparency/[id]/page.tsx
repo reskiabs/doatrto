@@ -3,7 +3,7 @@
 import LoaderContent from "@/components/common/LoaderContent";
 import SomethingWentWrong from "@/components/common/SomethingWentWrong";
 import DetailTitle from "@/components/typography/DetailTitle";
-import { useTrustTransparency } from "@/hooks/useTrustTransparency";
+import { useTrustTransparencyOptimized } from "@/hooks/optimized/useTrustTransparencyOptimized";
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useMemo } from "react";
@@ -11,7 +11,7 @@ import { useEffect, useMemo } from "react";
 export default function TrustAndTransparencyDetailPage() {
   const { id } = useParams();
   const router = useRouter();
-  const { items, loading, error } = useTrustTransparency();
+  const { items, loading, error } = useTrustTransparencyOptimized();
 
   const detail = useMemo(() => {
     if (!id || Array.isArray(id)) return undefined;
