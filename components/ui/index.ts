@@ -1,0 +1,1 @@
+// UI Components (Open Evidence components moved to @/components/open-evidence)

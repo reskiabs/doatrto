@@ -2,20 +2,14 @@
 
 import LoaderContent from "@/components/common/LoaderContent";
 import SomethingWentWrong from "@/components/common/SomethingWentWrong";
-import OpenEvidenceAutoSlider from "@/components/content/OpenEvidenceAutoSlider";
+import OpenEvidenceSection from "@/components/open-evidence/OpenEvidenceSection";
 import DetailHeader from "@/components/typography/DetailHeader";
 import { useOpenEvidenceDetailOptimized } from "@/hooks/optimized/useOpenEvidenceDetailOptimized";
-import { useOpenEvidenceListOptimized } from "@/hooks/optimized/useOpenEvidenceListOptimized";
 import { useParams } from "next/navigation";
 
 const OpenEvidenceDetailPage = () => {
   const { id } = useParams<{ id: string }>();
   const { detail, loading, error } = useOpenEvidenceDetailOptimized(id);
-  const { list } = useOpenEvidenceListOptimized();
-
-  const slideData = list.map((item) => ({
-    src: item.thumbnail,
-  }));
 
   if (loading) return <LoaderContent />;
   if (error) return <SomethingWentWrong />;
@@ -50,11 +44,14 @@ const OpenEvidenceDetailPage = () => {
       )}
 
       <div className="mt-[50px] lg:mt-[100px] w-full flex flex-col justify-center items-center">
-        <div className="w-full flex flex-col items-center max-w-[1140px]">
-          <h1 className="font-extrabold text-[28px] lg:text-[40px] text-tertiary text-center lg:text-left">
-            Lorem ipsum dolor
+        <div className="w-full flex flex-col items-center">
+          <h1 className="font-extrabold text-[28px] lg:text-[40px] text-tertiary text-center mb-[30px] lg:mb-[50px]">
+            More Open Evidence
           </h1>
-          <OpenEvidenceAutoSlider slideData={slideData} />
+          <OpenEvidenceSection 
+            layout="auto"
+            className="w-full"
+          />
         </div>
       </div>
     </div>
