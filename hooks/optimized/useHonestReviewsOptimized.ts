@@ -12,6 +12,7 @@ interface HonestReviewLocalized {
   description: string;
   thumbnail: string;
   images: string[] | null;
+  video: string;
 }
 
 export function useHonestReviewsOptimized(id?: string) {

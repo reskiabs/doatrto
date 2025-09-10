@@ -5,6 +5,7 @@ interface IHonestReview {
   name: string;
   description: string;
   images: string[];
+  video: string;
 }
 
 export type { IHonestReview };

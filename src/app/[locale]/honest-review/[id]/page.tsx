@@ -1,25 +1,39 @@
 "use client";
 
-import PrimaryButton from "@/components/button/PrimaryButton";
 import LoaderContent from "@/components/common/LoaderContent";
 import SomethingWentWrong from "@/components/common/SomethingWentWrong";
 import { HonestReview } from "@/components/content/HonestReview";
 import ImageGrid from "@/components/content/ImageGrid";
 import DetailHeader from "@/components/typography/DetailHeader";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { useHonestReviewsOptimized } from "@/hooks/optimized/useHonestReviewsOptimized";
 import { splitDescription } from "@/lib/splitDescription";
+import { MoveRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useParams } from "next/navigation";
+import { useState } from "react";
+import { extractYouTubeId } from "../../../../lib/extractYouTubeId";
 
 const HonestReviewDetailPage = () => {
   const { id } = useParams<{ id: string }>();
   const { review, loading, error } = useHonestReviewsOptimized(id);
+  const [isVideoDialogOpen, setIsVideoDialogOpen] = useState(false);
+  const t = useTranslations("button");
 
   if (!review) return null;
   if (loading) return <LoaderContent />;
   if (error) return <SomethingWentWrong />;
 
   const { short, remaining } = splitDescription(review.description || "");
+  const videoId = extractYouTubeId(review.video);
+  const hasVideo = Boolean(videoId);
 
   return (
     <div>
@@ -43,13 +57,59 @@ const HonestReviewDetailPage = () => {
               {review.title}
             </h2>
             <div
-              className="font-normal text-justify text-sm lg:text-xl my-[20px] lg:my-[30px]"
+              className="font-normal line-clamp-8 text-justify text-sm lg:text-xl my-[20px] lg:my-[30px]"
               dangerouslySetInnerHTML={{
                 __html: short,
               }}
             />
             <div className="flex justify-center lg:justify-start">
-              <PrimaryButton href="#" titleKey="watchVideo" />
+              {hasVideo ? (
+                <Dialog
+                  open={isVideoDialogOpen}
+                  onOpenChange={setIsVideoDialogOpen}
+                >
+                  <DialogTrigger asChild>
+                    <button
+                      className="inline-flex items-center px-6 py-3 lg:py-4 rounded-full text-white font-medium text-xs lg:text-lg bg-gradient-to-r from-secondary to-primary hover:cursor-pointer"
+                      onClick={() => setIsVideoDialogOpen(true)}
+                    >
+                      <span className="flex items-center gap-2.5">
+                        {t("watchVideo")} <MoveRight size={20} />
+                      </span>
+                    </button>
+                  </DialogTrigger>
+                  <DialogContent className="!w-[340px] !h-[240px] lg:!w-[1140px] lg:!h-[690px] !max-w-none p-4 lg:p-6">
+                    <DialogHeader>
+                      <DialogTitle className="text-lg lg:text-xl font-semibold mb-3 lg:mb-4">
+                        {review.name} - Video
+                      </DialogTitle>
+                    </DialogHeader>
+                    <div className="w-full h-[191px] lg:h-[641px]">
+                      {videoId && (
+                        <iframe
+                          width="100%"
+                          height="100%"
+                          src={`https://www.youtube-nocookie.com/embed/${videoId}`}
+                          title={review.name}
+                          style={{ border: 0 }}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          className="rounded-lg"
+                        />
+                      )}
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              ) : (
+                <button
+                  className="inline-flex items-center px-6 py-3 lg:py-4 rounded-full text-white font-medium text-xs lg:text-lg bg-gray-400 cursor-not-allowed opacity-50"
+                  disabled
+                >
+                  <span className="flex items-center gap-2.5">
+                    {t("watchVideo")} <MoveRight size={20} />
+                  </span>
+                </button>
+              )}
             </div>
           </div>
         </div>
